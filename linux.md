@@ -7,7 +7,7 @@
 * `cat [file]`    # stream file in shell
 * `cat ->[file]`
     * opens file in shell and awaits edit
-    * when done editing press [return] and [ctrl-d]
+    * when done editing press `[return]` and `[ctrl-d]`
 
 * `ls`     # list contents of working rirectory
     * `[-a]`    # show hidden files
