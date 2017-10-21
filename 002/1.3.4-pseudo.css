@@ -1,0 +1,23 @@
+main {
+  padding: 30px;
+}
+
+blockquote {
+  max-width: 300px;
+}
+
+blockquote + .author {
+  margin-bottom: 60px;
+}
+
+.author {
+  color: grey;
+}
+
+blockquote::before {
+  content: open-quote;
+}
+
+blockquote::after {
+  content: close-quote; 
+}

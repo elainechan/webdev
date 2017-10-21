@@ -1,0 +1,9 @@
+
+img {
+  width: 300px;
+}
+
+img[src*=dog] {
+  transform: rotate(180deg);
+}
+

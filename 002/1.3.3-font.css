@@ -1,0 +1,15 @@
+body {
+  font-family: 'Roboto Mono';
+  font-size: 36px;
+  font-weight: bold;
+  color: black;
+}
+
+main {
+  padding: 30px;
+}
+
+hr {
+  width: 50%;
+  margin-left: 0;
+}

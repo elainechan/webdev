@@ -1,0 +1,35 @@
+body {
+    font-family: "Roboto Mono", monospace;
+}
+
+#outerbox {
+    box-sizing: content-box;  
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+}
+
+#innerbox1 {
+    box-sizing: content-box;  
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+}
+
+#innerbox2 {
+    box-sizing: content-box;  
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+}
+
+#innerbox3 {
+    box-sizing: content-box;  
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+}
+
+h1 {}
+
+h2 {}

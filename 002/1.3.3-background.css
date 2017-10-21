@@ -1,0 +1,20 @@
+main {
+  padding: 60px;
+}
+
+.animal {
+  width: 400px;
+  height: 400px;
+  border: 1px solid black;
+  margin-bottom: 50px;
+  background-image: url('http://lorempixel.com/200/200/animals/');
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+}
+
+.animals {
+  border: 1px solid red;
+  width: 400px;
+  height: 400px;
+  background-image: url('http://lorempixel.com/200/200/animals/');
+}
