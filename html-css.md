@@ -2,7 +2,8 @@
 
 # CSS
   * Most common declaration for alignment:
-    * `margin-left: auto; margin-right: auto;`
+    * `margin-left: auto;` 
+    * `margin-right: auto;`
     * `text-align: center`
   * pseudo-element
     * `blockquote::before`
