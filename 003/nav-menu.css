@@ -1,0 +1,35 @@
+body {
+    font-family: "Rubik", sans-serif;
+    font-size: 20pt;
+}
+
+ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: #DDDDDD;
+}
+
+li {
+    float: left;
+}
+
+li a {
+    display: block;
+    padding: 20px 24px;
+    text-align: center;
+    text-decoration: none;
+}
+
+li a:link {
+    color: #1100AA;
+}
+
+li a:hover {
+    background-color: #AAAAAA;
+}
+
+li a:visited {
+    color: #010101;
+}
