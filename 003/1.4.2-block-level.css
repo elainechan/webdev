@@ -1,0 +1,25 @@
+main {
+  padding: 30px;
+}
+
+.container-one {
+ width: 800px; 
+ height: 600px;
+ border: 2px black solid;
+ position: static;
+}
+
+.inner-one {
+   height: 200px;
+   background-color: #5500FF;
+   border: 2px yellow solid;
+   float: top;
+}
+
+.inner-two {
+  width: 60%;
+  height: 200px;
+  background-color: #009955;
+  border: 2px blue solid;
+  float: bottom;
+}
