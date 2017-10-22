@@ -1,9 +1,10 @@
 body {
+    margin-top: 0;
+    margin-right: auto;
+    margin-left: auto;
+    text-align: center;
     font-family: "Roboto Mono", monospace;    
     font-size: 18pt;
-    text-align: center;
-    margin-left: auto;
-    margin-right: auto;
 }
 
 h1 {
@@ -16,9 +17,6 @@ h2 {
 
 nav li {
     display: inline-block;
-    border-style: dotted;
-    border-width: 2px;
-    border-color: #00ff00;
 }
 
 nav ul {
@@ -40,10 +38,19 @@ nav li a:hover {
     background-color: #AAAAAA;
 }
 
+li a:link {
+color: #200088;
+}
+
+li a:hover {
+    color: #2000F0;
+}
+
+li a:visited {
+    color: #101010;
+}
+
 section {
-    border-style: solid;
-    border-width: 2px;
-    border-color: #ffff00;
 }
 
 section ul {
