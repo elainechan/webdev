@@ -1,8 +1,17 @@
-html {
-    font-family: "Roboto Mono", monospace;
-    border-style: dotted;
-    border-width: 2px;
-    border-color: #ff0000;
+body {
+    font-family: "Roboto Mono", monospace;    
+    font-size: 18pt;
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+h1 {
+    font-size: 36pt;
+}
+
+h2 {
+    font-size: 24pt;
 }
 
 nav li {
@@ -12,13 +21,23 @@ nav li {
     border-color: #00ff00;
 }
 
-body {
+nav ul {
+    list-style-position: inside;
+    list-style-type: none;
+    margin: 0;
+    background-color: #DDDDDD;
+}
+
+nav li a {
+    display: inline-block;
     text-align: center;
-    margin-left: auto;
-    margin-right: auto;
-    border-style: dotted;
-    border-width: 2px;
-    border-color: #0000ff;
+    text-decoration: none;
+    font-size: 20pt;
+    padding: 20px 36px;
+}
+
+nav li a:hover {
+    background-color: #AAAAAA;
 }
 
 section {
@@ -27,10 +46,6 @@ section {
     border-color: #ffff00;
 }
 
-ul {
-    list-style-position: inside;
-    list-style-type: none;
-    border-style: dotted;
-    border-width: 2px;
-    border-color: #111111;
+section ul {
+    list-style: none;
 }
