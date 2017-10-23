@@ -30,33 +30,33 @@ a {
     float: left;
     width: 400px;
     height: 200px;
-    background-color: #AA0000;
+    background-color: #DAF7A6;
 }
 
 .two {
     float: right;
     width: 400px;
     height: 200px;
-    background-color: #00AA00;
+    background-color: #FFDCAC;
 }
 
 .three {
     float: left;
     width: 33.33%;
     height: 300px;
-    background-color: #AAAA00;
+    background-color: #FFD1D1;
 }
 
 .four {
     float: center;
     width: 33.33%;
     height: 300px;
-    background-color: #0000AA;
+    background-color: #FEFFD1;
 }
 
 .five {
     float: right;
     width: 33.33%;
     height: 300px;
-    background-color: #00AAAA
+    background-color: #CCF0FF;
 }
