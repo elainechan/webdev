@@ -7,4 +7,28 @@ a {
   text-decoration: none;
 }
 
-/* Your styles go here! */
+.container {
+    width: 800px;
+    height: 500px;
+margin-left: auto;
+margin-right: auto;
+}
+
+.box {
+    border: solid black 1px;
+}
+
+.one {
+}
+
+.two {
+}
+
+.three {
+}
+
+.four {
+}
+
+.five {
+}
