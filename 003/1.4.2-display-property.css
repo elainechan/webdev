@@ -10,25 +10,53 @@ a {
 .container {
     width: 800px;
     height: 500px;
-margin-left: auto;
-margin-right: auto;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 .box {
     border: solid black 1px;
 }
 
+.row-one {
+    display: inline-block;
+}
+
+.row-two {
+    display: inline-block;
+}
+
 .one {
+    float: left;
+    width: 400px;
+    height: 200px;
+    background-color: #AA0000;
 }
 
 .two {
+    float: right;
+    width: 400px;
+    height: 200px;
+    background-color: #00AA00;
 }
 
 .three {
+    float: left;
+    width: 33.33%;
+    height: 300px;
+    background-color: #AAAA00;
 }
 
 .four {
+    float: center;
+    width: 33.33%;
+    height: 300px;
+    background-color: #0000AA;
 }
 
 .five {
+    float: right;
+    width: 33.33%;
+    height: 300px;
+    background-color: #00AAAA
 }
