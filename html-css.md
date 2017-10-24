@@ -24,7 +24,7 @@
     * Most auto styling can be solved by "poor man's reset": resetting within specific element rather than master-reset.
   * Testing text-alignment by creating a mid-line that spans entire page: 
     * add a `id="ruler"` element in HTML file
-    * in CSS file set `#ruler` to `position: absolute` and `min-height: 90%`
+    * in CSS file set `#ruler` to `position: absolute` (or actually `position: fixed`) and `min-height: 90%`
     * a vertical line will appear in the mid-point of the page
 
 # Schools of Fonts
