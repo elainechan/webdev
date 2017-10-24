@@ -27,3 +27,7 @@
     * in CSS file set `#ruler` to `position: absolute` and `min-height: 90%`
     * a vertical line will appear in the mid-point of the page
 
+# Schools of Fonts
+  * Relative: scalable, using `em`
+  * Absolute: fixed, using `px` or `pt`
+  * [Detailed discussion of font sizing](https://kyleschaeffer.com/development/css-font-size-em-vs-px-vs-pt-vs/)
