@@ -1,9 +1,9 @@
 html {
-height: 100%
+    height: 100%
 }
 
 body {
-height: 100%;
+    height: 100%;
     box-sizing: border-box;
     font-family: 'Roboto', sans-serif;
     background-image: url("https://tf-assets-prod.s3.amazonaws.com/tf-curric/WEB-DEV-001/2.4.3_the_position_property/outerspace_landscape.jpeg");
@@ -12,26 +12,45 @@ height: 100%;
     background-size: cover;
 }
 
+body * {
+    box-sizing: border-box;
+}
+
 a {
     text-decoration: none;
-position: relative;
-font-size: 1.5em;
-padding-bottom: 1.5em;
 }
 
 #logo {
     border-radius: 50%;
-max-height: 4em;
+    height: 50px;
+    border: 1px solid black;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    vertical-align: middle;
+}
+
+.container {
+    padding-left: 60px;
+    padding-right: 60px;
 }
 
 nav {
     position: fixed;
     width: 100%;
-    display: inline-block;
-    padding-left: 60px;
-    padding-right: 60px;
+    height: 60px;
     background-color: #DDDDDD !important;
 }
+
+nav ul {
+    display: inline-block;
+    list-style: none;
+}
+
+nav li {
+    display: inline-block;
+    vertical-align: middle;
+}
+
 a::after {
     content:" \007C";
 }
