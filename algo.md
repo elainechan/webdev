@@ -63,7 +63,7 @@ Binary Search Tree
   * Level order traversal
   * Finding kth largest element, diameter, depth, number of nodes, etc.
 
-Heaps
+Heaps (common in databases)
   * Array Implementation
   * Heapify
   * Heap Sort

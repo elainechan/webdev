@@ -31,3 +31,23 @@
   * Relative: scalable, using `em`
   * Absolute: fixed, using `px` or `pt`
   * [Detailed discussion of font sizing](https://kyleschaeffer.com/development/css-font-size-em-vs-px-vs-pt-vs/)
+
+# Terminology
+* Ruleset 
+* Element
+* Selector
+* Box model
+* Normalizing and resetting
+* Pseudo-elements
+* Pseudo-classes
+    * `:nth-child()` - matches one or more elements based on their position among a group of siblings
+    * `::before`, `::after` - usually used to insert symbols before/after text
+
+# Positioning
+* Viewport - browser window
+* Normal flow - the default way browsers render content, linearly from top to bottom
+* `position: static` -  default _normal flow_
+* `position: fixed` - stays in position relative to viewport regardless of scrolling (e.g. nav menus)
+* `position: relative` - offset relative to its _normal flow_ position (i.e. where it's supposed to be in the top-bottom flow)
+* `position: absolute` - outside of _normal flow_, offset relative to its first parent with non-static position (e.g. logo in nav menu)
+
