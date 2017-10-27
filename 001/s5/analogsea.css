@@ -4,7 +4,7 @@
 
 body {
     background-color: #4A80F4;
-    font-family: helvetica;
+    font-family: "rubik", sans-serif;
     font-size: 18px;
 }
 
@@ -57,6 +57,7 @@ button[type="submit"] {
     padding: 10px;
     margin: 20px auto;
     width: 100%;
+    cursor: pointer;
 }
 
 footer {
@@ -65,4 +66,21 @@ footer {
     font-weight: 400;
     color: #FFFFFF;
     text-align: center;
+}
+
+input::placeholder {
+    font-family: "rubik", sans-serif;
+    font-size: 16px;
+}
+
+button[type="submit"]:hover {
+    background-color: #FBBAF6;
+}
+
+a:link {
+    color: #FFFFFF;
+}
+
+a:hover {
+    color: #FBBAF6;
 }
