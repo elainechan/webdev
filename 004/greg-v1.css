@@ -1,0 +1,146 @@
+* {
+    box-sizing: border-box;
+    font-weight: 700;
+}
+
+html {
+
+}
+
+body {
+    margin: 0;
+    padding: 80px;
+    font-family: "roboto mono", monospace;
+    font-size: 16px;
+}
+
+nav {
+    margin-bottom: 30px;
+}
+
+.top-nav {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+}
+
+h1 {
+    font-size: 20px;
+}
+
+.nav-bar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    padding: 10px;
+    background-color: #DDDDDD;
+}
+
+
+nav, section {
+    margin-bottom: 30px;
+}
+
+.search-section {
+    margin-top: 100px;
+}
+
+.search-section .search-field, 
+.search-section .search-button {
+    display: inline-block;
+    border: 1px solid #DDDDDD;
+    border-radius: 3px;
+}
+
+.search-section .search-label {
+    display:block;
+    padding-bottom: 10px;
+}
+
+.search-section input {
+    font-size: 16px;
+    height: 30px;
+    width: 400px;
+}
+
+.search-section .search-button {
+    height: 30px;
+    width: 30px;
+    vertical-align: bottom;
+}
+
+.nav-link {
+    font-size: 18px;
+    padding: 0 6px;
+}
+
+.logo {
+    display: inline-block;
+    font-size: 16px;
+}
+
+
+form {
+}
+
+.pages {
+    border: 1px #DDDDDD solid;
+    width: 444px;
+}
+
+.pages-display {
+    display: inline-block;
+    border-left: 1px #DDDDDD solid;
+    border-right: 1px #DDDDDD solid;
+}
+
+.pages-display, .pages-button {
+    display: inline-block;
+    padding: 10px 30px;
+}
+
+ul {
+}
+
+li {
+    list-style: none;
+}
+
+.listing {
+    padding: 10px;
+}
+
+a {
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+/*
+.search-section .search-field, 
+.search-section .search-button {
+  display: inline-block;
+  border: 1px solid #DDDDDD;
+  border-radius: 3px;
+  
+}
+
+.search-section input {
+  font-size: 16px;
+  font-weight: 500;
+  width: 400px;
+  height: 30px;
+  padding: 0 5px 0 8px;
+  
+}
+
+.search-section .search-button {
+  width: 37px;
+  height: 30px;
+  padding: 2px 6px 3px 6px;
+  background-color: white;
+  vertical-align: bottom;
+}
+*/

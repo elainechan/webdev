@@ -1,0 +1,132 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0; /* Tricky: override browser default */
+  padding: 80px;
+  font-family: "Roboto", sans-serif;
+  font-size: 16px; /* Set baseline font-size for whole page */
+}
+
+/* Create an even amount of space between all sectioning elements */
+nav, section {
+  margin-bottom: 30px;
+}
+
+/* Tricky. Interaction not obvious and not annotated. */
+a {
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+.nav-bar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  padding: 10px;
+  background-color: #EEEEEE;
+  border-bottom: 1px solid #DDDDDD;
+}
+
+.top-nav {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  
+}
+
+.nav-link {
+  font-size: 18px;
+  padding: 0 6px;
+}
+
+.rl-logo {
+  display: inline-block;
+  font-weight: 800;
+  
+}
+
+.rl-logo h1 {
+  font-size: 18px;
+  font-weight: normal;
+  cursor: pointer; /* restore visual cue that this is clickable */
+  margin: 0;
+  padding: 0;
+
+}
+
+.search-section .search-label {
+  display: block;
+  margin-bottom: 8px;
+}
+
+/* Note that, for consistency, 
+we choose to style the input using its class*/
+.search-section .search-field, 
+.search-section .search-button {
+  display: inline-block;
+  border: 1px solid #DDDDDD;
+  border-radius: 3px;
+  
+}
+
+.search-section input {
+  font-size: 16px; /* Must be set due to specificity weirdness of inputs */
+  font-weight: 500;
+  width: 400px;
+  height: 30px;
+  padding: 0 5px 0 8px;
+  
+}
+
+.search-section .search-button {
+  width: 37px;
+  height: 30px;
+  padding: 2px 6px 3px 6px;
+  background-color: white;
+  vertical-align: bottom;
+}
+
+.pages {
+  display: inline-block; /* Tricky, this could start wrapping!  */
+  font-size: 0;
+  border: 1px solid #DDDDDD;
+  border-radius: 3px;
+}
+
+.pages-button, 
+.pages-display {
+  display: inline-block;
+  font-size: 16px;
+  padding: 8px 25px;
+}
+
+.pages-display {
+  border-left: 1px solid #DDDDDD;
+  border-right: 1px solid #DDDDDD;
+}
+
+.listings {
+  padding: 0;
+}
+
+.listing {
+  list-style: none;
+  margin-bottom: 15px;
+}
+
+.listing-date,
+.listing-location {
+  color: #999;
+}
+
+.listing-title {
+  font-weight: 700;
+  margin-left: 8px;
+  margin-right: 8px;
+}

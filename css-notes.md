@@ -1,12 +1,13 @@
 # CSS Tips
-  * Most common declaration for alignment:
+* Most common declaration for alignment:
     * `margin-left: auto;` 
     * `margin-right: auto;`
     * `text-align: center`
-  * pseudo-element
+* pseudo-element
     * `blockquote::before`
-  * Good convention for images:
+* Good convention for images:
     * `border: 1px solid black;`
+* `z-index` only works on positioned elements, not on `position: static`
 
 # CSS Tricks
 * Browsers impose certain implicit style rules that are only visibile in dev tools. Common problems/solutions:

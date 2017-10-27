@@ -1,7 +1,9 @@
+# Algorithms and Data Structures
+
 Know at least one programming language and the concept of object / pointers.  
 Algorithms and data structures in increasing order of difficulty.
 
-# Basics
+## Basics
 
 Objects
 
@@ -28,7 +30,7 @@ Mathematical algorithms:
   * Probability distribution and expected value
   * Stats - Mean, Median, Variance, Bayes theorem
 
-# Intermediate Algorithms
+## Intermediate Algorithms
 
 Divide and Conquer
   * Binary Search
@@ -51,7 +53,7 @@ String Algorithms
   * LCS
   * Edit Distance
 
-# Non-linear Data Structures
+## Non-linear Data Structures
 
 Trees
   * Binary Tree
@@ -75,7 +77,7 @@ Hash Table
   * Open addressing
   * Collision avoidance
 
-# Graphs
+## Graphs
 
 Adjacency List, Adjacency Matrix, Weighted Edge Graphs
 
@@ -92,30 +94,40 @@ Minimum Spanning Tree
   * Kruskal's Algo
   * Prim's Algo
 
-# Advanced Trees and Graphs
+## Advanced Trees and Graphs
 
 Balanced Trees - AVL, Red-Black
+
 Heavy Light Decomposition, B+ Trees, Quad Tree
+
 Advance Graph - Min Cut, Max Flow
+
 Maximum Matching - Hall's Marriage
+
 Hamiltonian Cycle
+
 Edge Graphs / Line Graphs
+
 Strongly Connected Components
+
 Dominant Sub-Graph, Vertex Cover, Travelling Salesman - Approx algos
-Advance String Algorithms :
 
-Knuth Morris Pratt Algorithm
-Rabin Karp Algorithm
-Tries and Compressed Tries
-Prefix Trees, Suffix Trees, Suffix Automation - Ukkonen Algorithm
+Advance String Algorithms:
+* Knuth Morris Pratt Algorithm
+* Rabin Karp Algorithm
+* Tries and Compressed Tries
+* Prefix Trees, Suffix Trees, Suffix Automation - Ukkonen Algorithm
 
-# Advance Math
+## Advance Math
 
 Fast Fourier Transformation
+
 Primality Testing
+
 Computational Geometry - Closest point pair, Voronoi diagram, Convex Hull
 
 # General Advanced Topics
 
 Iterating through all combination / permutation
+
 Bit manipulation

@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Greg's List</title>
+<meta name="viewport" content="width=device-width">
+<link rel="stylesheet" href="./greg-v1.css" type="text/css">
+<link href="https://fonts.googleapis.com/css?family=Roboto+Mono" rel="stylesheet">
+</head>
+<body>
+    <div class="nav-bar">
+        <a class="logo">
+            <h1>Greg's List</h1>
+        </a>
+        <nav role="navigation" class="top-nav">
+            <a href="#" class="nav-link">Post</a>
+            <a href="#" class="nav-link">Acount</a>
+        </nav>
+    </div>
+    <section class="search-section">
+        <form>
+            <label for="search" class="search-label">Search Jobs</label>
+            <input type="text" id="search" name="search" class="search-field" placeholder="Developer, designer, engineer...">
+            <input type="image" role="button" class="search-button" src="https://tf-assets-prod.s3.amazonaws.com/tf-curric/WEB-DEV-001/2.4.6_challenge_design_to_code/magnifying-glass.png" alt="Search">
+        </form>
+    </section><!--search-section-->
+
+    <nav role="navigation" class="pages">
+        <a href="#" class="pages-button">&lt; prev</a>
+        <span class="pages-display">1 to 10 of 20</span>
+        <a href="#"  class="pages-button">next &gt;</a>
+    </nav><!--pages-->
+
+<main role="main">
+    <ul class="listings">
+        <li class="listing">
+            <span class="listing-date">Oct 13</span>
+            <a href="#" class="listing-title">UI/UX Designer</a>
+            <span class="listing-date">Bushwick</span>
+        </li>
+        <li class="listing">
+            <span class="listing-date">Oct 10</span>
+            <a href="#" class="listing-title">DevOps Engineer</a>
+            <span class="listing-date">Chelsea</span>
+        </li>
+        <li class="listing">
+            <span class="listing-date">Oct 1</span>
+            <a href="#"  class="listing-title">Frontend Developer</a>
+            <span class="listing-date">SoHo</span>
+        </li>
+    </ul><!--listings-->
+</main>
+</body>
+</html>
