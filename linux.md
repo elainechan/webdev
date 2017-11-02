@@ -21,3 +21,5 @@
 * `mkdir [directory]`    # create new directory
 
 * `grep -rn [string] *`    # seach for string in files recursively
+
+* `strace` examing processes, OSX equivalent `dtruss` or `dtrace`
