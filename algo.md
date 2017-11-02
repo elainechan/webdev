@@ -132,3 +132,4 @@
 * Bit manipulation
 
 [Source](https://www.quora.com/What-algorithms-should-I-know-to-become-a-good-programmer/answer/Ashish-Kedia?srid=udOXS)
+[List with 500 links](https://techiedelight.quora.com/500-Data-Structures-and-Algorithms-practice-problems-and-their-solutions)
