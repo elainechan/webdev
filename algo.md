@@ -1,133 +1,134 @@
 # Algorithms and Data Structures
 
-Know at least one programming language and the concept of object / pointers.  
-Algorithms and data structures in increasing order of difficulty.
+* Know at least one programming language and the concept of object / pointers.  
+* Algorithms and data structures in increasing order of difficulty.
 
 ## Basics
 
-Objects
+### Linear Data Structures:
+  - [x] Arrays
+  - [ ] Linked List
+  - [ ] Stack
+  - [ ] Queues
 
-Pointers
+### Sorting Algorithms:
+  - [x] Bubble Sort
+  - [x] Selection Sort
+  - [ ] Merge Sort
+  - [ ] Insertion Sort
+  - [ ] Quick Sort
+  - [ ] Number of inversions
 
-Linear data structures:
-  * Arrays
-  * Linked List
-  * Stack
-  * Queues
-
-Sorting algorithms:
-  * Merge Sort
-  * Insertion Sort
-  * Quick Sort
-  * Number of inversions
-
-Mathematical algorithms:
-  * Matrix Multiplication (just know the algo if not implement it)
-  * Prime Sieving
-  * Modular Math including multiplication and division
-  * Euclidean Algorithm for GCD, Modular Inverse, Fast Exponentiation
-  * Fibonacci number with matrix multiplication
-  * Probability distribution and expected value
-  * Stats - Mean, Median, Variance, Bayes theorem
+### Mathematical Algorithms:
+  - [ ] Matrix Multiplication (just know the algo if not implement it)
+  - [ ] Prime Sieving
+  - [ ] Modular Math including multiplication and division
+  - [ ] Euclidean Algorithm for GCD, Modular Inverse, Fast Exponentiation
+  - [ ] Fibonacci number with matrix multiplication
+  - [ ] Probability distribution and expected value
+  - [ ] Stats - Mean, Median, Variance, Bayes theorem
 
 ## Intermediate Algorithms
 
-Divide and Conquer
-  * Binary Search
-  * Maximum Subarray
+### Divide and Conquer
+  - [ ] Binary Search
+  - [ ] Maximum Subarray
 
-Greedy Algorithms
-  * Activity Selection
-  * Huffman encoding
+### Greedy Algorithms
+  - [ ] Activity Selection
+  - [ ] Huffman encoding
 
-Dynamic Programming
-  * Matrix Chain Multiplication
-  * Knapsack,
+### Dynamic Programming
+  - [ ] Matrix Chain Multiplication
+  - [ ] Knapsack,
 
-Linear Programming
-  * Variable Maximisation
-  * Linear time sorting
+### Linear Programming
+  - [ ] Variable Maximisation
+  - [ ] Linear time sorting
 
-String Algorithms
-  * Manacher
-  * LCS
-  * Edit Distance
+### String Algorithms
+  - [ ] Manacher
+  - [ ] LCS
+  - [ ] Edit Distance
 
 ## Non-linear Data Structures
 
-Trees
-  * Binary Tree
-  * General Tree
-  * Lowest Common Ancestor
+### Trees
+  - [ ] Binary Tree
+  - [ ] General Tree
+  - [ ] Lowest Common Ancestor
 
-Binary Search Tree
-  * Inorder Traversal
-  * Level order traversal
-  * Finding kth largest element, diameter, depth, number of nodes, etc.
+### Binary Search Tree
+  - [ ] Inorder Traversal
+  - [ ] Level order traversal
+  - [ ] Finding kth largest element, diameter, depth, number of nodes, etc.
 
-Heaps (common in databases)
-  * Array Implementation
-  * Heapify
-  * Heap Sort
+### Heaps (common in databases)
+  - [ ] Array Implementation
+  - [ ] Heapify
+  - [ ] Heap Sort
 
-Union Find
+### Hash Table
+  - [ ] Linear Probing
+  - [ ] Open addressing
+  - [ ] Collision avoidance
 
-Hash Table
-  * Linear Probing
-  * Open addressing
-  * Collision avoidance
+### Union Find
 
-## Graphs
+### Graphs
 
-Adjacency List, Adjacency Matrix, Weighted Edge Graphs
+* Adjacency List, Adjacency Matrix, Weighted Edge Graphs
 
-Basic Traversal
-  * Breadth First Search
-  * Depth First Search
+* Basic Traversal
+  - [ ] Breadth First Search
+  - [ ] Depth First Search
 
-Shortest Path Finding
-  * Dijkstra
-  * Floyd Warshal
-  * Bellman Ford
+* Shortest Path Finding
+  - [ ] Dijkstra
+  - [ ] Floyd Warshal
+  - [ ] Bellman Ford
 
-Minimum Spanning Tree
-  * Kruskal's Algo
-  * Prim's Algo
+* Minimum Spanning Tree
+  - [ ] Kruskal's Algorithm
+  - [ ] Prim's Algorithm
 
-## Advanced Trees and Graphs
+## Advanced 
 
-Balanced Trees - AVL, Red-Black
+## Trees and Graphs
 
-Heavy Light Decomposition, B+ Trees, Quad Tree
+* Balanced Trees
+    * AVL
+    * Red-Black
 
-Advance Graph - Min Cut, Max Flow
+* Heavy Light Decomposition, B+ Trees, Quad Tree
 
-Maximum Matching - Hall's Marriage
+* Advance Graph
+    * Min Cut
+    * Max Flow
 
-Hamiltonian Cycle
+* Maximum Matching - Hall's Marriage
 
-Edge Graphs / Line Graphs
+* Hamiltonian Cycle
 
-Strongly Connected Components
+* Edge Graphs / Line Graphs
 
-Dominant Sub-Graph, Vertex Cover, Travelling Salesman - Approx algos
+* Strongly Connected Components
 
-Advance String Algorithms:
+* Dominant Sub-Graph, Vertex Cover, Travelling Salesman - Approx algos
+
+### String Algorithms
 * Knuth Morris Pratt Algorithm
 * Rabin Karp Algorithm
 * Tries and Compressed Tries
 * Prefix Trees, Suffix Trees, Suffix Automation - Ukkonen Algorithm
 
-## Advance Math
+### Math
+* Fast Fourier Transformation
+* Primality Testing
+* Computational Geometry - Closest point pair, Voronoi diagram, Convex Hull
 
-Fast Fourier Transformation
+### Other Advanced Topics
+* Iterating through all combination / permutation
+* Bit manipulation
 
-Primality Testing
-
-Computational Geometry - Closest point pair, Voronoi diagram, Convex Hull
-
-# General Advanced Topics
-
-Iterating through all combination / permutation
-
-Bit manipulation
+[Source](https://www.quora.com/What-algorithms-should-I-know-to-become-a-good-programmer/answer/Ashish-Kedia?srid=udOXS)

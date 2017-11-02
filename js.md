@@ -1,14 +1,11 @@
-1. Self-reference
+# JavaScript Notes
 
-2. DOM
-
-3. array equality
-
-4. open source libraries for grokking
-
-5. diff between vanilla unit tests and testing libraries
-
-6. underscore
+## Current Issues
+* Self-reference
+* DOM
+* open source libraries for grokking
+* diff between vanilla unit tests and testing libraries
+* underscore
 
 ## jQuery
 * `$` turns element into a jQuery object
@@ -19,6 +16,7 @@
 * `.text()` accepts no arguments, get/set text content
 * `.find([selector])`, `.find([element])` - traverse using a filter condition
 * `.parent([selector])` - target the first parent element of a jQuery object
+* `.closest([selector])` target the closest selected element
 
 ### Event Listeners
 * `$(callback)` at bottom of file in place of deprecated `.ready()`
