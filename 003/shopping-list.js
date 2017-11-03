@@ -10,7 +10,8 @@ function addItem() {
  // event delegation
  $("#js-shopping-list-form").submit(event => {
     event.preventDefault();
-/*
+
+/* Equivalent to the block that follows, just for reference
     let value = $(".js-shopping-list-entry").val();
     let sl = $("ul.shopping-list");
     let i = sl.find("li:first");
