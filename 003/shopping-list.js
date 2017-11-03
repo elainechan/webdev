@@ -8,7 +8,13 @@ Delete: permanently remove items from the list
 
 function addItem() {
  // event delegation
-     $().on("");
+ $("#js-shopping-list-form").on("submit", event => {
+     console.log("submitted");
+     let value = $(".js-shopping-list-entry").val();
+     let emptyClone = $("ul.shopping-list > li:first").clone().val().remove();
+     let newItem = emptyClone.find(".shopping-item").text(value);
+     newItem.appendTo(".shopping-list");
+ });
 }
 
 function toggleCheckItem() {
@@ -24,5 +30,6 @@ function deleteItem() {
     });
 }
 
+$(addItem);
 $(toggleCheckItem);
 $(deleteItem);

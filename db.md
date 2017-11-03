@@ -1,4 +1,4 @@
-# Database Notes
+# Database
 
 ## CRUD
 
