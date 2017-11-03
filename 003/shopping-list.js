@@ -8,12 +8,22 @@ Delete: permanently remove items from the list
 
 function addItem() {
  // event delegation
- $("#js-shopping-list-form").on("submit", event => {
-     console.log("submitted");
-     let value = $(".js-shopping-list-entry").val();
-     let emptyClone = $("ul.shopping-list > li:first").clone().val().remove();
-     let newItem = emptyClone.find(".shopping-item").text(value);
-     newItem.appendTo(".shopping-list");
+ $("#js-shopping-list-form").submit(event => {
+    event.preventDefault();
+/*
+    let value = $(".js-shopping-list-entry").val();
+    let sl = $("ul.shopping-list");
+    let i = sl.find("li:first");
+    let newItem = i.clone(true);
+    sl.append(newItem);
+    newItem.find(".shopping-item").text(value);
+*/
+    $("ul.shopping-list")
+        .find("li:first")
+        .clone(true)
+        .appendTo("ul.shopping-list")
+        .find(".shopping-item")
+        .text($(".js-shopping-list-entry").val());
  });
 }
 
