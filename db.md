@@ -97,4 +97,4 @@ Online Analytical Processing (OLAP) Database
 * allows use of analytics tools based on S3, Elasticsearch, Redshift
 1. Delivery stream - 
 2. Records - data producer sends data blobs (records) to delivery stream
-3. Data producers: producers sent records to delivery stream 
+3. Data producers: producers sent records to delivery stream  
