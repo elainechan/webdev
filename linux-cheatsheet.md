@@ -17,18 +17,21 @@
 * `popd` # pop top-most dir from the stack 
 
 ### Inspecting Files
-* `echo`
-
-* `cat [file]`    # stream file in shell
-* `cat ->[file]`
-    * opens file in shell and awaits edit
-    * when done editing press `[return]` and `[ctrl-d]`
 
 * `ls`     # list contents of working rirectory
     * with `-a`    # show hidden files
     * with `-l` # show long-form file info
     * with `li` # prints out the *inode* number
         * linked files have the same *inode* number
+* `echo` used to modify command line prompt
+* `cat [file]`    # stream file in shell
+* `cat ->[file]`
+    * opens file in shell and awaits edit
+    * when done editing press `return` and `ctrl-d`
+* `tac` # look at file backwards, starting with last line
+* `head` # print first 10 lines of file by default
+    * add `-n` (n = any number) to print n lines
+* `tail` # print last 10 lines of file by default
 
 * `less [file]`
 
@@ -39,10 +42,13 @@
 
 ### Manipulating Files
 * `mv [old-file] [new-file]`    # rename file
-
 * `touch [file]`    # create new file
-
+    * `touch -t 11031600 [file]` for timestamp of 4pm Nov 3
 * `mkdir [directory]`    # create new directory
+* `rm [file]` remove a file
+    * with `-i` interactively remove; receive prompt before each removal (useful when removing many files)
+* `rmdir [dir]` remove directory
+* `rm -rf [dir]` remove directory and all its contents
 
 * `grep -rn [string] *`    # seach for string in files recursively
 
@@ -50,4 +56,4 @@
 * `strace` examing processes, OSX equivalent `dtruss` or `dtrace`
 
 ### Mac OSX
-`ifconfig | grep inet` # find IP address
+* `ifconfig | grep inet` # find IP address

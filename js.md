@@ -1,12 +1,26 @@
 # JavaScript Notes
 
-## Current Issues
-* Self-reference
-* DOM
-* open source libraries for grokking
+## Current Interest
+* Self-reference with `this`
+* DOM manipulation
 * diff between vanilla unit tests and testing libraries
 * underscore
+* asyncronous module definition (AMD)
+* function declaration, expression, closure
 
+---
+## Common Concepts
+
+### Functions
+* Declaration: `function add(x, y) = { return x + y; }`
+* Expression: `var add = function(x, y) { return x + y }`
+* Arrow: `var add = (x, y) => { x + y; }
+
+## Objects
+* Objects are passed  by reference not value
+* `const obj = { a: 1, b: 2 }`
+    * contents of `obj` can change but `obj` can't be reassigned
+---
 ## jQuery
 * `$` turns element into a jQuery object
 * REMEMBER to insert `$` when using jQuery, as JavaScript uses some of the same methods 
