@@ -10,7 +10,8 @@
     * when done editing press `[return]` and `[ctrl-d]`
 
 * `ls`     # list contents of working rirectory
-    * `[-a]`    # show hidden files
+    * with `-a`    # show hidden files
+    * with `-l` # show long-form file info
 
 * `less [file]`
 
@@ -23,3 +24,6 @@
 * `grep -rn [string] *`    # seach for string in files recursively
 
 * `strace` examing processes, OSX equivalent `dtruss` or `dtrace`
+
+* `which [app]`  # request location of the program in the filesystem
+* `whereis [app]` # looks for packages in a wider range of system directories
