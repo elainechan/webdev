@@ -9,7 +9,13 @@
 * function declaration, expression, closure
 
 ---
-## Common Concepts
+## Document Object Model (DOM)
+* `window` is the global object in a browser
+* `window.document` is the main object of the visible/rendered DOM
+* `viewport` is the user's visible area of a webpage
+
+---
+## Syntax
 
 ### Functions
 * Declaration: `function add(x, y) = { return x + y; }`
