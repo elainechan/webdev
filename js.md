@@ -12,8 +12,11 @@
 ## Document Object Model (DOM)
 * `window` is the global object in a browser
 * `window.document` is the main object of the visible/rendered DOM
+* `screen` contains properties about the user's display
 * `viewport` is the user's visible area of a webpage
-
+### Sources
+[StackOverflow](https://stackoverflow.com/questions/9895202/what-is-the-difference-between-window-screen-and-document-in-javascript)
+[Eli Geske](http://eligeske.com/jquery/what-is-the-difference-between-document-and-window-objects-2/)
 ---
 ## Syntax
 
