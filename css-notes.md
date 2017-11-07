@@ -38,7 +38,7 @@
 * Viewport - browser window
 * Normal flow - the default way browsers render content, linearly from top to bottom
 * `position: static` -  default _normal flow_
-* `position: fixed` - stays in position relative to viewport regardless of scrolling (e.g. nav menus)
+* `position: fixed` - stays in position relative to _viewport_ as opposed to _normal flow_, regardless of scrolling (e.g. nav menus)
 * `position: relative` - offset relative to its _normal flow_ position (i.e. where it's supposed to be in the top-bottom flow)
 * `position: absolute` - outside of _normal flow_, offset relative to its first parent with non-static position (e.g. logo in nav menu)
 

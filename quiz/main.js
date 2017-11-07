@@ -2,43 +2,43 @@
 
 const BANK = [
     {
-        question: 'Why do you need to specify doctype in an HTML document?',
+        question: 'HTML: Why do you need to specify doctype in an HTML document?',
         answer: 'To inform the browser on how to render the document' 
     },
     {
-        question: 'What is the difference between window and document?',
+        question: 'DOM: what is the difference between window and document?',
         answer: 'a2'
     },
     {
-        question: 'q3',
+        question: 'DOM: what is "event bubble"?',
         answer: 'a3'
     },
     {
-        question: 'q4',
+        question: 'CSS: what is the different between relative and absolute positioning?',
         answer: 'a4'
     },
     {
-        question: 'q5',
+        question: 'CSS: what is a common way of aligning text to the center?',
         answer: 'a5'
     },
     {
-        question: 'q6',
+        question: 'CSS: what is the difference between inline, block, and in-line block?',
         answer: 'a6'
     },
     {
-        question: 'q7',
+        question: 'JS: Which of the following is a difference between "null" and "undefined"?',
         answer: 'a7'
     },
     {
-        question: 'q8',
+        question: 'JS: Which of the following is a difference between "==" and "==="?',
         answer: 'a8'
     },
     {
-        question: 'q9',
+        question: 'JS: How would you compare the equality between two arrays?',
         answer: 'a9'
     },
     {
-        question: 'q10',
+        question: 'JS: object mutation',
         answer: 'a10'
     }
 ];
