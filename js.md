@@ -57,6 +57,7 @@
     * `.click()` is shorcut for `.on('click'...)
     * `.hover()` is shortcut for `.on('hover'...)
     * Use `.on()` rather than `.click()` on dynamically generated elements (added to the page after JS has been loaded)
+* **IMPORTANT:** when deleting `li` item **never** use `li` as selector; **always** use parent
 
 ## Interactivity and Accessibility
 * Use jQuery to manipulate classes - `.addClass()`, `.removeClass()`, `.toggleClass()`

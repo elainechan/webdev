@@ -57,3 +57,15 @@
 
 ### Mac OSX
 * `ifconfig | grep inet` # find IP address
+
+#### Notes from Ubuntu install
+* If you continue the following will be written to disks
+* Partition tables of following devices are changed:
+* LVM VG ubuntu-vg, LV root
+* LVM VG ubuntu-vg, LV swap_1
+* MMC/SD card #1 (mmcblk0)
+* Following partitions will be formatted:
+* LVM VG ubuntu-vg, LV root as ext4
+* LVM VG ubuntu-vg, LV swap_1 as swap
+* partition #1 of MMC/SD card #1 (mmcblk0) as ESP
+* partition #2 of MMC/SC card #1 (mmcblk0) as ext2

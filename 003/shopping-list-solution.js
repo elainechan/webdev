@@ -85,7 +85,7 @@ function handleItemCheckClicked() {
     console.log('`handleItemCheckClicked` ran');
     const itemIndex = getItemIndexFromElement(event.currentTarget);
     toggleCheckedForListItem(itemIndex);
-    renderPage();
+    renderShoppingList();
   });
 }
 
@@ -96,8 +96,8 @@ function setDeleteItemClickedHandler() {
     const itemIndex = getItemIndexFromElement(event.currentTarget);
     // delete the item
     deleteListItem(itemIndex);
-    // rerenderPagepdated shopping list
-    renderPage();
+    // rerender updated shopping list
+    renderShoppingList();
   });
 }
 
