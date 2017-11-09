@@ -1,4 +1,4 @@
-/*
+
 'use strict';
 
 const BANK = [
@@ -14,7 +14,7 @@ const BANK = [
     },
     {
         question: 'DOM: what is the difference between window and document?',
-        answer: 'a2'
+        rightAnswer: 'a2'
     },
     {
         question: 'DOM: what is "event bubble"?',
@@ -52,6 +52,7 @@ const BANK = [
 
 function renderStart() {
     console.log("`renderStart()` ran");
+    $("section :main");
 }
 
 function renderNextQ() {
@@ -92,4 +93,3 @@ function handleQuiz() {
 }
 
 $(handleQuiz);
-*/

@@ -1,10 +1,68 @@
 <!DOCTYPE html>
 <html lang="en">
     <head>
+        <title>Web Development Knowledge Quiz</title>
+        <link href="./index.css" rel="stylesheet" type="text/css">
         <meta charset="utf-8">
-        <link href="./index.css" type="text/css" rel="stylesheet">
     </head>
     <body>
-        <script src="./main.js"></script>
+        <header role="banner">
+            <h1 class="headline">Web Development Knowledge Quiz</h1>
+        </header>
+        <main role="main">
+        <section role="region">
+            <form id="question">
+                <p id="question-text">Question text</p>
+                <ul id="answer-choices">
+                <li>
+                    <input type="radio" id="answer-choice-A"
+                        name="answer-choice" value="A">
+                    <label for="answer-choice-A">A</label>
+                </li>
+                <li>
+                    <input type="radio" id="answer-choice-B"
+                        name="answer-choice" value="B">
+                    <label for="answer-choice-B">B</label>
+                </li>
+                <li>
+                    <input type="radio" id="answer-choice-C"
+                    name="answer-choice" value="C">
+                    <label for="answer-choice-C">C</label>
+                </li>
+                <li>
+                    <input type="radio" id="answer-choice-D"
+                    name="answer-choice" value="D">
+                    <label for="answer-choice-D">D</label>
+                </li>
+                <li>
+                    <input type="radio" id="answer-choice-E"
+                    name="answer-choice" value="E">
+                    <label for="answer-choice-E">E</label>
+                </li>
+                </ul>
+                <div>
+                    <button type="submit">Submit</button>
+                </div>
+            </form>
+        </section>
+        </main>
+        <nav role="navigation">
+            <button type="submit" class="start-submit">Start Quiz</button>
+            <button>Previous</button>
+            <button>Next</button>
+        </nav>
+        <footer role="content-info"></footer>
     </body>
+    <script src="//code.jquery.com/jquery.min.js"></script>
+    <script src="./main.js" type="text/javascript"></script>
 </html>
+
+<!--
+
+
+ Form content
+ ul of choices
+ hidden field of question id
+ ans choices
+ submit button
+-->
