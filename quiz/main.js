@@ -1,4 +1,3 @@
-
 'use strict';
 
 const BANK = [
@@ -50,13 +49,38 @@ const BANK = [
     }
 ];
 
+const state = {
+    currentQ: -1,
+    numRight: 0,
+    numWrong: 0
+};
+// html DOM not pre-rendered as was in shopping list
 function renderStart() {
     console.log("`renderStart()` ran");
-    $("section :main");
+    $("main").html(`Hit start to begin!`);
+    $("nav").html(generateStartButton());
+    $("#start-form").submit(event => { // button handler: Controller
+        event.preventDefault();
+        state.currentQ = 0;
+        updateView();
+        console.log(state);
+    });
 }
 
-function renderNextQ() {
+function generateStartButton() {
+    let html = `<form id="start-form"><button type="submit" class="start-submit">Start</button></form>`;
+    return html;
+}
+
+function renderQuestion() {
     console.log("`renderNextQ()` ran");
+    $("main").html(`Question number ${state.currentQ + 1}`);
+}
+
+function generateQuestionForm() { // use map function instead
+    // increment through the pages first, without business logic
+    // BANK kv pairs, array of strings
+    let html = `<form id="question-form"><button type="submit" class="start-submit">Start</button></form>`;
 }
 
 function showCurrQNum() {
@@ -81,9 +105,19 @@ function renderResult() {
     console.log("`renderResult()` ran");
 }
 
-function handleQuiz() {
-    renderStart();
-    renderNextQ();
+function updateView() {
+    const totalNumOfQuestions = BANK.length;
+    
+    if(state.currentQ === -1) { 
+        renderStart();
+        return;
+    }
+    
+    if(state.currentQ >= 0 && state.currentQ < BANK.length - 1) {
+        renderQuestion();
+        return;
+    }
+    
     showCurrQNum()
     showCurrScore()
     showCurrResult()
@@ -92,4 +126,10 @@ function handleQuiz() {
     renderResult();
 }
 
-$(handleQuiz);
+$(updateView);
+
+/*
+Model: question, state
+View: render, generate
+Controller: update, button handlers
+*/
