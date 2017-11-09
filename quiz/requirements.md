@@ -23,6 +23,7 @@ Your quiz app must:
 * [ ] Refer back to the lessons on accessibility and forms for help.
 * [ ] Use responsive design. (3 points)
 * [ ] Be fully usable by keyboard and mouse (which will be easy enough if you start with a form). (1 point)
+* [ ] (Optional) Make screenreader read out question
 
 ## Process requirements
 Before you dive into the app, you'll need to:
@@ -31,3 +32,12 @@ Before you dive into the app, you'll need to:
 * [ ] think about the user experiences outlined above and how your design must make them possible.
 * [ ] design your app using HTML wireframes, which are HTML (and minimal CSS) only versions of the different screens in your app. We'll discuss HTML wireframes soon.
 * [ ] We're going to spend the next couple lessons walking you through this process. Just keep this order in mind, because the JavaScript will be easier to write if you've thought through this stage carefully.
+
+## TODO
+* state (question number)
+* tally (score)
+* data store (question bank)
+* render question (id)
+* submit question ()
+* submit + render at the same button click
+

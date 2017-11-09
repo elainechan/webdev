@@ -1,9 +1,16 @@
+/*
 'use strict';
 
 const BANK = [
     {
         question: 'HTML: Why do you need to specify doctype in an HTML document?',
-        answer: 'To inform the browser on how to render the document' 
+        rightAnswer: 'To inform the browser on how to render the document',
+        wrongAnswers: ["xxx", "sss", "ll"]
+
+        
+        //if userGuess === correctAnswer => correctanswerCount++
+        //var correctAnswer = Bank[i].correctAnswer;
+        
     },
     {
         question: 'DOM: what is the difference between window and document?',
@@ -85,3 +92,4 @@ function handleQuiz() {
 }
 
 $(handleQuiz);
+*/

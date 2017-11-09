@@ -1,0 +1,15 @@
+body {
+    font-family: sans-serif;
+}
+
+button {
+    border-radius: 5px;
+}
+
+.answer-choice {
+    list-style: none;
+}
+
+.answer-checkbox, .answer-text {
+    display: inline-block;
+}
