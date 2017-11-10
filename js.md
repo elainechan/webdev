@@ -14,9 +14,21 @@
 * `window.document` is the main object of the visible/rendered DOM
 * `screen` contains properties about the user's display
 * `viewport` is the user's visible area of a webpage
-### Sources
+####  Sources
 [StackOverflow](https://stackoverflow.com/questions/9895202/what-is-the-difference-between-window-screen-and-document-in-javascript)
 [Eli Geske](http://eligeske.com/jquery/what-is-the-difference-between-document-and-window-objects-2/)
+---
+## Event Concepts
+### Event Propagation
+* Event capturing
+* Event bubbling
+### Event Delegation
+* allows attachment of a single event listener to a parent element that will fire for all current and future descendants matching a selector.
+
+#### Sources
+[jQuery](https://learn.jquery.com/events/event-delegation/)
+[Event propagation explained](https://www.sitepoint.com/event-bubbling-javascript/)
+[Bubbling and capturing](https://javascript.info/bubbling-and-capturing)
 ---
 ## Syntax
 

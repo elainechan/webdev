@@ -1,48 +1,29 @@
 <!DOCTYPE html>
 <html lang="en">
     <head>
-        <title>Web Development Knowledge Quiz</title>
+        <title>Web Developer Interview</title>
         <link href="./index.css" rel="stylesheet" type="text/css">
         <meta charset="utf-8">
     </head>
     <body>
         <header role="banner">
-            <h1 class="headline">Web Development Knowledge Quiz</h1>
+            <h1 class="headline">Web Developer Interview</h1>
         </header>
         <main role="main">
         <section role="region">
+            <h3 id="question-one"></h3>
             <form id="question">
-                <p id="question-text">Question text</p>
-                <ul id="answer-choices">
-                <li>
-                    <input type="radio" id="answer-choice-A"
-                        name="answer-choice" value="A">
-                    <label for="answer-choice-A">A</label>
-                </li>
-                <li>
-                    <input type="radio" id="answer-choice-B"
-                        name="answer-choice" value="B">
-                    <label for="answer-choice-B">B</label>
-                </li>
-                <li>
-                    <input type="radio" id="answer-choice-C"
-                    name="answer-choice" value="C">
-                    <label for="answer-choice-C">C</label>
-                </li>
-                <li>
-                    <input type="radio" id="answer-choice-D"
-                    name="answer-choice" value="D">
-                    <label for="answer-choice-D">D</label>
-                </li>
-                <li>
-                    <input type="radio" id="answer-choice-E"
-                    name="answer-choice" value="E">
-                    <label for="answer-choice-E">E</label>
-                </li>
-                </ul>
-                <div>
-                    <button type="submit">Submit</button>
-                </div>
+            <fieldset>
+                <legend>Question text</legend>
+                <input type="radio">
+                <label for="a1">Answer choice 1</label>
+                <input id="a2" type="radio">
+                <label for="a2">Answer choice 2</label>
+                <input id="a3" type="radio">
+                <label for="a3">Answer choice 3</label>
+                <input id="a4" type="radio">
+                <label for="a4">Answer choice 4</label>
+            </fieldset>
             </form>
         </section>
         </main>

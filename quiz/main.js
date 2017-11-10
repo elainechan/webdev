@@ -2,9 +2,13 @@
 
 const BANK = [
     {
-        question: 'HTML: Why do you need to specify doctype in an HTML document?',
-        rightAnswer: 'To inform the browser on how to render the document',
-        wrongAnswers: ["xxx", "sss", "ll"]
+        question: 'HTML: What does "!DOCTYPE" do in an HTML document?',
+        rightAnswer: 'It informs the browser on how to render the document.',
+        wrongAnswers: [
+            'It represents the root (top-level element) of an HTML document.',
+            'It is the generic container for flow content and does not inherently represent anything', 
+            'It represents the content of an HTML document.'
+        ]
 
         
         //if userGuess === correctAnswer => correctanswerCount++
@@ -13,11 +17,23 @@ const BANK = [
     },
     {
         question: 'DOM: what is the difference between window and document?',
-        rightAnswer: 'a2'
+        rightAnswer: '"Window" is the global object in a browser, and "document" is the main object of the rendered DOM.',
+        wrongAnswers: [
+         '"Window" is the main object of the rendered DOM, and "document" is the global object in a browser.',
+         '"Window" is the area of a webpage visible to the user, and "document" is the global object in a browser.',
+         '"Window" contains properties about the user display, and "document" is the area of a webpage visible to the user.'   
+        ]
+
     },
     {
-        question: 'DOM: what is "event bubble"?',
-        answer: 'a3'
+        question: 'DOM: what is the difference between "event propagation" and "event delegation"?',
+        rightAnswers: 'Event bubbling: when an event happens on an element, it first runs the handlers on it, then on its parent, then all the way up on other ancestors.\nEvent delegation: allows attachment of an event listener to a parent element that will fire for all its current and future descendents.',
+        wrongAnswers: [
+            'Event bubbling: when an event happens on an element, it first runs the handlers on it, then all the way down on its children.\nEvent delegation: allow attachment of an event listener to a child element that will fire for all its parents.',
+            'Event bubbling: when an event happens on an element, it runs for all its siblings.\nEvent delegation: allows attachment of an event listener to an element that will fire for all elements with the same class',
+            'Event bubbling: refers to the node on which the event listener is registered on.\nEvent delegation: refers to the most deeply nested element that caused the event.'
+        ]
+
     },
     {
         question: 'CSS: what is the different between relative and absolute positioning?',
