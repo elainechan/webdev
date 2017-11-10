@@ -19,7 +19,11 @@
 [Eli Geske](http://eligeske.com/jquery/what-is-the-difference-between-document-and-window-objects-2/)
 ---
 ## Event Concepts
+### Event Target
+* `event.target`
+* `event.currentTarget`
 ### Event Propagation
+Blanket term for both event bubbling and event capturing.
 * Event capturing
 * Event bubbling
 ### Event Delegation
