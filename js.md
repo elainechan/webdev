@@ -18,8 +18,8 @@
 * `screen` contains properties about the user's display
 * `viewport` is the user's visible area of a webpage
 ####  Sources
-* [StackOverflow](https://stackoverflow.com/questions/9895202/what-is-the-difference-between-window-screen-and-document-in-javascript)
-* [Eli Geske](http://eligeske.com/jquery/what-is-the-difference-between-document-and-window-objects-2/)
+* [StackOverflow: document vs window](https://stackoverflow.com/questions/9895202/what-is-the-difference-between-window-screen-and-document-in-javascript)
+* [Eli Geske: document vs window](http://eligeske.com/jquery/what-is-the-difference-between-document-and-window-objects-2/)
 ---
 ## Event Concepts
 
@@ -36,9 +36,9 @@
 * allows attachment of a single event listener to a parent element that will fire for all current and future descendants matching a selector.
 
 #### Sources
-* [Event propagation explained](https://www.sitepoint.com/event-bubbling-javascript/)
-* [jQuery](https://learn.jquery.com/events/event-delegation/)
-* [Bubbling and capturing](https://javascript.info/bubbling-and-capturing)
+* [Sitepoint: Event propagation explained](https://www.sitepoint.com/event-bubbling-javascript/)
+* [jQuery: Event delegation](https://learn.jquery.com/events/event-delegation/)
+* [Javascript.info: Bubbling and capturing](https://javascript.info/bubbling-and-capturing)
 ---
 ## Syntax
 
