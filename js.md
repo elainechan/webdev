@@ -10,7 +10,10 @@
 
 ---
 ## Document Object Model (DOM)
-* `window` is the global object in a browser
+* `window` 
+    * the global object in a browser
+    * is *not* a DOM node
+    * implements the `EventTarget` interface
 * `window.document` is the main object of the visible/rendered DOM
 * `screen` contains properties about the user's display
 * `viewport` is the user's visible area of a webpage
@@ -19,19 +22,22 @@
 [Eli Geske](http://eligeske.com/jquery/what-is-the-difference-between-document-and-window-objects-2/)
 ---
 ## Event Concepts
+
 ### Event Target
 * `event.target`
 * `event.currentTarget`
-### Event Propagation
-Blanket term for both event bubbling and event capturing.
-* Event capturing
-* Event bubbling
-### Event Delegation
+### Event Propagation: Capturing and Bubbling
+* Blanket term for both event bubbling and event capturing.
+* Works bidirectionally from window to target and back:
+    1. Capture phase: window --> event target parent
+    2. Target phase: event target itsel
+    3. Bubble phase: event target parent back --> window
+#### Event Delegation
 * allows attachment of a single event listener to a parent element that will fire for all current and future descendants matching a selector.
 
 #### Sources
-[jQuery](https://learn.jquery.com/events/event-delegation/)
 [Event propagation explained](https://www.sitepoint.com/event-bubbling-javascript/)
+[jQuery](https://learn.jquery.com/events/event-delegation/)
 [Bubbling and capturing](https://javascript.info/bubbling-and-capturing)
 ---
 ## Syntax
