@@ -27,7 +27,7 @@ const BANK = [
     },
     {
         question: 'DOM: what is the difference between "event propagation" and "event delegation"?',
-        rightAnswers: 'Event bubbling: when an event happens on an element, it first runs the handlers on it, then on its parent, then all the way up on other ancestors.\nEvent delegation: allows attachment of an event listener to a parent element that will fire for all its current and future descendents.',
+        rightAnswer: 'Event bubbling: when an event happens on an element, it first runs the handlers on it, then on its parent, then all the way up on other ancestors.\nEvent delegation: allows attachment of an event listener to a parent element that will fire for all its current and future descendents.',
         wrongAnswers: [
             'Event bubbling: when an event happens on an element, it first runs the handlers on it, then all the way down on its children.\nEvent delegation: allow attachment of an event listener to a child element that will fire for all its parents.',
             'Event bubbling: when an event happens on an element, it runs for all its siblings.\nEvent delegation: allows attachment of an event listener to an element that will fire for all elements with the same class',
@@ -36,7 +36,16 @@ const BANK = [
 
     },
     {
-        question: 'CSS: what is the different between relative and absolute positioning?',
+        question: 'CSS: in the box model, what is the difference between "padding" and "margin"?',
+        rightAnswer: 'Padding represents the space between the box and the border.\nMargin represents the space between the border and the other content that interact with the box.',
+        wrongAnswers: [
+            'Padding represents the space between the border and the other content that interact with the box.\nMargin represents the space between the box and the border.',
+            'Padding does not affect the size of the box but it affects the other content that interact with the box.\nMargin directly determines the size of the box through specifying the size of the space between the box and the border.',
+            'Padding is on the outside of block elements.\nMargin is on the inside of block elements.'
+        ]
+    },
+    {
+        question: 'CSS: what is the difference between relative and absolute positioning?',
         answer: 'a4'
     },
     {
@@ -59,10 +68,6 @@ const BANK = [
         question: 'JS: How would you compare the equality between two arrays?',
         answer: 'a9'
     },
-    {
-        question: 'JS: object mutation',
-        answer: 'a10'
-    }
 ];
 
 const state = {

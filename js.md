@@ -88,3 +88,10 @@
     * `area-pressed="false"` indicates toggle buttons
     * `.attr()` sets `area-pressed` to `true` or `false` when button is pressed
     * Button elements interpret `Space` key as a standard `click` event
+
+## Testing Frameworks
+* Jest
+* Enzyme
+* Jasmine
+* Mocha
+* Chai
