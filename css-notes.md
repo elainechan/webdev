@@ -37,16 +37,19 @@
 ### Positioning `position`
 * Viewport - browser window
 * Normal flow - the default way browsers render content, linearly from top to bottom
-* `position: static` -  default _normal flow_
-* `position: fixed` - stays in position relative to _viewport_ as opposed to _normal flow_, regardless of scrolling (e.g. nav menus)
-* `position: relative` - offset relative to its _normal flow_ position (i.e. where it's supposed to be in the top-bottom flow)
-* `position: absolute` - outside of _normal flow_, offset relative to its first parent with non-static position (e.g. logo in nav menu)
+* `static` -  default _normal flow_
+* `fixed` 
+    * stays in position relative to _viewport_ as opposed to _normal flow_, 
+    * unaffected by scrolling (e.g. nav menus)
+* `relative` - offset relative to its _normal flow_ position (i.e. where it's supposed to be in the top-bottom flow)
+* `absolute`
+    * outside of _normal flow_
+    * offset relative to its first parent with non-static position (e.g. logo in nav menu)
 
 ### Float `float`
 * Takes elements out of _normal flow_
 
-### Margin
-* doesn't affect the size of the box but *other* content interacting with box
-
-### Padding
-* represents space between the `border` and the box, thus affects box size.
+### Margin and Padding
+* `margin` doesn't affect the size of the box but _other_ content interacting with box
+* `padding` represents space between the `border` and the box, thus affects box size.
+* if undeclared, they are set to browser default or zero (with CSS reset)
