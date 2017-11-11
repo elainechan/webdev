@@ -36,8 +36,15 @@
 
 ### Display
 * `block`
+    * top-to-bottom only, does not tolerate adjacent external elements
 * `inline`
+    * tolerates adjacent external elements
+    * no line-break
+    * an infinite number of `inline` elements will flow in one line forever
 * `inline-block`
+    * `inline` in relation to external elements; `block` within own element
+    * tolerates adjacent external elements (side-by-side)
+    * content within element flows top-to-bottom as in `block`
 [StackOverflow](https://stackoverflow.com/questions/9189810/css-display-inline-vs-inline-block)
 
 ### Positioning `position`
