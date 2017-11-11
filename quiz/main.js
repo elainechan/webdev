@@ -9,11 +9,8 @@ const BANK = [
             'It is the generic container for flow content and does not inherently represent anything', 
             'It represents the content of an HTML document.'
         ]
-
-        
         //if userGuess === correctAnswer => correctanswerCount++
         //var correctAnswer = Bank[i].correctAnswer;
-        
     },
     {
         question: 'DOM: what is the difference between window and document?',
@@ -23,7 +20,6 @@ const BANK = [
          '"Window" is the area of a webpage visible to the user, and "document" is the global object in a browser.',
          '"Window" contains properties about the user display, and "document" is the area of a webpage visible to the user.'   
         ]
-
     },
     {
         question: 'DOM: what is the difference between "event propagation" and "event delegation"?',
@@ -33,7 +29,6 @@ const BANK = [
             'Event bubbling: when an event happens on an element, it runs for all its siblings.\nEvent delegation: allows attachment of an event listener to an element that will fire for all elements with the same class',
             'Event bubbling: refers to the node on which the event listener is registered on.\nEvent delegation: refers to the most deeply nested element that caused the event.'
         ]
-
     },
     {
         question: 'CSS: in the box model, what is the difference between "padding" and "margin"?',
@@ -46,27 +41,33 @@ const BANK = [
     },
     {
         question: 'CSS: what is the difference between relative and absolute positioning?',
-        answer: 'a4'
+        rightAnswer: 'a4',
+        wrongAnswers: []
     },
     {
         question: 'CSS: what is a common way of aligning text to the center?',
-        answer: 'a5'
+        rightAnswer: 'a5',
+        wrongAnswers: []
     },
     {
         question: 'CSS: what is the difference between inline, block, and in-line block?',
-        answer: 'a6'
+        rightAnswer: 'a6',
+        wrongAnswers: []
     },
     {
         question: 'JS: Which of the following is a difference between "null" and "undefined"?',
-        answer: 'a7'
+        rightAnswer: 'a7',
+        wrongAnswers: []
     },
     {
-        question: 'JS: Which of the following is a difference between "==" and "==="?',
-        answer: 'a8'
+        question: 'JS: What is the difference between "==" and "==="?',
+        rightAnswer: 'a8',
+        wrongAnswers: []
     },
     {
         question: 'JS: How would you compare the equality between two arrays?',
-        answer: 'a9'
+        rightAnswer: 'a9',
+        wrongAnswers: []
     },
 ];
 
