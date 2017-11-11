@@ -34,6 +34,12 @@
 * `:nth-child()` - matches one or more elements based on their position among a group of siblings
 * `::before`, `::after` - usually used to insert symbols before/after text
 
+### Display
+* `block`
+* `inline`
+* `inline-block`
+[StackOverflow](https://stackoverflow.com/questions/9189810/css-display-inline-vs-inline-block)
+
 ### Positioning `position`
 * Viewport - browser window
 * Normal flow - the default way browsers render content, linearly from top to bottom
@@ -53,3 +59,4 @@
 * `margin` doesn't affect the size of the box but _other_ content interacting with box
 * `padding` represents space between the `border` and the box, thus affects box size.
 * if undeclared, they are set to browser default or zero (with CSS reset)
+[StackOverflow](https://stackoverflow.com/questions/2189452/when-to-use-margin-vs-padding-in-css)
