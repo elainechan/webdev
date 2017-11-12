@@ -22,7 +22,7 @@ const BANK = [
         ]
     },
     {
-        question: 'DOM: what is the difference between "event propagation" and "event delegation"?',
+        question: 'DOM: Which of the following is true regarding "event propagation" and "event delegation"?',
         rightAnswer: 'Event bubbling: when an event happens on an element, it first runs the handlers on it, then on its parent, then all the way up on other ancestors.\nEvent delegation: allows attachment of an event listener to a parent element that will fire for all its current and future descendents.',
         wrongAnswers: [
             'Event bubbling: when an event happens on an element, it first runs the handlers on it, then all the way down on its children.\nEvent delegation: allow attachment of an event listener to a child element that will fire for all its parents.',
@@ -40,34 +40,58 @@ const BANK = [
         ]
     },
     {
-        question: 'CSS: what is the difference between relative and absolute positioning?',
-        rightAnswer: 'a4',
-        wrongAnswers: []
+        question: 'CSS: Which of the following is true regarding "fixed" and "absolute" positioning?',
+        rightAnswer: 'Both position an element relative to the document rather than any particular parent.',
+        wrongAnswers: [
+            'A "fixed" element responds to the dimension of its parent, while an "absolute" element responds to the dimension of the document.',
+            '"Absolute" elements are unaffected by srolling.',
+            'An "absolute" element is removed from the normal flow of the document, while a "fixed" element follows the normal flow of the document.'
+        ]
     },
     {
         question: 'CSS: what is a common way of aligning text to the center?',
-        rightAnswer: 'a5',
-        wrongAnswers: []
+        rightAnswer: '',
+        wrongAnswers: [
+            '',
+            '',
+            ''
+        ]
     },
     {
-        question: 'CSS: what is the difference between inline, block, and in-line block?',
+        question: 'CSS: Which of the following is true about "inline", "block", and "in-line block" display?',
         rightAnswer: 'a6',
-        wrongAnswers: []
+        wrongAnswers: [
+            '',
+            '',
+            ''
+        ]
     },
     {
         question: 'JS: Which of the following is a difference between "null" and "undefined"?',
         rightAnswer: 'a7',
-        wrongAnswers: []
+        wrongAnswers: [
+            '',
+            '',
+            ''
+        ]
     },
     {
         question: 'JS: What is the difference between "==" and "==="?',
         rightAnswer: 'a8',
-        wrongAnswers: []
+        wrongAnswers: [
+            '',
+            '',
+            ''
+        ]
     },
     {
         question: 'JS: How would you compare the equality between two arrays?',
         rightAnswer: 'a9',
-        wrongAnswers: []
+        wrongAnswers: [
+            '',
+            '',
+            ''
+        ]
     },
 ];
 
