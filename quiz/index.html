@@ -10,11 +10,11 @@
             <h1 class="headline">Web Developer Interview</h1>
         </header>
         <main role="main">
-        <section role="region" aria-labelledby="question-one">
-            <h3 id="question-one">Question One</h3>
-            <form role="form" id="question">
+        <section role="region" aria-labelledby="question">
+            <h3 id="question-number">Question One</h3>
+            <form aria-labelledby="question" id="question">
             <fieldset>
-                <legend>Question text</legend>
+                <legend id="question-statement">Question statement</legend>
                 <input type="radio">
                 <label for="a1">Answer choice 1</label>
                 <input id="a2" type="radio">
@@ -32,7 +32,7 @@
             <button>Previous</button>
             <button>Next</button>
         </nav>
-        <footer role="content-info">Status</footer>
+        <footer role="contentinfo">You got 1 right, 1 wrong, 3 to go.</footer>
     </body>
     <script src="//code.jquery.com/jquery.min.js"></script>
     <script src="./main.js" type="text/javascript"></script>
