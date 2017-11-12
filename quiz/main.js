@@ -4,7 +4,8 @@ const BANK = [
     {
         question: 'HTML: What does "!DOCTYPE" do in an HTML document?',
         rightAnswer: 'It informs the browser on how to render the document.',
-        wrongAnswers: [
+        answers: [
+            'It informs the browser on how to render the document.',
             'It represents the root (top-level element) of an HTML document.',
             'It is the generic container for flow content and does not inherently represent anything', 
             'It represents the content of an HTML document.'
@@ -15,16 +16,18 @@ const BANK = [
     {
         question: 'DOM: what is the difference between window and document?',
         rightAnswer: '"Window" is the global object in a browser, and "document" is the main object of the rendered DOM.',
-        wrongAnswers: [
+        answers: [
          '"Window" is the main object of the rendered DOM, and "document" is the global object in a browser.',
          '"Window" is the area of a webpage visible to the user, and "document" is the global object in a browser.',
-         '"Window" contains properties about the user display, and "document" is the area of a webpage visible to the user.'   
+         '"Window" contains properties about the user display, and "document" is the area of a webpage visible to the user.',
+         '"Window" is the global object in a browser, and "document" is the main object of the rendered DOM.'
         ]
     },
     {
         question: 'DOM: What is the difference between "event propagation" and "event delegation"?',
         rightAnswer: 'Event bubbling: when an event happens on an element, it first runs the handlers on it, then on its parent, then all the way up on other ancestors.\nEvent delegation: allows attachment of an event listener to a parent element that will fire for all its current and future descendents.',
-        wrongAnswers: [
+        answers: [
+            'Event bubbling: when an event happens on an element, it first runs the handlers on it, then on its parent, then all the way up on other ancestors.\nEvent delegation: allows attachment of an event listener to a parent element that will fire for all its current and future descendents.',
             'Event bubbling: when an event happens on an element, it first runs the handlers on it, then all the way down on its children.\nEvent delegation: allow attachment of an event listener to a child element that will fire for all its parents.',
             'Event bubbling: when an event happens on an element, it runs for all its siblings.\nEvent delegation: allows attachment of an event listener to an element that will fire for all elements with the same class',
             'Event bubbling: refers to the node on which the event listener is registered on.\nEvent delegation: refers to the most deeply nested element that caused the event.'
@@ -33,7 +36,8 @@ const BANK = [
     {
         question: 'CSS: in the box model, what is the difference between "padding" and "margin"?',
         rightAnswer: 'Padding represents the space between the box and the border.\nMargin represents the space between the border and the other content that interact with the box.',
-        wrongAnswers: [
+        answers: [
+            'Padding represents the space between the box and the border.\nMargin represents the space between the border and the other content that interact with the box.',
             'Padding represents the space between the border and the other content that interact with the box.\nMargin represents the space between the box and the border.',
             'Padding does not affect the size of the box but it affects the other content that interact with the box.\nMargin directly determines the size of the box through specifying the size of the space between the box and the border.',
             'Padding is on the outside of block elements.\nMargin is on the inside of block elements.'
@@ -42,7 +46,8 @@ const BANK = [
     {
         question: 'CSS: What is the difference between "fixed" and "absolute" positioning?',
         rightAnswer: 'Both position an element relative to the document rather than any particular parent.',
-        wrongAnswers: [
+        answers: [
+            'Both position an element relative to the document rather than any particular parent.',
             'A "fixed" element responds to the dimension of its parent, while an "absolute" element responds to the dimension of the document.',
             '"Fixed" elements respond to scrolling, while "absolute" elements are unaffected by srolling.',
             'An "absolute" element is removed from the normal flow of the document, while a "fixed" element follows the normal flow of the document.'
@@ -89,13 +94,11 @@ function generateStartButton() {
 }
 
 function renderQuestion() {
-    console.log("`renderNextQ()` ran");
-    $("main").html(`Question number ${state.currentQ + 1}`);
-}
-
-function generateQuestionForm() { // use map function instead
+    // use map function instead
     // increment through the pages first, without business logic
     // BANK kv pairs, array of strings
+    console.log("`renderNextQ()` ran");
+    $("main").html(`Question number ${state.currentQ + 1}`);
     let html = `<form id="question-form"><button type="submit" class="start-submit">Start</button></form>`;
 }
 
@@ -107,26 +110,17 @@ function renderNav() {
 
 }
 
-function showCurrQNum() {
-    console.log("`showCurrQNum()` ran");
-}
-
-function showCurrResult() {
-    console.log("`showCurrResult()` ran");
-}
-
 function handleSubmitAnswer() {
     console.log("`handleSubmitAnswer()` ran");
     $('.submit-answer').on('click', event => {
         state.currentQ += 1;
         updateView();
     });
-
 }
+
 function renderEnd() {
     console.log("`renderEnd()` ran");
 }
-
 
 $(updateView);
 
