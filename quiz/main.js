@@ -55,6 +55,25 @@ const state = {
     numRight: 0,
     numWrong: 0
 };
+
+function updateView() {
+    if(state.currentQ === -1) { 
+        renderStart();
+        return;
+    } else if(state.currentQ >= 0 && state.currentQ < BANK.length - 1) {
+        renderQuestion(state);
+        renderStatus(state);
+        renderNav(state);
+        return;
+    } else {
+        renderEnd();
+    }
+    showCurrQNum()
+    showCurrResult()
+    handleChoice();
+    handleFinish();
+    renderResult();
+}
 // html DOM not pre-rendered as was in shopping list
 function renderStart() {
     console.log("`renderStart()` ran");
@@ -69,6 +88,7 @@ function renderStart() {
 }
 
 function generateStartButton() {
+    console.log("`generateStartButton()` ran");
     let html = `<form id="start-form"><button type="submit" class="start-submit">Start</button></form>`;
     return html;
 }
@@ -84,48 +104,31 @@ function generateQuestionForm() { // use map function instead
     let html = `<form id="question-form"><button type="submit" class="start-submit">Start</button></form>`;
 }
 
-function showCurrQNum() {
-    console.log("`showCurrQNum()` ran");
+function renderStatus() {
+
 }
 
-function showCurrScore() {
-    console.log("`showCurrScore()` ran");
+function renderNav() {
+
+}
+
+function showCurrQNum() {
+    console.log("`showCurrQNum()` ran");
 }
 
 function showCurrResult() {
     console.log("`showCurrResult()` ran");
 }
 
-function handleChoice() {
-    console.log("`handleChoice()` ran");
+function handleSubmitAnswer() {
+    console.log("`handleSubmitAnswer()` ran");
+    $()
+
 }
-function handleFinish() {
-    console.log("`handleFinish()` ran");
-}
-function renderResult() {
-    console.log("`renderResult()` ran");
+function renderEnd() {
+    console.log("`renderEnd()` ran");
 }
 
-function updateView() {
-    const totalNumOfQuestions = BANK.length;
-    
-    if(state.currentQ === -1) { 
-        renderStart();
-        return;
-    }
-    
-    if(state.currentQ >= 0 && state.currentQ < BANK.length - 1) {
-        renderQuestion();
-        return;
-    }
-    
-    showCurrQNum()
-    showCurrScore()
-    showCurrResult()
-    handleChoice();
-    handleFinish();
-    renderResult();
-}
 
 $(updateView);
 

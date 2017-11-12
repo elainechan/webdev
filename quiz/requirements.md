@@ -2,7 +2,7 @@
 
 ## User experience requirements
 
-* [ ] The starting screen should have a button that users can click to start the quiz. (1 point)
+* [x] The starting screen should have a button that users can click to start the quiz. (1 point)
 * [ ] Users should be prompted through a series of at least 5 multiple choice questions which they can answer. (1 point)
 * [ ] Users should be asked questions one after the other.
 * [ ] Users should only be prompted with one question at a time. (1 point)

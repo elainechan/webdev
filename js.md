@@ -8,6 +8,11 @@
 * asyncronous module definition (AMD)
 * function declaration, expression, closure
 
+## Debugging
+check if:
+    * `object.key` or `object[key]`
+    * `myFunction()` or `myFunction`
+
 ---
 ## Document Object Model (DOM)
 * `window` 
