@@ -68,11 +68,6 @@ function updateView() {
     } else {
         renderEnd();
     }
-    showCurrQNum()
-    showCurrResult()
-    handleChoice();
-    handleFinish();
-    renderResult();
 }
 // html DOM not pre-rendered as was in shopping list
 function renderStart() {
@@ -122,7 +117,10 @@ function showCurrResult() {
 
 function handleSubmitAnswer() {
     console.log("`handleSubmitAnswer()` ran");
-    $()
+    $('.submit-answer').on('click', event => {
+        state.currentQ += 1;
+        updateView();
+    });
 
 }
 function renderEnd() {
