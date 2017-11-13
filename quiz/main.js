@@ -58,7 +58,8 @@ const BANK = [
 const state = {
     currentQ: -1,
     numRight: 0,
-    numWrong: 0
+    numWrong: 0,
+    remaining: (BANK.length - currentQ - 1)
 };
 
 function updateView() {
@@ -74,6 +75,7 @@ function updateView() {
         renderEnd();
     }
 }
+
 function renderStart() {
     console.log("`renderStart()` ran");
     $("main").html(`Hit start to begin!`);
@@ -92,23 +94,24 @@ function generateStartButton() {
     return html;
 }
 
-function renderQuestion() {
+function renderQuestion(state) {
     // remove hidden class
-    // use map function instead
+    // use map function
     // increment through the pages first, without business logic
     // BANK kv pairs, array of strings
     console.log("`renderNextQ()` ran");
-    $("main").html(`Question number ${state.currentQ + 1}`);
-    let html = `<form aria-labelledby="question" id="question"><button type="submit" class="start-submit">Start</button></form>`;
+    $("main").html(`Question number ${state.currentQ}`);
+    let html = `<form aria-labelledby="question" id="question"><button type="submit" class="submit-start">Start</button></form>`;
     // disable "submit" button until an answer is chosen
 }
 
-function renderStatus() {
-
+function renderStatus(state) {
+    console.log("`renderStatus()` ran");
+    $("footer").html(`You got ${state.numRight} right, ${state.numWrong} wrong, ${state.remaining} to go`)
 }
 
-function renderNav() {
-
+function renderNav(state) {
+    console.log("`renderNav()` ran");
 }
 
 function handleSubmitAnswer() {
@@ -121,6 +124,7 @@ function handleSubmitAnswer() {
 
 function renderEnd() {
     console.log("`renderEnd()` ran");
+    
 }
 
 $(updateView);
