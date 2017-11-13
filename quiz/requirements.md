@@ -28,10 +28,9 @@ Your quiz app must:
 ## Process requirements
 Before you dive into the app, you'll need to:
 
-* [ ] gather content for your app. That means typing up the questions you'll ask and gathering any images or icons you'll need in your app.
-* [ ] think about the user experiences outlined above and how your design must make them possible.
-* [ ] design your app using HTML wireframes, which are HTML (and minimal CSS) only versions of the different screens in your app. We'll discuss HTML wireframes soon.
-* [ ] We're going to spend the next couple lessons walking you through this process. Just keep this order in mind, because the JavaScript will be easier to write if you've thought through this stage carefully.
+* [x] gather content for your app. That means typing up the questions you'll ask and gathering any images or icons you'll need in your app.
+* [x] think about the user experiences outlined above and how your design must make them possible.
+* [x] design your app using HTML wireframes, which are HTML (and minimal CSS) only versions of the different screens in your app.
 
 ## TODO
 * state (question number)
