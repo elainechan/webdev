@@ -101,6 +101,7 @@ function renderQuestion() {
     console.log("`renderNextQ()` ran");
     $("main").html(`Question number ${state.currentQ + 1}`);
     let html = `<form aria-labelledby="question" id="question"><button type="submit" class="start-submit">Start</button></form>`;
+    // disable "submit" button until an answer is chosen
 }
 
 function renderStatus() {
