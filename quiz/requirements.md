@@ -20,8 +20,7 @@ Your quiz app must:
 
 * [ ] Render questions in a <form>. (1 point)
 * [ ] Use other semantic HTML, along with CSS and jQuery. (3 points)
-* [ ] Follow a11y best-practices. (5 points)
-* [ ] Refer back to the lessons on accessibility and forms for help.
+* [x] Follow a11y best-practices. (5 points)
 * [ ] Use responsive design. (3 points)
 * [ ] Be fully usable by keyboard and mouse (which will be easy enough if you start with a form). (1 point)
 * [ ] (Optional) Make screenreader read out question

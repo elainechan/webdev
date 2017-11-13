@@ -94,12 +94,13 @@ function generateStartButton() {
 }
 
 function renderQuestion() {
+    // remove hidden class
     // use map function instead
     // increment through the pages first, without business logic
     // BANK kv pairs, array of strings
     console.log("`renderNextQ()` ran");
     $("main").html(`Question number ${state.currentQ + 1}`);
-    let html = `<form id="question-form"><button type="submit" class="start-submit">Start</button></form>`;
+    let html = `<form aria-labelledby="question" id="question"><button type="submit" class="start-submit">Start</button></form>`;
 }
 
 function renderStatus() {
