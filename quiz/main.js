@@ -74,7 +74,6 @@ function updateView() {
         renderEnd();
     }
 }
-// html DOM not pre-rendered as was in shopping list
 function renderStart() {
     console.log("`renderStart()` ran");
     $("main").html(`Hit start to begin!`);
@@ -89,7 +88,7 @@ function renderStart() {
 
 function generateStartButton() {
     console.log("`generateStartButton()` ran");
-    let html = `<form id="start-form"><button type="submit" class="start-submit">Start</button></form>`;
+    let html = `<form id="start-form"><button type="submit" class="start-submit">Start Quiz</button></form>`;
     return html;
 }
 
