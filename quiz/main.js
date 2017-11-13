@@ -59,7 +59,7 @@ const state = {
     currentQ: -1,
     numRight: 0,
     numWrong: 0,
-    remaining: (BANK.length - currentQ - 1)
+    remaining: (BANK.length - this.currentQ - 1)
 };
 
 function updateView() {
@@ -102,7 +102,7 @@ function renderQuestion(state) {
     $("main").html(`Question number ${state.currentQ}`);
     let html = `<form aria-labelledby="question" id="question"><button type="submit" class="submit-start">Start</button></form>`;
     BANK.map();
-    // disable "submit" button until an answer is chosen
+    // disable "submit" button until any answer is chosen
 }
 
 function renderStatus(state) {
@@ -112,6 +112,7 @@ function renderStatus(state) {
 
 function renderNav(state) {
     console.log("`renderNav()` ran");
+
 }
 
 function handleSubmitAnswer() {
