@@ -106,8 +106,11 @@ function generateQuestion(questionIndex) {
     let question = BANK[questionIndex];
     let whichQ = `Question ${questionIndex + 1} of ${BANK.length}<br>`;
     let questionStatement = `${question.question}<br>`;
-    let answerChoices = BANK.map()
-    return whichQ + questionStatement; 
+    let answerChoices = BANK[questionIndex].answers.map( answer => {
+        let answerChoice = `${answer}<br>`;
+        return answerChoice;
+    });
+    return whichQ + questionStatement + answerChoices; 
     // todos: 
     // display q correctly 
         // question
