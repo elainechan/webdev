@@ -59,7 +59,7 @@ const state = {
     currentQ: -1,
     numRight: 0,
     numWrong: 0,
-    remaining: (BANK.length - this.currentQ - 1)
+    remaining: (BANK.length - this.currentQ - 1)// todo: refactor
 };
 
 function updateView() {
@@ -78,19 +78,20 @@ function updateView() {
 
 function renderStart() {
     console.log("`renderStart()` ran");
-    $("main").html(`Hit start to begin!`);
+    $("main").html(`<section role="region" aria-labelledby="start-page" id="start-section">
+    <h1>Welcome to your interview.</h1>
+</section>`);
     $("nav").html(generateStartButton());
-    $("#start-form").submit(event => { // button handler: Controller
-        event.preventDefault();
+    $("#start-button").click(event => { // button handler: Controller
         state.currentQ = 0;
-        updateView();
         console.log(state);
+        updateView(state);
     });
 }
 
 function generateStartButton() {
     console.log("`generateStartButton()` ran");
-    let html = `<form id="start-form"><button type="submit" class="start-submit">Start Quiz</button></form>`;
+    let html = `<button id="start-button">Start Quiz</button>`;
     return html;
 }
 
@@ -98,11 +99,20 @@ function renderQuestion(state) {
     // remove hidden class
     // increment through the pages first, without business logic
     // BANK kv pairs, array of strings
-    console.log("`renderNextQ()` ran");
-    $("main").html(`Question number ${state.currentQ}`);
-    let html = `<form aria-labelledby="question" id="question"><button type="submit" class="submit-start">Start</button></form>`;
-    BANK.map();
-    // disable "submit" button until any answer is chosen
+    console.log("`renderQuestion()` ran");
+    $("main").html(generateQuestion(state.currentQ));
+}
+
+function generateQuestion(questionIndex) {
+    console.log("`generateQuestion()` called");
+    let question = BANK[questionIndex];
+    let html = `Question number ${questionIndex + 1}<br>`;
+    html += Object.values(BANK[questionIndex]).toString();
+    return html; 
+    // todos: 
+    // display q correctly, 
+    // hook up next button,
+    // when any answer is chosen, remove "disable" attribute of Next button
 }
 
 function renderStatus(state) {
@@ -112,7 +122,19 @@ function renderStatus(state) {
 
 function renderNav(state) {
     console.log("`renderNav()` ran");
+    $("nav").html(generateNextButton());
+}
 
+function generateNextButton() {
+    console.log("`generatNextButton()` ran");
+    let html = `<button id="next-button" disabled>Next</button>`;
+    return html;
+}
+
+function handleNextButton() {
+    // suggestions:
+    // increment state
+    // call updateView();
 }
 
 function handleSubmitAnswer() {
