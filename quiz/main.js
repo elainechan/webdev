@@ -97,15 +97,20 @@ function generateStartButton() {
 
 function renderQuestion(state) {
     console.log("`renderQuestion()` was called");
-    $("main").html(generateQuestion(state.currentQ));
+    generateQuestion(state.currentQ);
 }
 
 function generateQuestion(questionIndex) {
     console.log("`generateQuestion()` was called");
-    let question = BANK[questionIndex];
-    let whichQ = `Question ${questionIndex + 1} of ${BANK.length}<br>`;
-    let questionStatement = `${question.question}<br>`;
-    let answerChoices = BANK[questionIndex].answers.map( answer => {
+    let currentQuestion = BANK[questionIndex];
+    let whichQ = `<h3 id="question-number">Question ${questionIndex + 1} of ${BANK.length}</h3><br>`;
+    let questionStatement = `${currentQuestion.question}`;
+    $("main").append(`<section role="region" aria-labelledby="question" id="question-section"></section>`); // add <section>
+    $("#question-section").append(`<form aria-labelledby="question" id="question-form">
+    <fieldset><legend id="question-statement"></legend></fieldset></form>`); // add <legend>
+    $("#question-statement").html(questionStatement);
+
+    let answerChoices = BANK[questionIndex].answers.map(answer => {
         let answerChoice = `${answer}<br>`;
         return answerChoice;
     });
@@ -116,6 +121,10 @@ function generateQuestion(questionIndex) {
         // radomize answer choice * 4 within <label></label> with <input type="radio">
     // hook up Next button
     // when any answer is chosen, remove "disable" attribute of Next button
+}
+
+function shuffleAnswerChoices() {
+    console.log("`shuffleAnswerChoices()` was called");
 }
 
 function renderStatus(state) {
