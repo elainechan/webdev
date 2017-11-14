@@ -96,9 +96,7 @@ function generateStartButton() {
 }
 
 function renderQuestion(state) {
-    // remove hidden class
     // increment through the pages first, without business logic
-    // BANK kv pairs, array of strings
     console.log("`renderQuestion()` ran");
     $("main").html(generateQuestion(state.currentQ));
 }
@@ -106,11 +104,14 @@ function renderQuestion(state) {
 function generateQuestion(questionIndex) {
     console.log("`generateQuestion()` called");
     let question = BANK[questionIndex];
-    let html = `Question number ${questionIndex + 1}<br>`;
-    html += Object.values(BANK[questionIndex]).toString();
-    return html; 
+    let whichQ = `Question ${questionIndex + 1} of ${BANK.length}<br>`;
+    let questionStatement = `${question.question}<br>`;
+    let answerChoices = BANK.map()
+    return whichQ + questionStatement; 
     // todos: 
-    // display q correctly, 
+    // display q correctly 
+        // question
+        // answer choice * 4
     // hook up next button,
     // when any answer is chosen, remove "disable" attribute of Next button
 }
