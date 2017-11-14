@@ -102,11 +102,12 @@ function renderQuestion(state) {
 }
 
 function generateQuestion(questionIndex) {
-    console.log("`geerateQuestion()` was called");
+    console.log("`generateQuestion()` was called");
     let currentQuestion = BANK[questionIndex];
     let whichQ = `<h3 id="question-number">Question ${questionIndex + 1} of ${BANK.length}</h3><br>`;
     let questionStatement = `${currentQuestion.question}`;
-    $("main").append(`<section role="region" aria-labelledby="question" id="question-section"></section>`); // add <section>
+    $("main").html(`<section role="region" aria-labelledby="question" id="question-section"></section>`); // add <section>
+    $("#question-section").append(whichQ); // add current question number
     $("#question-section").append(`<form aria-labelledby="question" id="question-form">
     <fieldset><legend id="question-statement"></legend></fieldset></form>`); // add <legend>
     $("#question-statement").html(questionStatement);
@@ -120,7 +121,7 @@ function generateAnswerChoices(questionIndex) {
     console.log("`generateAnswerChoices()` was called");
     let answerStatements = BANK[questionIndex].answers; // array
     let answerChoices = answerStatements.map( (answer, index) => {
-        let answerChoice = `<input type="radio"><label for="answer ${index}">${answer}</label>`;
+        let answerChoice = `<input type="radio"><label for="answer${index}">${answer}</label>`;
         return answerChoice;
     });
     return answerChoices;
