@@ -98,7 +98,7 @@ function generateStartButton() {
 function renderQuestion(state) {
     console.log("`renderQuestion()` was called");
     generateQuestion(state.currentQ);
-    generateAnswerChoies(state.currentQ);
+    $("fieldset").append(generateAnswerChoices(state.currentQ));
 }
 
 function generateQuestion(questionIndex) {
@@ -118,8 +118,9 @@ function generateQuestion(questionIndex) {
 
 function generateAnswerChoices(questionIndex) {
     console.log("`generateAnswerChoices()` was called");
-    let answerChoices = BANK[questionIndex].answers.map(answer => {
-        let answerChoice = `<input type="radio"><label for="answer${BANK[questionIndex].answers.indexOf(answer)}">${answer}</label>`;
+    let answerStatements = BANK[questionIndex].answers; // array
+    let answerChoices = answerStatements.map( (answer, index) => {
+        let answerChoice = `<input type="radio"><label for="answer ${index}">${answer}</label>`;
         return answerChoice;
     });
     return answerChoices;
