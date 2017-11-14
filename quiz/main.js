@@ -2,13 +2,13 @@
 
 const BANK = [
     {
-        question: 'HTML: What does "!DOCTYPE" do in an HTML document?',
+        question: 'HTML: What does "!DOCTYPE html" do in an HTML document?',
         rightAnswer: 'It informs the browser on how to render the document.',
         answers: [
             'It informs the browser on how to render the document.',
             'It represents the root (top-level element) of an HTML document.',
-            'It is the generic container for flow content and does not inherently represent anything', 
-            'It represents the content of an HTML document.'
+            'It refers to the generic container for flow content in an HTML document.', 
+            'It represents the document object of an HTML document.'
         ]
         //if userGuess === correctAnswer => correctanswerCount++
         //var correctAnswer = Bank[i].correctAnswer;
@@ -59,7 +59,7 @@ const state = {
     currentQ: -1,
     numRight: 0,
     numWrong: 0,
-    remaining: (BANK.length - this.currentQ - 1)// todo: refactor
+    //remaining: (BANK.length - this.currentQ - 1)// todo: refactor
 };
 
 function updateView() {
@@ -68,7 +68,7 @@ function updateView() {
         return;
     } else if(state.currentQ >= 0 && state.currentQ < BANK.length - 1) {
         renderQuestion(state);
-        renderStatus(state);
+        renderStatus(state); // todo: refactor. render only after answer submit
         renderNav(state);
         return;
     } else {
@@ -77,7 +77,7 @@ function updateView() {
 }
 
 function renderStart() {
-    console.log("`renderStart()` ran");
+    console.log("`renderStart()` was called");
     $("main").html(`<section role="region" aria-labelledby="start-page" id="start-section">
     <h1>Welcome to your interview.</h1>
 </section>`);
@@ -90,19 +90,18 @@ function renderStart() {
 }
 
 function generateStartButton() {
-    console.log("`generateStartButton()` ran");
-    let html = `<button id="start-button">Start Quiz</button>`;
+    console.log("`generateStartButton()` was called");
+    let html = `<button id="start-button">Start</button>`;
     return html;
 }
 
 function renderQuestion(state) {
-    // increment through the pages first, without business logic
-    console.log("`renderQuestion()` ran");
+    console.log("`renderQuestion()` was called");
     $("main").html(generateQuestion(state.currentQ));
 }
 
 function generateQuestion(questionIndex) {
-    console.log("`generateQuestion()` called");
+    console.log("`generateQuestion()` was called");
     let question = BANK[questionIndex];
     let whichQ = `Question ${questionIndex + 1} of ${BANK.length}<br>`;
     let questionStatement = `${question.question}<br>`;
@@ -112,25 +111,31 @@ function generateQuestion(questionIndex) {
     });
     return whichQ + questionStatement + answerChoices; 
     // todos: 
-    // display q correctly 
+    // display q in html <form>
         // question
-        // answer choice * 4
-    // hook up next button,
+        // radomize answer choice * 4 within <label></label> with <input type="radio">
+    // hook up Next button
     // when any answer is chosen, remove "disable" attribute of Next button
 }
 
 function renderStatus(state) {
-    console.log("`renderStatus()` ran");
-    $("footer").html(`You got ${state.numRight} right, ${state.numWrong} wrong, ${state.remaining} to go`)
+    console.log("`renderStatus()` was called");
+    $("footer").html(generateStatus(state)).removeAttr("hidden");
 }
 
-function renderNav(state) {
-    console.log("`renderNav()` ran");
+function generateStatus(state) {
+    console.log("`generateStatus() was called");
+    let html = `You got ${state.numRight} right, ${state.numWrong} wrong, ${BANK.length - state.currentQ - 1} to go`;
+    return html;
+}
+
+function renderNav() {
+    console.log("`renderNav()` was called");
     $("nav").html(generateNextButton());
 }
 
 function generateNextButton() {
-    console.log("`generatNextButton()` ran");
+    console.log("`generatNextButton()` was called");
     let html = `<button id="next-button" disabled>Next</button>`;
     return html;
 }
@@ -142,7 +147,7 @@ function handleNextButton() {
 }
 
 function handleSubmitAnswer() {
-    console.log("`handleSubmitAnswer()` ran");
+    console.log("`handleSubmitAnswer()` was called");
     $('.submit-answer').on('click', event => {
         state.currentQ += 1;
         updateView();
@@ -150,7 +155,7 @@ function handleSubmitAnswer() {
 }
 
 function renderEnd() {
-    console.log("`renderEnd()` ran");
+    console.log("`renderEnd()` was called");
 
 }
 
