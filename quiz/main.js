@@ -114,48 +114,49 @@ function generateQuestion(questionIndex) {
     <fieldset><legend id="question-statement"></legend></fieldset></form>`); // add <legend>
     $("#question-statement").html(questionStatement);
     // todos: 
-    // when any answer is chosen, enable submit button
     // handle state change on answer submit
     // decide whether to add Next button or just answer submit
         // if choose to use Next:
         // on answer submit, remove "disable" attribute of Next button
         // hook up Next button
 }
+    // todos:
+        // refactor spaghetti code: separate "generate" and "render" concerns
 
 function generateAnswerChoices(questionIndex) {
     console.log("`generateAnswerChoices()` was called");
-    let answerStatements = BANK[questionIndex].answers; // array
+    let answerStatements = shuffleAnswerChoices(BANK[questionIndex].answers); // array
     let answerChoices = answerStatements.map( (answer, index) => {
         let answerChoice = `<input type="radio" name="answer-checkbox" class="answer-checkbox" id="answer${index}"><label for="answer${index}">${answer}</label><br>`;
         return answerChoice;
     });
     $("fieldset").append(answerChoices);
-    // todos:
-        // refactor spaghetti code: separate "generate" and "render" concerns
-        // radomize answer choice
 }
 
-function shuffleAnswerChoices(array) {
+function shuffleAnswerChoices(answerChoices) {
     console.log("`shuffleAnswerChoices()` was called");
-    let currentIndex = array.length, 
+    let currentIndex = answerChoices.length, 
     temporaryValue, 
     randomIndex ;
-
     while (0 !== currentIndex) {
         randomIndex = Math.floor(Math.random() * currentIndex); // randomize
         currentIndex -= 1;
-        temporaryValue = array[currentIndex]; // swap
-        array[currentIndex] = array[randomIndex];
-        array[randomIndex] = temporaryValue;
+        temporaryValue = answerChoices[currentIndex]; // swap
+        answerChoices[currentIndex] = answerChoices[randomIndex];
+        answerChoices[randomIndex] = temporaryValue;
     }
-
-    return array;
+    return answerChoices;
 }
 
-function handleAnswerChecked() { // todo: refactor, doesn't work
+function handleAnswerChecked() {
     $(".answer-checkbox").change(event => {
-        // get id 
+        // get id of checked answer 
+        let checkedID = $("input[name=answer-checkbox]:checked").attr("id");
+        alert($(`label, #${checkedID}`).text());    
+        // alert($("input[name=answer-checkbox]:checked").attr("id"));
+        
         // check if chosen answer === right answer
+        // display status: x right, y wrong, z to go
         $("#submit-answer").attr("disabled", false);
     });
 }
@@ -199,7 +200,6 @@ function generateNextButton() {
 }
 
 function handleNextButton() {
-    // suggestions:
     // increment state
     // call updateView();
 }
