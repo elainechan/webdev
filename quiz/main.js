@@ -113,7 +113,6 @@ function generateQuestion(questionIndex) {
     $("#question-section").append(`<form aria-labelledby="question" id="question-form">
     <fieldset><legend id="question-statement"></legend></fieldset></form>`); // add <legend>
     $("#question-statement").html(questionStatement);
-    return 0;
     // todos: 
     // when any answer is chosen, enable submit button
     // handle state change on answer submit
@@ -131,7 +130,6 @@ function generateAnswerChoices(questionIndex) {
         return answerChoice;
     });
     $("fieldset").append(answerChoices);
-    return 0;
     // todos:
         // refactor spaghetti code: separate "generate" and "render" concerns
         // radomize answer choice
