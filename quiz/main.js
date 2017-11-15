@@ -142,6 +142,7 @@ function shuffleAnswerChoices() {
 function handleAnswerChecked() { // todo: refactor, doesn't work
     $(".answer-checkbox").change(event => {
         // get id 
+        // check if chosen answer === right answer
         $("#submit-answer").attr("disabled", false);
     });
 }
