@@ -152,11 +152,7 @@ function handleAnswerChecked() {
     $(".answer-checkbox").change(event => {
         // get id of checked answer 
         let checkedID = $("input[name=answer-checkbox]:checked").attr("id");
-        alert($(`label, #${checkedID}`).text());    
-        // alert($("input[name=answer-checkbox]:checked").attr("id"));
-        
-        // check if chosen answer === right answer
-        // display status: x right, y wrong, z to go
+        let chosenAnswer = $(`label[for=${checkedID}]`).text();
         $("#submit-answer").attr("disabled", false);
     });
 }
@@ -169,21 +165,33 @@ function generateSubmitAnswerButton() {
 
 function handleSubmitAnswer() {
     console.log("`handleSubmitAnswer()` was called");
-    
     $("#submit-answer").on('click', event => {
         event.stopPropagation();
-        state.currentQ += 1;
-        updateView();
+        alert("submitted");
+        let checkedID = $("input[name=answer-checkbox]:checked").attr("id");
+        let chosenAnswer = $(`label[for=${checkedID}]`).text();
+        if(chosenAnswer === BANK[state.currentQ].rightAnswer) {
+            alert("correct");
+        }
+        renderStatus(state);
     });
 }
 
 function renderStatus(state) {
     console.log("`renderStatus()` was called");
     $("footer").html(generateStatus(state)).removeAttr("hidden");
+    handleSubmitAnswer();
 }
 
 function generateStatus(state) {
     console.log("`generateStatus() was called");
+    // check if chosen answer === right answer
+    let checkedID = $("input[name=answer-checkbox]:checked").attr("id");
+    let chosenAnswer = $(`label[for=${checkedID}]`).text();
+    if(chosenAnswer === BANK[state.currentQ].rightAnswer) {
+        alert("correct");
+    }
+    // display status: x right, y wrong, z to go
     let html = `You got ${state.numRight} right, ${state.numWrong} wrong, ${BANK.length - state.currentQ - 1} to go`;
     return html;
 }
