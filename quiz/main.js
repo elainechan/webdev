@@ -100,6 +100,7 @@ function renderQuestion(state) {
     generateQuestion(state.currentQ);
     generateAnswerChoices(state.currentQ);
     $("nav").html(generateSubmitAnswerButton());
+    handleAnswerChecked();
 }
 
 function generateQuestion(questionIndex) {
@@ -114,7 +115,6 @@ function generateQuestion(questionIndex) {
     $("#question-statement").html(questionStatement);
     return 0;
     // todos: 
-    // render answer submit button disabled
     // when any answer is chosen, enable submit button
     // handle state change on answer submit
     // decide whether to add Next button or just answer submit
@@ -127,7 +127,7 @@ function generateAnswerChoices(questionIndex) {
     console.log("`generateAnswerChoices()` was called");
     let answerStatements = BANK[questionIndex].answers; // array
     let answerChoices = answerStatements.map( (answer, index) => {
-        let answerChoice = `<input type="radio"><label for="answer${index}">${answer}</label>`;
+        let answerChoice = `<input type="radio" name="answer-checkbox" class="answer-checkbox" id="answer${index}"><label for="answer${index}">${answer}</label><br>`;
         return answerChoice;
     });
     $("fieldset").append(answerChoices);
@@ -141,6 +141,14 @@ function shuffleAnswerChoices() {
     console.log("`shuffleAnswerChoices()` was called");
 }
 
+function handleAnswerChecked() { // todo: refactor, doesn't work
+    $("#answer-checkbox").on("click", event => {
+        this.setAttribute("checked", "checked");
+        this.checked = true;
+        $("#submit-answer").prop("disabled", false);
+    });
+}
+
 function generateSubmitAnswerButton() {
     console.log("`generateSubmitAnswerButton()` was called");
     let answerButton = `<button type="submit" id="submit-answer" disabled>Submit Answer</button>`;
@@ -149,7 +157,9 @@ function generateSubmitAnswerButton() {
 
 function handleSubmitAnswer() {
     console.log("`handleSubmitAnswer()` was called");
-    $('.submit-answer').on('click', event => {
+    
+    $("#submit-answer").on('click', event => {
+        event.stopPropagation();
         state.currentQ += 1;
         updateView();
     });
