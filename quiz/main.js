@@ -140,10 +140,9 @@ function shuffleAnswerChoices() {
 }
 
 function handleAnswerChecked() { // todo: refactor, doesn't work
-    $("#answer-checkbox").on("click", event => {
-        this.setAttribute("checked", "checked");
-        this.checked = true;
-        $("#submit-answer").prop("disabled", false);
+    $(".answer-checkbox").change(event => {
+        // get id 
+        $("#submit-answer").attr("disabled", false);
     });
 }
 
