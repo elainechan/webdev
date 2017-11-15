@@ -135,8 +135,21 @@ function generateAnswerChoices(questionIndex) {
         // radomize answer choice
 }
 
-function shuffleAnswerChoices() {
+function shuffleAnswerChoices(array) {
     console.log("`shuffleAnswerChoices()` was called");
+    let currentIndex = array.length, 
+    temporaryValue, 
+    randomIndex ;
+
+    while (0 !== currentIndex) {
+        randomIndex = Math.floor(Math.random() * currentIndex); // randomize
+        currentIndex -= 1;
+        temporaryValue = array[currentIndex]; // swap
+        array[currentIndex] = array[randomIndex];
+        array[randomIndex] = temporaryValue;
+    }
+
+    return array;
 }
 
 function handleAnswerChecked() { // todo: refactor, doesn't work
