@@ -172,7 +172,12 @@ function handleSubmitAnswer() {
         let chosenAnswer = $(`label[for=${checkedID}]`).text();
         if(chosenAnswer === BANK[state.currentQ].rightAnswer) {
             alert("correct");
+            state.numRight += 1;
+        } else {
+            alert("incorrect");
+            state.numWrong += 1;
         }
+        state.currentQ += 1;
         renderStatus(state);
     });
 }
@@ -180,7 +185,7 @@ function handleSubmitAnswer() {
 function renderStatus(state) {
     console.log("`renderStatus()` was called");
     $("footer").html(generateStatus(state)).removeAttr("hidden");
-    handleSubmitAnswer();
+    handleSubmitAnswer(); // todo: fix why "correct" is alerted twice
 }
 
 function generateStatus(state) {
