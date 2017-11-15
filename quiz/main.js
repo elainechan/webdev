@@ -91,14 +91,15 @@ function renderStart() {
 
 function generateStartButton() {
     console.log("`generateStartButton()` was called");
-    let html = `<button id="start-button">Start</button>`;
-    return html;
+    let startButton = `<button id="start-button">Start</button>`;
+    return startButton;
 }
 
 function renderQuestion(state) {
     console.log("`renderQuestion()` was called");
     generateQuestion(state.currentQ);
-    $("fieldset").append(generateAnswerChoices(state.currentQ));
+    generateAnswerChoices(state.currentQ);
+    $("nav").html(generateSubmitAnswerButton());
 }
 
 function generateQuestion(questionIndex) {
@@ -111,10 +112,15 @@ function generateQuestion(questionIndex) {
     $("#question-section").append(`<form aria-labelledby="question" id="question-form">
     <fieldset><legend id="question-statement"></legend></fieldset></form>`); // add <legend>
     $("#question-statement").html(questionStatement);
-    return whichQ + questionStatement; 
+    return 0;
     // todos: 
-    // hook up Next button
-    // when any answer is chosen, remove "disable" attribute of Next button
+    // render answer submit button disabled
+    // when any answer is chosen, enable submit button
+    // handle state change on answer submit
+    // decide whether to add Next button or just answer submit
+        // if choose to use Next:
+        // on answer submit, remove "disable" attribute of Next button
+        // hook up Next button
 }
 
 function generateAnswerChoices(questionIndex) {
@@ -124,14 +130,29 @@ function generateAnswerChoices(questionIndex) {
         let answerChoice = `<input type="radio"><label for="answer${index}">${answer}</label>`;
         return answerChoice;
     });
-    return answerChoices;
+    $("fieldset").append(answerChoices);
+    return 0;
     // todos:
-        // create <input type="radio"> and <label> tags for answer choices
-        // radomize answer choice * 4 within <label></label> with <input type="radio">
+        // refactor spaghetti code: separate "generate" and "render" concerns
+        // radomize answer choice
 }
 
 function shuffleAnswerChoices() {
     console.log("`shuffleAnswerChoices()` was called");
+}
+
+function generateSubmitAnswerButton() {
+    console.log("`generateSubmitAnswerButton()` was called");
+    let answerButton = `<button type="submit" id="submit-answer" disabled>Submit Answer</button>`;
+    return answerButton;
+}
+
+function handleSubmitAnswer() {
+    console.log("`handleSubmitAnswer()` was called");
+    $('.submit-answer').on('click', event => {
+        state.currentQ += 1;
+        updateView();
+    });
 }
 
 function renderStatus(state) {
@@ -147,13 +168,13 @@ function generateStatus(state) {
 
 function renderNav() {
     console.log("`renderNav()` was called");
-    $("nav").html(generateNextButton());
+    $("nav").append(generateNextButton());
 }
 
 function generateNextButton() {
     console.log("`generatNextButton()` was called");
-    let html = `<button id="next-button" disabled>Next</button>`;
-    return html;
+    let nextButton = `<button id="next-button" disabled>Next</button>`;
+    return nextButton;
 }
 
 function handleNextButton() {
@@ -162,13 +183,6 @@ function handleNextButton() {
     // call updateView();
 }
 
-function handleSubmitAnswer() {
-    console.log("`handleSubmitAnswer()` was called");
-    $('.submit-answer').on('click', event => {
-        state.currentQ += 1;
-        updateView();
-    });
-}
 
 function renderEnd() {
     console.log("`renderEnd()` was called");
