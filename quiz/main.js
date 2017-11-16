@@ -57,15 +57,22 @@ const state = {
     currentQ: -1,
     numRight: 0,
     numWrong: 0,
-    //remaining: (BANK.length - this.currentQ - 1)// todo: refactor
+    displayMode: "QUESTION", // either QUESTION or FEEDBACK
+    currentAnswerCorrect: false 
 };
 
 function updateView() {
     if(state.currentQ === -1) { 
         renderStart();
         return;
-    } else if(state.currentQ >= 0 && state.currentQ < BANK.length - 1) {
-        renderQuestion(state);
+    } else if(state.currentQ >= 0 && state.currentQ < BANK.length - 1) { // steady state
+        if(state.displayMode === "QUESTION") {
+            renderQuestion(state); //
+            state.displayMode = "FEEDBACK";
+        } else {
+            renderFeedback(state.currentAnswerCorrect);
+            state.displayMode = "QUESTION"
+        }
         renderStatus(state); // todo: refactor. render only after answer submit
         renderNav(state);
         return;
@@ -93,6 +100,11 @@ function generateStartButton() {
     return startButton;
 }
 
+function renderFeedback(correctness) {
+    console.log("`renderFeedback()` was called");
+    $("main").html(correctness ? "Correct" : "Incorrect");
+}
+
 function renderQuestion(state) {
     console.log("`renderQuestion()` was called");
     generateQuestion(state.currentQ);
@@ -112,13 +124,13 @@ function generateQuestion(questionIndex) {
     <fieldset><legend id="question-statement"></legend></fieldset></form>`); // add <legend>
     $("#question-statement").html(questionStatement);
     // todos: 
-    // handle state change on answer submit
-    // decide whether to add Next button or just answer submit
-        // if choose to use Next:
-        // on answer submit, remove "disable" attribute of Next button
-        // hook up Next button
+    // turn L109-113 to template string, don't use jquery
+    // return something for renderQuestion() to call
+    // handle state change on answer submit (done alread?)
+    // on answer submit, remove "disable" attribute of Next button
+    // hook up Next button
 }
-    // todos:
+    // todos
         // refactor spaghetti code: separate "generate" and "render" concerns
 
 function generateAnswerChoices(questionIndex) {
@@ -146,12 +158,9 @@ function shuffleAnswerChoices(answerChoices) {
     return answerChoices;
 }
 
-function handleAnswerChecked() {
+function handleAnswerChecked() { // setting up handling of answer check
     $(".answer-checkbox").change(event => {
-        // get id of checked answer 
-        let checkedID = $("input[name=answer-checkbox]:checked").attr("id");
-        let chosenAnswer = $(`label[for=${checkedID}]`).text();
-        $("#submit-answer").attr("disabled", false);
+        $("#submit-answer").attr("disabled", false); // enables submit answer button
     });
 }
 
@@ -165,18 +174,19 @@ function handleSubmitAnswer() {
     console.log("`handleSubmitAnswer()` was called");
     $("#submit-answer").on('click', event => {
         event.stopPropagation();
-        alert("submitted");
         let checkedID = $("input[name=answer-checkbox]:checked").attr("id");
         let chosenAnswer = $(`label[for=${checkedID}]`).text();
         if(chosenAnswer === BANK[state.currentQ].rightAnswer) {
             alert("correct");
             state.numRight += 1;
+            state.currentAnswerCorrect = true;
         } else {
             alert("incorrect");
             state.numWrong += 1;
+            state.currentAnswerCorrect = false;
         }
         state.currentQ += 1;
-        renderStatus(state);
+        updateView();
     });
 }
 
@@ -227,4 +237,9 @@ $(updateView);
 Model: question, state
 View: render, generate
 Controller: update, button handlers
+
+separation of concerns:
+handlers change state, don't call render
+updates changes view, don't change state
 */
+
