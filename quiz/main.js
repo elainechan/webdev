@@ -10,8 +10,6 @@ const BANK = [
             'It refers to the generic container for flow content in an HTML document.', 
             'It represents the document object of an HTML document.'
         ]
-        //if userGuess === correctAnswer => correctanswerCount++
-        //var correctAnswer = Bank[i].correctAnswer;
     },
     {
         question: 'DOM: what is the difference between window and document?',
