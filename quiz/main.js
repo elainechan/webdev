@@ -64,23 +64,22 @@ const STATE = {
 function updateView() {
     if(STATE.currentQ === -1) { 
         renderStart();
-        return;
     } else if(STATE.currentQ >= 0 && STATE.currentQ < BANK.length - 1) { // steady state
         if(STATE.displayMode === "QUESTION") {
             renderQuestion(STATE);
-            renderNav(STATE.displayMode);
+            renderNav(STATE.displayMode); // REPEATEDLY EXECUTING!!
         } else {
             renderFeedback(STATE.currentAnswerCorrect);
-            renderNav(STATE.displayMode);
+            renderNav(STATE.displayMode); // REPEATEDLY EXECUTING!!
         }
         renderStatus(STATE); // todo: refactor. render only after answer submit
-        return;
     } else {
         renderEnd();
     }
+    return;
 }
 
-function renderNav(displayMode) { // this function keeps executing over and over 
+function renderNav(displayMode) { // REFACTOR!!
     console.log("`renderNav()` was called");
     if(displayMode === "FEEDBACK") {
         $("nav").html(generateNextButton());
@@ -94,7 +93,6 @@ function renderNav(displayMode) { // this function keeps executing over and over
 function handleNextButton() {
     console.log("`handleNextButton()` was called");
     $("#next-button").on("click", event => {
-        // render next question
         STATE.currentQ += 1;
         STATE.displayMode = "QUESTION";
         alert(`${STATE.displayMode} in handleNextButton()`);
@@ -111,7 +109,7 @@ function renderStart() {
     $("#start-button").click(event => { // button handler: Controller
         STATE.currentQ = 0;
         console.log(STATE);
-        updateView(STATE);
+        updateView();
     });
 }
 
@@ -123,13 +121,13 @@ function generateStartButton() {
 
 function renderFeedback(correctness) {
     console.log("`renderFeedback()` was called");
-    $("main").html(correctness ? "Correct" : "Incorrect");
+    $("main").html(correctness ? "You got the right answer." : "You got the wrong answer.");
 }
 
 function renderQuestion(state) {
     console.log("`renderQuestion()` was called");
-    generateQuestion(STATE.currentQ);
-    generateAnswerChoices(STATE.currentQ);
+    $("main").html(generateQuestion(STATE.currentQ));
+    $("fieldset").append(generateAnswerChoices(STATE.currentQ));
     $("#question-form").append(generateSubmitAnswerButton());
     handleAnswerChecked();
 }
@@ -139,20 +137,10 @@ function generateQuestion(questionIndex) {
     let currentQuestion = BANK[questionIndex];
     let whichQ = `<h3 id="question-number">Question ${questionIndex + 1} of ${BANK.length}</h3><br>`;
     let questionStatement = `${currentQuestion.question}`;
-    $("main").html(`<section role="region" aria-labelledby="question" id="question-section"></section>`); // add <section>
-    $("#question-section").append(whichQ); // add current question number
-    $("#question-section").append(`<form aria-labelledby="question" id="question-form">
-    <fieldset><legend id="question-statement"></legend></fieldset></form>`); // add <legend>
-    $("#question-statement").html(questionStatement);
-    // todos: 
-    // turn L109-113 to template string, don't use jquery
-    // return something for renderQuestion() to call
-    // handle state change on answer submit (done alread?)
-    // on answer submit, remove "disable" attribute of Next button
-    // hook up Next button
+    let questionForm = `<section role="region" aria-labelledby="question" id="question-section"><h3 id="question-number">Question ${questionIndex + 1} of ${BANK.length}</h3><br><form aria-labelledby="question" id="question-form">
+    <fieldset><legend id="question-statement">${questionStatement}</legend></fieldset></form></section>`;
+    return questionForm;
 }
-    // todos
-        // refactor spaghetti code: separate "generate" and "render" concerns
 
 function generateAnswerChoices(questionIndex) {
     console.log("`generateAnswerChoices()` was called");
@@ -161,7 +149,7 @@ function generateAnswerChoices(questionIndex) {
         let answerChoice = `<input type="radio" name="answer-checkbox" class="answer-checkbox" id="answer${index}"><label for="answer${index}">${answer}</label><br>`;
         return answerChoice;
     });
-    $("fieldset").append(answerChoices);
+    return answerChoices;
 }
 
 function shuffleAnswerChoices(answerChoices) {
@@ -213,7 +201,7 @@ function handleSubmitAnswer() {
 function renderStatus(state) {
     console.log("`renderStatus()` was called");
     $("footer").html(generateStatus(STATE)).removeAttr("hidden");
-    handleSubmitAnswer(); // todo: fix why "correct" is alerted twice
+    handleSubmitAnswer();
 }
 
 function generateStatus(state) {
