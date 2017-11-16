@@ -53,7 +53,7 @@ const BANK = [
     }
 ];
 
-const state = {
+const STATE = {
     currentQ: -1,
     numRight: 0,
     numWrong: 0,
@@ -62,31 +62,32 @@ const state = {
 };
 
 function updateView() {
-    if(state.currentQ === -1) { 
+    if(STATE.currentQ === -1) { 
         renderStart();
         return;
-    } else if(state.currentQ >= 0 && state.currentQ < BANK.length - 1) { // steady state
-        if(state.displayMode === "QUESTION") {
-            renderQuestion(state);
-            renderNav(state.displayMode);
+    } else if(STATE.currentQ >= 0 && STATE.currentQ < BANK.length - 1) { // steady state
+        if(STATE.displayMode === "QUESTION") {
+            renderQuestion(STATE);
+            renderNav(STATE.displayMode);
         } else {
-            renderFeedback(state.currentAnswerCorrect);
-            renderNav(state.displayMode);
+            renderFeedback(STATE.currentAnswerCorrect);
+            renderNav(STATE.displayMode);
         }
-        renderStatus(state); // todo: refactor. render only after answer submit
+        renderStatus(STATE); // todo: refactor. render only after answer submit
         return;
     } else {
         renderEnd();
     }
 }
 
-function renderNav(displayMode) {
+function renderNav(displayMode) { // this function keeps executing over and over 
     console.log("`renderNav()` was called");
     if(displayMode === "FEEDBACK") {
         $("nav").html(generateNextButton());
     } else {
         $("nav").html("");
     }
+    alert(`${displayMode} in renderNav()`);
     handleNextButton();
 }
 
@@ -94,10 +95,11 @@ function handleNextButton() {
     console.log("`handleNextButton()` was called");
     $("#next-button").on("click", event => {
         // render next question
-        state.currentQ += 1;
+        STATE.currentQ += 1;
+        STATE.displayMode = "QUESTION";
+        alert(`${STATE.displayMode} in handleNextButton()`);
     });
-    state.displayMode = "QUESTION";
-    //updateView();
+    updateView();
 }
 
 function renderStart() {
@@ -107,9 +109,9 @@ function renderStart() {
 </section>`);
     $("nav").html(generateStartButton());
     $("#start-button").click(event => { // button handler: Controller
-        state.currentQ = 0;
-        console.log(state);
-        updateView(state);
+        STATE.currentQ = 0;
+        console.log(STATE);
+        updateView(STATE);
     });
 }
 
@@ -126,8 +128,8 @@ function renderFeedback(correctness) {
 
 function renderQuestion(state) {
     console.log("`renderQuestion()` was called");
-    generateQuestion(state.currentQ);
-    generateAnswerChoices(state.currentQ);
+    generateQuestion(STATE.currentQ);
+    generateAnswerChoices(STATE.currentQ);
     $("#question-form").append(generateSubmitAnswerButton());
     handleAnswerChecked();
 }
@@ -195,21 +197,22 @@ function handleSubmitAnswer() {
         event.preventDefault();
         let checkedID = $("input[name=answer-checkbox]:checked").attr("id");
         let chosenAnswer = $(`label[for=${checkedID}]`).text();
-        if(chosenAnswer === BANK[state.currentQ].rightAnswer) {
-            state.numRight += 1;
-            state.currentAnswerCorrect = true;
+        if(chosenAnswer === BANK[STATE.currentQ].rightAnswer) {
+            STATE.numRight += 1;
+            STATE.currentAnswerCorrect = true;
         } else {
-            state.numWrong += 1;
-            state.currentAnswerCorrect = false;
+            STATE.numWrong += 1;
+            STATE.currentAnswerCorrect = false;
         }
-        state.displayMode = "FEEDBACK";
+        STATE.displayMode = "FEEDBACK";
+        alert(`${STATE.displayMode} in handleSubmitAnswer()`);
         updateView();
     });
 }
 
 function renderStatus(state) {
     console.log("`renderStatus()` was called");
-    $("footer").html(generateStatus(state)).removeAttr("hidden");
+    $("footer").html(generateStatus(STATE)).removeAttr("hidden");
     handleSubmitAnswer(); // todo: fix why "correct" is alerted twice
 }
 
@@ -218,11 +221,11 @@ function generateStatus(state) {
     // check if chosen answer === right answer
     let checkedID = $("input[name=answer-checkbox]:checked").attr("id");
     let chosenAnswer = $(`label[for=${checkedID}]`).text();
-    if(chosenAnswer === BANK[state.currentQ].rightAnswer) {
+    if(chosenAnswer === BANK[STATE.currentQ].rightAnswer) {
         alert("correct");
     }
     // display status: x right, y wrong, z to go
-    let html = `You got ${state.numRight} right, ${state.numWrong} wrong, ${BANK.length - state.currentQ - 1} to go`;
+    let html = `You got ${STATE.numRight} right, ${STATE.numWrong} wrong, ${BANK.length - STATE.currentQ - 1} to go`;
     return html;
 }
 
