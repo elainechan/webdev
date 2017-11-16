@@ -69,11 +69,9 @@ function updateView() {
         if(state.displayMode === "QUESTION") {
             renderQuestion(state);
             renderNav(state.displayMode);
-            state.displayMode = "FEEDBACK";
         } else {
             renderFeedback(state.currentAnswerCorrect);
             renderNav(state.displayMode);
-            state.displayMode = "QUESTION";
         }
         renderStatus(state); // todo: refactor. render only after answer submit
         return;
@@ -98,6 +96,7 @@ function handleNextButton() {
         // render next question
         state.currentQ += 1;
     });
+    state.displayMode = "QUESTION";
     //updateView();
 }
 
@@ -203,6 +202,7 @@ function handleSubmitAnswer() {
             state.numWrong += 1;
             state.currentAnswerCorrect = false;
         }
+        state.displayMode = "FEEDBACK";
         updateView();
     });
 }
