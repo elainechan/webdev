@@ -67,18 +67,38 @@ function updateView() {
         return;
     } else if(state.currentQ >= 0 && state.currentQ < BANK.length - 1) { // steady state
         if(state.displayMode === "QUESTION") {
-            renderQuestion(state); //
+            renderQuestion(state);
+            renderNav(state.displayMode);
             state.displayMode = "FEEDBACK";
         } else {
             renderFeedback(state.currentAnswerCorrect);
-            state.displayMode = "QUESTION"
+            renderNav(state.displayMode);
+            state.displayMode = "QUESTION";
         }
         renderStatus(state); // todo: refactor. render only after answer submit
-        renderNav(state);
         return;
     } else {
         renderEnd();
     }
+}
+
+function renderNav(displayMode) {
+    console.log("`renderNav()` was called");
+    if(displayMode === "FEEDBACK") {
+        $("nav").html(generateNextButton());
+    } else {
+        $("nav").html("");
+    }
+    handleNextButton();
+}
+
+function handleNextButton() {
+    console.log("`handleNextButton()` was called");
+    $("#next-button").on("click", event => {
+        // render next question
+        state.currentQ += 1;
+    });
+    //updateView();
 }
 
 function renderStart() {
@@ -109,7 +129,7 @@ function renderQuestion(state) {
     console.log("`renderQuestion()` was called");
     generateQuestion(state.currentQ);
     generateAnswerChoices(state.currentQ);
-    $("nav").html(generateSubmitAnswerButton());
+    $("#question-form").append(generateSubmitAnswerButton());
     handleAnswerChecked();
 }
 
@@ -173,19 +193,16 @@ function generateSubmitAnswerButton() {
 function handleSubmitAnswer() {
     console.log("`handleSubmitAnswer()` was called");
     $("#submit-answer").on('click', event => {
-        event.stopPropagation();
+        event.preventDefault();
         let checkedID = $("input[name=answer-checkbox]:checked").attr("id");
         let chosenAnswer = $(`label[for=${checkedID}]`).text();
         if(chosenAnswer === BANK[state.currentQ].rightAnswer) {
-            alert("correct");
             state.numRight += 1;
             state.currentAnswerCorrect = true;
         } else {
-            alert("incorrect");
             state.numWrong += 1;
             state.currentAnswerCorrect = false;
         }
-        state.currentQ += 1;
         updateView();
     });
 }
@@ -209,22 +226,12 @@ function generateStatus(state) {
     return html;
 }
 
-function renderNav() {
-    console.log("`renderNav()` was called");
-    $("nav").append(generateNextButton());
-}
 
 function generateNextButton() {
     console.log("`generatNextButton()` was called");
-    let nextButton = `<button id="next-button" disabled>Next</button>`;
+    let nextButton = `<button id="next-button">Next</button>`;
     return nextButton;
 }
-
-function handleNextButton() {
-    // increment state
-    // call updateView();
-}
-
 
 function renderEnd() {
     console.log("`renderEnd()` was called");
