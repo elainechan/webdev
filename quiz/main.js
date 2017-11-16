@@ -86,7 +86,7 @@ function renderNav(displayMode) { // REFACTOR!!
     } else {
         $("nav").html("");
     }
-    alert(`${displayMode} in renderNav()`);
+    alert(`${displayMode} in renderNav()`); // Keeps alerting QUESTION mode
     handleNextButton();
 }
 
@@ -131,7 +131,7 @@ function renderFeedback(correctness) {
 function renderQuestion(state) {
     console.log("`renderQuestion()` was called");
     $("main").html(generateQuestion(STATE.currentQ));
-    $("fieldset").append(generateAnswerChoices(STATE.currentQ));
+    $("#question-form > fieldset").append(generateAnswerChoices(STATE.currentQ));
     $("#question-form").append(generateSubmitAnswerButton());
     handleAnswerChecked();
 }
@@ -185,7 +185,7 @@ function generateSubmitAnswerButton() {
 
 function handleSubmitAnswer() {
     console.log("`handleSubmitAnswer()` was called");
-    $("#submit-answer").on('click', event => {
+    $("#submit-answer").on("click", event => {
         event.preventDefault();
         let checkedID = $("input[name=answer-checkbox]:checked").attr("id");
         let chosenAnswer = $(`label[for=${checkedID}]`).text();
@@ -196,7 +196,7 @@ function handleSubmitAnswer() {
             STATE.numWrong += 1;
             STATE.currentAnswerCorrect = false;
         }
-        STATE.displayMode = "FEEDBACK";
+        STATE.displayMode = "FEEDBACK"; // mutate state
         alert(`${STATE.displayMode} in handleSubmitAnswer()`);
         updateView();
     });
@@ -223,13 +223,14 @@ function generateStatus(state) {
 
 function generateNextButton() {
     console.log("`generatNextButton()` was called");
-    let nextButton = `<button id="next-button">Next</button>`;
+    let nextButton = `<button type="button" id="next-button">Next</button>`;
     return nextButton;
 }
 
 function renderEnd() {
     console.log("`renderEnd()` was called");
-    $(main).html(generateEnd());
+    $("main").html(generateEnd());
+    $("#end-section").append(generateRestartButton());
     handleRestartButton();
 }
 
@@ -247,11 +248,11 @@ function generateEnd() {
 
 function generateRestartButton() {
     console.log("`generateRestartButton()` was called");
-    let restartButton = `<button type="submit" id="restart-button">Try again</button>`
+    let restartButton = `<button type="button" id="restart-button">Try again</button>`
 }
 
 function handleRestartButton() {
-    $("#restart-button").click(event => { // button handler: Controller
+    $("#restart-button").on("click", event => { // button handler: Controller
         STATE.currentQ = 0;
         console.log(STATE);
         updateView();
