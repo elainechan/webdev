@@ -226,7 +226,6 @@ function generateStatus(state) {
     return html;
 }
 
-
 function generateNextButton() {
     console.log("`generatNextButton()` was called");
     let nextButton = `<button id="next-button">Next</button>`;
