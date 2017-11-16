@@ -106,17 +106,21 @@ function renderStart() {
     <h1>Welcome to your interview.</h1>
 </section>`);
     $("nav").html(generateStartButton());
-    $("#start-button").click(event => { // button handler: Controller
-        STATE.currentQ = 0;
-        console.log(STATE);
-        updateView();
-    });
+    handleStartButton();
 }
 
 function generateStartButton() {
     console.log("`generateStartButton()` was called");
     let startButton = `<button id="start-button">Start</button>`;
     return startButton;
+}
+
+function handleStartButton() {
+    $("#start-button").click(event => { // button handler: Controller
+        STATE.currentQ = 0;
+        console.log(STATE);
+        updateView();
+    });
 }
 
 function renderFeedback(correctness) {
@@ -225,7 +229,33 @@ function generateNextButton() {
 
 function renderEnd() {
     console.log("`renderEnd()` was called");
+    $(main).html(generateEnd());
+    handleRestartButton();
+}
 
+function generateEnd() {
+    console.log("`gnerateEnd()` was called");
+    let message;
+    if(STATE.numRight / STATE.numWrong > 0.5) {
+        message = `Congratulations, you are hired!`;
+    } else {
+        message = `Sorry, you didn't get the offer. Please try again!`;
+    }
+    let end = `<section role="region" aria-labelledby="end-page" id="end-section"><h2>${message}</h2><h3>Your score is:</h3><p>${STATE.numRight} out of ${BANK.length}</p></section>`;
+    return end;
+}
+
+function generateRestartButton() {
+    console.log("`generateRestartButton()` was called");
+    let restartButton = `<button type="submit" id="restart-button">Try again</button>`
+}
+
+function handleRestartButton() {
+    $("#restart-button").click(event => { // button handler: Controller
+        STATE.currentQ = 0;
+        console.log(STATE);
+        updateView();
+    });
 }
 
 $(updateView);
@@ -239,4 +269,3 @@ separation of concerns:
 handlers change state, don't call render
 updates changes view, don't change state
 */
-
