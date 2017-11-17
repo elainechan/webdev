@@ -139,7 +139,7 @@ function renderFeedback(state) {
     console.log("`renderFeedback()` was called");
     let correctness = STATE.currentAnswerCorrect;
     let question = BANK[STATE.currentQ];
-    $("main").html(correctness? "You got the right answer." : `You got the wrong answer.<br>The question is: ${question.question}<br>The correct answer is: ${question.rightAnswer}`);
+    $("main").html(correctness? `You got the right answer.` : `<p>You got the wrong answer.</p><p>The question is: ${question.question}</p><p>The correct answer is: ${question.rightAnswer}</p>`);
 }
 
 function renderQuestion(state) {
@@ -231,7 +231,7 @@ function generateStatus(state) {
     if(chosenAnswer === BANK[STATE.currentQ].rightAnswer) {
     }
     // display status: x right, y wrong, z to go
-    let html = `You got ${STATE.numRight} right, ${STATE.numWrong} wrong, ${BANK.length - STATE.currentQ - 1} to go`;
+    let html = `<p>You got ${STATE.numRight} right, ${STATE.numWrong} wrong, ${BANK.length - STATE.currentQ - 1} to go</p>`;
     return html;
 }
 
