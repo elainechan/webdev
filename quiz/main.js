@@ -61,8 +61,6 @@ const STATE = {
     currentAnswerCorrect: false 
 };
 
-
-
 function updateView() {
     if(STATE.currentQ === -1) { 
         renderStart();
@@ -74,33 +72,33 @@ function updateView() {
             renderFeedback(STATE.currentAnswerCorrect);
             renderNav(STATE.displayMode);
         }
-        renderStatus(STATE); // todo: refactor. render only after answer submit
+        renderStatus(STATE); // todo: refactor to show correct nums at all times
     } else {
         renderEnd();
     }
     return;
 }
 
-function renderNav(displayMode) { // REFACTOR
+function renderNav(displayMode) {
     console.log("`renderNav()` was called");
     if(displayMode === "FEEDBACK") {
-        $("nav").html(generateNextButton());
+        $("nav").html(generateNextButton()); // display "Next" button
     } else {
         $("nav").html("");
     }
-    handleNextButton();
+    setHandleNextButton();
 }
 
 function initialize() {
     // only called once
     // initialize static elements, some hidden
     // updateView() hides and shows elements through app cycle
-    handleNextButton();
+    setHandleNextButton();
 }
 
-function handleNextButton() {
-    console.log("`handleNextButton()` was called");
-    $("#next-button").on("click", event => {
+function setHandleNextButton() {
+    console.log("`setHandleNextButton()` was called");
+    $("#next-button").on("click", event => { // mutate STATE
         STATE.currentQ += 1;
         STATE.displayMode = "QUESTION";
         updateView();
@@ -119,7 +117,7 @@ function renderStart() {
     <h1>Welcome to your interview.</h1>
 </section>`);
     $("nav").html(generateStartButton());
-    handleStartButton();
+    setHandleStartButton();
 }
 
 function generateStartButton() {
@@ -128,7 +126,8 @@ function generateStartButton() {
     return startButton;
 }
 
-function handleStartButton() {
+function setHandleStartButton() {
+    console.log("`setHandleStartButton()` was called");
     $("#start-button").click(event => { // button handler: Controller
         STATE.currentQ = 0;
         console.log(STATE);
@@ -146,7 +145,8 @@ function renderQuestion(state) {
     $("main").html(generateQuestion(STATE.currentQ));
     $("#question-form > fieldset").append(generateAnswerChoices(STATE.currentQ));
     $("#question-form").append(generateSubmitAnswerButton());
-    handleAnswerChecked();
+    setHandleAnswerChecked();
+    setHandleSubmitAnswer();
 }
 
 function generateQuestion(questionIndex) {
@@ -184,7 +184,8 @@ function shuffleAnswerChoices(answerChoices) {
     return answerChoices;
 }
 
-function handleAnswerChecked() { // setting up handling of answer check
+function setHandleAnswerChecked() { // setting up handling of answer check
+    console.log("`setHandleAnswerChecked` was called")
     $(".answer-checkbox").change(event => {
         $("#submit-answer").attr("disabled", false); // enables submit answer button
     });
@@ -196,20 +197,20 @@ function generateSubmitAnswerButton() {
     return answerButton;
 }
 
-function handleSubmitAnswer() {
-    console.log("`handleSubmitAnswer()` was called");
+function setHandleSubmitAnswer() {
+    console.log("`setHandleSubmitAnswer()` was called");
     $("#submit-answer").on("click", event => {
         event.preventDefault();
         let checkedID = $("input[name=answer-checkbox]:checked").attr("id");
         let chosenAnswer = $(`label[for=${checkedID}]`).text();
-        if(chosenAnswer === BANK[STATE.currentQ].rightAnswer) {
+        if(chosenAnswer === BANK[STATE.currentQ].rightAnswer) { // mutate STATE
             STATE.numRight += 1;
             STATE.currentAnswerCorrect = true;
         } else {
             STATE.numWrong += 1;
             STATE.currentAnswerCorrect = false;
         }
-        STATE.displayMode = "FEEDBACK"; // mutate state
+        STATE.displayMode = "FEEDBACK"; // mutate STATE
         updateView();
     });
 }
@@ -217,7 +218,7 @@ function handleSubmitAnswer() {
 function renderStatus(state) {
     console.log("`renderStatus()` was called");
     $("footer").html(generateStatus(STATE)).removeAttr("hidden");
-    handleSubmitAnswer();
+    // setHandleSubmitAnswer();
 }
 
 function generateStatus(state) {
@@ -236,7 +237,7 @@ function renderEnd() {
     console.log("`renderEnd()` was called");
     $("main").html(generateEnd());
     $("nav").html(generateRestartButton());
-    handleRestartButton();
+    setHandleRestartButton();
 }
 
 function generateEnd() {
@@ -245,7 +246,7 @@ function generateEnd() {
     if(STATE.numRight / STATE.numWrong > 0.5) {
         message = `Congratulations, you are hired!`;
     } else {
-        message = `Sorry, you didn't get the offer. Please try again!`;
+        message = `Sorry, you didn't get the job. Please try again!`;
     }
     let end = `<section role="region" aria-labelledby="end-page" id="end-section"><h2>${message}</h2><h3>Your score is:</h3><p>${STATE.numRight} out of ${BANK.length}</p></section>`;
     return end;
@@ -253,14 +254,16 @@ function generateEnd() {
 
 function generateRestartButton() {
     console.log("`generateRestartButton()` was called");
-    let restartButton = `<button type="button" id="restart-button">Try again</button>`;
+    let restartButton = `<button type="button" id="restart-button">Try again</button>`
     return restartButton;
 }
 
-function handleRestartButton() {
-    console.log("`handleRestartButton()` was called")
+function setHandleRestartButton() {
+    console.log("`setHandleRestartButton()` was called")
     $("#restart-button").on("click", event => { // button handler: Controller
         STATE.currentQ = 0;
+        STATE.numRight = 0;
+        STATE.numWrong = 0;
         console.log(STATE);
         updateView();
     });
