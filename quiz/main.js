@@ -69,10 +69,10 @@ function updateView() {
     } else if(STATE.currentQ >= 0 && STATE.currentQ < BANK.length - 1) { // steady state
         if(STATE.displayMode === "QUESTION") {
             renderQuestion(STATE);
-            renderNav(STATE.displayMode); // !!! REPEATEDLY EXECUTING
+            renderNav(STATE.displayMode);
         } else {
             renderFeedback(STATE.currentAnswerCorrect);
-            renderNav(STATE.displayMode); // !!! REPEATEDLY EXECUTING
+            renderNav(STATE.displayMode);
         }
         renderStatus(STATE); // todo: refactor. render only after answer submit
     } else {
@@ -88,7 +88,7 @@ function renderNav(displayMode) { // REFACTOR
     } else {
         $("nav").html("");
     }
-    alert(`${displayMode} mode in renderNav()`); // !!! Repeatedly alerts QUESTION mode
+    handleNextButton();
 }
 
 function initialize() {
@@ -103,9 +103,14 @@ function handleNextButton() {
     $("#next-button").on("click", event => {
         STATE.currentQ += 1;
         STATE.displayMode = "QUESTION";
-        alert(`${STATE.displayMode} mode in handleNextButton()`);
+        updateView();
     });
-    updateView();
+}
+
+function generateNextButton() {
+    console.log("`generatNextButton()` was called");
+    let nextButton = `<button type="button" id="next-button">Next</button>`;
+    return nextButton;
 }
 
 function renderStart() {
@@ -205,7 +210,6 @@ function handleSubmitAnswer() {
             STATE.currentAnswerCorrect = false;
         }
         STATE.displayMode = "FEEDBACK"; // mutate state
-        alert(`${STATE.displayMode} mode in handleSubmitAnswer()`);
         updateView();
     });
 }
@@ -222,23 +226,16 @@ function generateStatus(state) {
     let checkedID = $("input[name=answer-checkbox]:checked").attr("id");
     let chosenAnswer = $(`label[for=${checkedID}]`).text();
     if(chosenAnswer === BANK[STATE.currentQ].rightAnswer) {
-        alert("correct");
     }
     // display status: x right, y wrong, z to go
     let html = `You got ${STATE.numRight} right, ${STATE.numWrong} wrong, ${BANK.length - STATE.currentQ - 1} to go`;
     return html;
 }
 
-function generateNextButton() {
-    console.log("`generatNextButton()` was called");
-    let nextButton = `<button type="button" id="next-button">Next</button>`;
-    return nextButton;
-}
-
 function renderEnd() {
     console.log("`renderEnd()` was called");
     $("main").html(generateEnd());
-    $("#end-section").append(generateRestartButton());
+    $("nav").html(generateRestartButton());
     handleRestartButton();
 }
 
@@ -256,10 +253,12 @@ function generateEnd() {
 
 function generateRestartButton() {
     console.log("`generateRestartButton()` was called");
-    let restartButton = `<button type="button" id="restart-button">Try again</button>`
+    let restartButton = `<button type="button" id="restart-button">Try again</button>`;
+    return restartButton;
 }
 
 function handleRestartButton() {
+    console.log("`handleRestartButton()` was called")
     $("#restart-button").on("click", event => { // button handler: Controller
         STATE.currentQ = 0;
         console.log(STATE);
