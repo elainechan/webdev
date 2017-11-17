@@ -3,7 +3,7 @@
 ## User experience requirements
 
 * [x] The starting screen should have a button that users can click to start the quiz. (1 point)
-* [ ] Users should be prompted through a series of at least 5 multiple choice questions which they can answer. (1 point)
+* [x] Users should be prompted through a series of at least 5 multiple choice questions which they can answer. (1 point)
 * [x] Users should be asked questions one after the other.
 * [x] Users should only be prompted with one question at a time. (1 point)
 * [x] Users should not be able to skip questions. (1 point)
@@ -11,9 +11,9 @@
 
 Upon submitting an answer, users should:
 * [x] receive textual feedback about their answer. If they were incorrect, they should be told the correct answer. (2 points)
-* [ ] be moved onto the next question (or interact with an element to move on). (1 point)
-* [ ] Users should be shown their overall score at the end of the quiz. In other words, how many questions they got right out of the total questions asked. (1 point)
-* [ ] Users should be able to start a new game. (1 point)
+* [x] be moved onto the next question (or interact with an element to move on). (1 point)
+* [x] Users should be shown their overall score at the end of the quiz. In other words, how many questions they got right out of the total questions asked. (1 point)
+* [x] Users should be able to start a new game. (1 point)
 
 ## Technical requirements
 Your quiz app must:
