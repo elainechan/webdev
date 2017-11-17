@@ -61,16 +61,18 @@ const STATE = {
     currentAnswerCorrect: false 
 };
 
+
+
 function updateView() {
     if(STATE.currentQ === -1) { 
         renderStart();
     } else if(STATE.currentQ >= 0 && STATE.currentQ < BANK.length - 1) { // steady state
         if(STATE.displayMode === "QUESTION") {
             renderQuestion(STATE);
-            renderNav(STATE.displayMode); // REPEATEDLY EXECUTING!!
+            renderNav(STATE.displayMode); // !!! REPEATEDLY EXECUTING
         } else {
             renderFeedback(STATE.currentAnswerCorrect);
-            renderNav(STATE.displayMode); // REPEATEDLY EXECUTING!!
+            renderNav(STATE.displayMode); // !!! REPEATEDLY EXECUTING
         }
         renderStatus(STATE); // todo: refactor. render only after answer submit
     } else {
@@ -79,14 +81,20 @@ function updateView() {
     return;
 }
 
-function renderNav(displayMode) { // REFACTOR!!
+function renderNav(displayMode) { // REFACTOR
     console.log("`renderNav()` was called");
     if(displayMode === "FEEDBACK") {
         $("nav").html(generateNextButton());
     } else {
         $("nav").html("");
     }
-    alert(`${displayMode} in renderNav()`); // Keeps alerting QUESTION mode
+    alert(`${displayMode} mode in renderNav()`); // !!! Repeatedly alerts QUESTION mode
+}
+
+function initialize() {
+    // only called once
+    // initialize static elements, some hidden
+    // updateView() hides and shows elements through app cycle
     handleNextButton();
 }
 
@@ -95,7 +103,7 @@ function handleNextButton() {
     $("#next-button").on("click", event => {
         STATE.currentQ += 1;
         STATE.displayMode = "QUESTION";
-        alert(`${STATE.displayMode} in handleNextButton()`);
+        alert(`${STATE.displayMode} mode in handleNextButton()`);
     });
     updateView();
 }
@@ -197,7 +205,7 @@ function handleSubmitAnswer() {
             STATE.currentAnswerCorrect = false;
         }
         STATE.displayMode = "FEEDBACK"; // mutate state
-        alert(`${STATE.displayMode} in handleSubmitAnswer()`);
+        alert(`${STATE.displayMode} mode in handleSubmitAnswer()`);
         updateView();
     });
 }
@@ -259,6 +267,7 @@ function handleRestartButton() {
     });
 }
 
+$(initialize);
 $(updateView);
 
 /*
