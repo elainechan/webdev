@@ -69,7 +69,7 @@ function updateView() {
             renderQuestion(STATE);
             renderNav(STATE.displayMode);
         } else {
-            renderFeedback(STATE.currentAnswerCorrect);
+            renderFeedback(STATE);
             renderNav(STATE.displayMode);
         }
         renderStatus(STATE); // todo: refactor to show correct nums at all times
@@ -135,9 +135,11 @@ function setHandleStartButton() {
     });
 }
 
-function renderFeedback(correctness) {
+function renderFeedback(state) {
     console.log("`renderFeedback()` was called");
-    $("main").html(correctness ? "You got the right answer." : "You got the wrong answer.");
+    let correctness = STATE.currentAnswerCorrect;
+    let question = BANK[STATE.currentQ];
+    $("main").html(correctness? "You got the right answer." : `You got the wrong answer.<br>The question is: ${question.question}<br>The correct answer is: ${question.rightAnswer}`);
 }
 
 function renderQuestion(state) {
