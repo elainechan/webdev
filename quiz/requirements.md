@@ -40,3 +40,8 @@ Before you dive into the app, you'll need to:
 * submit question ()
 * render feedback
 * render end
+
+## Examples
+* Max Carlquist 
+    * [Codepen](https://codepen.io/Tenkaklet/pen/QEpWPo?editors=1111)
+    * [Repo](https://github.com/Tenkaklet/MusicQuiz/blob/master/index.html)
