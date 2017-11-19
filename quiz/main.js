@@ -57,11 +57,11 @@ const STATE = {
     currentQ: -1,
     numRight: 0,
     numWrong: 0,
-    displayMode: "QUESTION", // either QUESTION or FEEDBACK
-    currentAnswerCorrect: false 
+    displayMode: "QUESTION", // either START, QUESTION, FEEDBACK, or END
+    currentAnswerCorrect: false,
 };
 
-function updateView() {
+function updateView() { // refactor to show correct num of questions; last q is cut
     if(STATE.currentQ === -1) { 
         renderStart();
     } else if(STATE.currentQ >= 0 && STATE.currentQ < BANK.length - 1) { // steady state
