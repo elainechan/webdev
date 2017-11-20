@@ -78,6 +78,9 @@ function updateView() { // refactor to show correct num of questions; last q is 
     }
     return;
 }
+// todo: on submit of last question: 
+// hide footer
+// button show "get results"
 
 function renderNav(displayMode) {
     console.log("`renderNav()` was called");
