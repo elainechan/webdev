@@ -54,7 +54,7 @@ const BANK = [
 ];
 
 const STATE = {
-    currentQ: -1,
+    currentQ: -1, // ?
     numRight: 0,
     numWrong: 0,
     displayMode: "QUESTION", // either START, QUESTION, FEEDBACK, or END
@@ -64,7 +64,7 @@ const STATE = {
 function updateView() { // refactor to show correct num of questions; last q is cut
     if(STATE.currentQ === -1) { 
         renderStart();
-    } else if(STATE.currentQ >= 0 && STATE.currentQ < BANK.length - 1) { // steady state
+    } else if(STATE.currentQ >= 0 && STATE.currentQ < BANK.length) { // steady state
         if(STATE.displayMode === "QUESTION") {
             renderQuestion(STATE);
             renderNav(STATE.displayMode);
@@ -83,6 +83,7 @@ function renderNav(displayMode) {
     console.log("`renderNav()` was called");
     if(displayMode === "FEEDBACK") {
         $("nav").html(generateNextButton()); // display "Next" button
+        STATE.currentQ += 1;
     } else {
         $("nav").html("");
     }
@@ -99,7 +100,7 @@ function initialize() {
 function setHandleNextButton() {
     console.log("`setHandleNextButton()` was called");
     $("#next-button").on("click", event => { // mutate STATE
-        STATE.currentQ += 1;
+        //STATE.currentQ += 1;
         STATE.displayMode = "QUESTION";
         updateView();
     });
@@ -231,7 +232,7 @@ function generateStatus(state) {
     if(chosenAnswer === BANK[STATE.currentQ].rightAnswer) {
     }
     // display status: x right, y wrong, z to go
-    let html = `<p>You got ${STATE.numRight} right, ${STATE.numWrong} wrong, ${BANK.length - STATE.currentQ - 1} to go</p>`;
+    let html = `<p>You got ${STATE.numRight} right, ${STATE.numWrong} wrong, ${BANK.length - STATE.currentQ} to go</p>`;
     return html;
 }
 
