@@ -76,7 +76,6 @@ function updateView() { // refactor to show correct num of questions; last q is 
     } else {
         renderEnd();
     }
-    return;
 }
 // todo: on submit of final question: 
 // button show "get results"
@@ -144,7 +143,15 @@ function renderFeedback(state) {
     console.log("`renderFeedback()` was called");
     let correctness = STATE.currentAnswerCorrect;
     let question = BANK[STATE.currentQ];
-    $("main").html(correctness? `<section role="region" aria-labelledby="feedback" id="feedback-section"><p>You got the right answer.</p></section` : `<section role="region" aria-labelledby="feedback" id="feedback-section"><p>You got the wrong answer.</p><p>Question: ${question.question}</p><p>Correct answer: ${question.rightAnswer}</p></section>`);
+    if(correctness) {
+        $("main").html(`<section role="region" aria-labelledby="feedback" id="feedback-section"><p>Correct.</p><p>${question.question}</p><p>${question.rightAnswer}</p></section>`);
+        // $("main").prepend(`<div><image src=""></div>`);
+    } else {
+        $("main").html(`<section role="region" aria-labelledby="feedback" id="feedback-section"><p>Wrong.</p><p>${question.question}</p><p>${question.rightAnswer}</p></section>`);
+        // $("main").prepend(`<div><img></div>`);
+    }
+
+    $("main").html(correctness? `<section role="region" aria-labelledby="feedback" id="feedback-section"><p>Correct.</p><p>${question.question}</p><p>${question.rightAnswer}</p></section>` : `<section role="region" aria-labelledby="feedback" id="feedback-section"><p>Wrong.</p><p>${question.question}</p><p>${question.rightAnswer}</p></section>`);
 }
 
 function renderQuestion(state) {
@@ -159,7 +166,7 @@ function renderQuestion(state) {
 function generateQuestion(questionIndex) {
     console.log("`generateQuestion()` was called");
     let currentQuestion = BANK[questionIndex];
-    let whichQ = `<h3 id="question-number">Question ${questionIndex + 1} of ${BANK.length}</h3><br>`;
+    let whichQ = `<h3 id="question-number">Question ${questionIndex + 1} of ${BANK.length}</h3>`;
     let questionStatement = `${currentQuestion.question}`;
     let questionForm = `<section role="region" aria-labelledby="question" id="question-section"><h3 id="question-number">Question ${questionIndex + 1} of ${BANK.length}</h3><form aria-labelledby="question" id="question-form">
     <fieldset class="question-body"><legend id="question-statement">${questionStatement}</legend></fieldset></form></section>`;
@@ -225,8 +232,6 @@ function setHandleSubmitAnswer() {
 function renderStatus(state) {
     console.log("`renderStatus()` was called");
     $("footer").html(generateStatus(STATE)).removeAttr("hidden");
-    // setHandleSubmitAnswer();
-
 }
 
 function generateStatus(state) {

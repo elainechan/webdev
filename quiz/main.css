@@ -16,10 +16,14 @@ section { /* <section> */
 }
 
 #question-statement { /* <legend> */
-
+    font-size: 20px;
 }
 
-button {
+.answer-choice {
+    margin: 12px;
+}
+
+button { /* todo: make all buttons display in same place */
     padding: 12px 30px;
     margin: 12px;
     cursor: pointer;
