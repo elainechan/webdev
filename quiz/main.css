@@ -1,24 +1,33 @@
 body {
-    font-family: sans-serif;
+    font-family: helvetica;
+}
+
+header {
+
+}
+
+.question-body {
+    border: none;
+}
+
+#question-section { /* <section> */
+
+}
+
+#question-statement { /* <legend> */
+
 }
 
 button {
+    cursor: pointer;
+    padding: 12px 30px;
+    font-size: 14px;
     border-radius: 5px;
 }
-
-.answer-choice {
-    list-style: none;
-}
-
-.answer-checkbox, .answer-text {
-    display: inline-block;
-}
-
-#question-section {
-    
+button:hover {
+    background: darken();
+    color: lighten();
 }
 
 /* Non-mobile */
-@media only screen and (min-width: 640px) {
-
-}
+@media only screen and (min-width: 640px) {}

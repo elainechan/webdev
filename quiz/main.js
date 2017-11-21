@@ -27,7 +27,7 @@ const BANK = [
         answers: [
             'Event bubbling: when an event happens on an element, it first runs the handlers on it, then on its parent, then all the way up on other ancestors.\nEvent delegation: allows attachment of an event listener to a parent element that will fire for all its current and future descendents.',
             'Event bubbling: when an event happens on an element, it first runs the handlers on it, then all the way down on its children.\nEvent delegation: allow attachment of an event listener to a child element that will fire for all its parents.',
-            'Event bubbling: when an event happens on an element, it runs for all its siblings.\nEvent delegation: allows attachment of an event listener to an element that will fire for all elements with the same class',
+            'Event bubbling: when an event happens on an element, it runs for all its siblings.\nEvent delegation: allows attachment of an event listener to an element that will fire for all elements with the same class.',
             'Event bubbling: refers to the node on which the event listener is registered on.\nEvent delegation: refers to the most deeply nested element that caused the event.'
         ]
     },
@@ -72,14 +72,13 @@ function updateView() { // refactor to show correct num of questions; last q is 
             renderFeedback(STATE);
             renderNav(STATE.displayMode);
         }
-        renderStatus(STATE); // todo: refactor to show correct nums at all times
+        renderStatus(STATE);
     } else {
         renderEnd();
     }
     return;
 }
-// todo: on submit of last question: 
-// hide footer
+// todo: on submit of final question: 
 // button show "get results"
 
 function renderNav(displayMode) {
@@ -93,12 +92,14 @@ function renderNav(displayMode) {
     setHandleNextButton();
 }
 
+/* todo: optional redesign
 function initialize() {
     // only called once
     // initialize static elements, some hidden
     // updateView() hides and shows elements through app cycle
     setHandleNextButton();
 }
+*/
 
 function setHandleNextButton() {
     console.log("`setHandleNextButton()` was called");
@@ -143,7 +144,7 @@ function renderFeedback(state) {
     console.log("`renderFeedback()` was called");
     let correctness = STATE.currentAnswerCorrect;
     let question = BANK[STATE.currentQ];
-    $("main").html(correctness? `You got the right answer.` : `<section role="region" aria-labelledby="feedback" id="feedback-section" ><p>You got the wrong answer.</p><p>The question is: ${question.question}</p><p>The correct answer is: ${question.rightAnswer}</p></section>`);
+    $("main").html(correctness? `You got the right answer.` : `<section role="region" aria-labelledby="feedback" id="feedback-section" ><p>You got the wrong answer.</p><p>Question: ${question.question}</p><p>Correct answer: ${question.rightAnswer}</p></section>`);
 }
 
 function renderQuestion(state) {
@@ -160,8 +161,8 @@ function generateQuestion(questionIndex) {
     let currentQuestion = BANK[questionIndex];
     let whichQ = `<h3 id="question-number">Question ${questionIndex + 1} of ${BANK.length}</h3><br>`;
     let questionStatement = `${currentQuestion.question}`;
-    let questionForm = `<section role="region" aria-labelledby="question" id="question-section"><h3 id="question-number">Question ${questionIndex + 1} of ${BANK.length}</h3><br><form aria-labelledby="question" id="question-form">
-    <fieldset><legend id="question-statement">${questionStatement}</legend></fieldset></form></section>`;
+    let questionForm = `<section role="region" aria-labelledby="question" id="question-section"><h3 id="question-number">Question ${questionIndex + 1} of ${BANK.length}</h3><form aria-labelledby="question" id="question-form">
+    <fieldset class="question-body"><legend id="question-statement">${questionStatement}</legend></fieldset></form></section>`;
     return questionForm;
 }
 
@@ -169,7 +170,7 @@ function generateAnswerChoices(questionIndex) {
     console.log("`generateAnswerChoices()` was called");
     let answerStatements = shuffleAnswerChoices(BANK[questionIndex].answers); // array
     let answerChoices = answerStatements.map( (answer, index) => {
-        let answerChoice = `<input type="radio" name="answer-checkbox" class="answer-checkbox" id="answer${index}"><label for="answer${index}">${answer}</label><br>`;
+        let answerChoice = `<div class="answer-choice"><input type="radio" name="answer-checkbox" class="answer-checkbox" id="answer${index}"><label for="answer${index}" class="answer-text">${answer}</label></div>`;
         return answerChoice;
     });
     return answerChoices;
@@ -272,7 +273,7 @@ function setHandleRestartButton() {
     });
 }
 
-$(initialize);
+// $(initialize); part of optional redesign
 $(updateView);
 
 /*
