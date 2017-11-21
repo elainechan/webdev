@@ -1,5 +1,6 @@
 body {
     font-family: helvetica;
+    font-size: 18px;
 }
 
 header {
@@ -16,14 +17,13 @@ section { /* <section> */
 }
 
 #question-statement { /* <legend> */
-    font-size: 20px;
 }
 
 .answer-choice {
     margin: 12px;
 }
 
-.button-container { /* only Start and Restart buttons */
+.button-container { /* only center Start and Restart buttons */
     text-align: center;
 }
 
@@ -32,7 +32,7 @@ button { /* todo: make all buttons display in same place */
     margin: 12px;
     text-align: center;
     cursor: pointer;
-    font-size: 16px;
+    font-size: 18px;
     border-radius: 5px;
     border: 1px solid #d9d9d9;
     font-weight: 600;
