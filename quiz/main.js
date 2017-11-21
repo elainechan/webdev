@@ -84,9 +84,9 @@ function updateView() { // refactor to show correct num of questions; last q is 
 
 function renderNav(displayMode) {
     console.log("`renderNav()` was called");
-    if(displayMode === "FEEDBACK" && STATE.currentQ < BANK.length) {
+    if(displayMode === "FEEDBACK" && STATE.currentQ < BANK.length) { // adding < BANK.length fixed issue where after last question it still shows "1 to go"
         $("nav").html(generateNextButton()); // display "Next" button
-        STATE.currentQ += 1;
+        STATE.currentQ += 1; // mutate state for correct display info
     } else {
         $("nav").html("");
     }
@@ -143,7 +143,7 @@ function renderFeedback(state) {
     console.log("`renderFeedback()` was called");
     let correctness = STATE.currentAnswerCorrect;
     let question = BANK[STATE.currentQ];
-    $("main").html(correctness? `You got the right answer.` : `<p>You got the wrong answer.</p><p>The question is: ${question.question}</p><p>The correct answer is: ${question.rightAnswer}</p>`);
+    $("main").html(correctness? `You got the right answer.` : `<section role="region" aria-labelledby="feedback" id="feedback-section" ><p>You got the wrong answer.</p><p>The question is: ${question.question}</p><p>The correct answer is: ${question.rightAnswer}</p></section>`);
 }
 
 function renderQuestion(state) {
@@ -239,13 +239,14 @@ function renderEnd() {
     console.log("`renderEnd()` was called");
     $("main").html(generateEnd());
     $("nav").html(generateRestartButton());
+    $("footer").html(""); // remove status display
     setHandleRestartButton();
 }
 
 function generateEnd() {
     console.log("`gnerateEnd()` was called");
     let message;
-    if(STATE.numRight / STATE.numWrong > 1) {
+    if(STATE.numRight >= STATE.numWrong) { // works for both odd and even num of questions
         message = `Congratulations, you are hired!`;
     } else {
         message = `Sorry, you didn't get the job. Please try again!`;
