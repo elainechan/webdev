@@ -144,7 +144,7 @@ function renderFeedback(state) {
     console.log("`renderFeedback()` was called");
     let correctness = STATE.currentAnswerCorrect;
     let question = BANK[STATE.currentQ];
-    $("main").html(correctness? `You got the right answer.` : `<section role="region" aria-labelledby="feedback" id="feedback-section" ><p>You got the wrong answer.</p><p>Question: ${question.question}</p><p>Correct answer: ${question.rightAnswer}</p></section>`);
+    $("main").html(correctness? `<section role="region" aria-labelledby="feedback" id="feedback-section"><p>You got the right answer.</p></section` : `<section role="region" aria-labelledby="feedback" id="feedback-section"><p>You got the wrong answer.</p><p>Question: ${question.question}</p><p>Correct answer: ${question.rightAnswer}</p></section>`);
 }
 
 function renderQuestion(state) {
