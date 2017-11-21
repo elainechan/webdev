@@ -68,7 +68,7 @@ function updateView() { // refactor to show correct num of questions; last q is 
         if(STATE.displayMode === "QUESTION") {
             renderQuestion(STATE);
             renderNav(STATE.displayMode);
-        } else {
+        } else { // FEEDBACK mode
             renderFeedback(STATE);
             renderNav(STATE.displayMode);
         }
@@ -84,7 +84,7 @@ function updateView() { // refactor to show correct num of questions; last q is 
 
 function renderNav(displayMode) {
     console.log("`renderNav()` was called");
-    if(displayMode === "FEEDBACK") {
+    if(displayMode === "FEEDBACK" && STATE.currentQ < BANK.length) {
         $("nav").html(generateNextButton()); // display "Next" button
         STATE.currentQ += 1;
     } else {
@@ -225,15 +225,11 @@ function renderStatus(state) {
     console.log("`renderStatus()` was called");
     $("footer").html(generateStatus(STATE)).removeAttr("hidden");
     // setHandleSubmitAnswer();
+
 }
 
 function generateStatus(state) {
     console.log("`generateStatus() was called");
-    // check if chosen answer === right answer
-    let checkedID = $("input[name=answer-checkbox]:checked").attr("id");
-    let chosenAnswer = $(`label[for=${checkedID}]`).text();
-    if(chosenAnswer === BANK[STATE.currentQ].rightAnswer) {
-    }
     // display status: x right, y wrong, z to go
     let html = `<p>You got ${STATE.numRight} right, ${STATE.numWrong} wrong, ${BANK.length - STATE.currentQ} to go</p>`;
     return html;
@@ -249,7 +245,7 @@ function renderEnd() {
 function generateEnd() {
     console.log("`gnerateEnd()` was called");
     let message;
-    if(STATE.numRight / STATE.numWrong > 0.5) {
+    if(STATE.numRight / STATE.numWrong > 1) {
         message = `Congratulations, you are hired!`;
     } else {
         message = `Sorry, you didn't get the job. Please try again!`;
