@@ -1,10 +1,33 @@
+// different data formats
 {
-    "question": "What does 'HTML' stand for?",
-    "rightAnswer": "Hypertext markup language.",
-    "answers": [
-        "a",
-        "b",
-        "c",
-        "d"
-    ]
+    "unlabelledQuestion" : { // unlabelled answers with no explicit index
+        "question": "What does 'HTML' stand for?",
+        "rightAnswer": "Hypertext markup language.",
+        "answers": [
+            "fe",
+            "fi",
+            "fo",
+            "fum"
+        ]
+    },
+
+    "labelledQuestion" : { // labelled answers with no explicit index
+        "question": "What is a function?",
+        "answers": {
+            "a": "fe",
+            "b": "fi",
+            "c": "fo",
+            "d": "fum"
+        },
+        "rightAnswer": "a"
+    },
+
+    "indexedQuestion": { // labelled answers with explicit index
+        "question": "What does 'CSS' stand for?",
+        "answers": [
+            { "key": 1, "answer": "Apple"}, 
+            { "key": 2, "answer": "Orange"}, 
+            { "key": 3, "answer": "Banana"}
+        ]
+    }
 }

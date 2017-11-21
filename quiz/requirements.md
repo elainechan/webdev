@@ -24,7 +24,7 @@ Your quiz app must:
 * [x] Use responsive design. (3 points)
 * [ ] Be fully usable by keyboard and mouse (which will be easy enough if you start with a form). (1 point)
 * [ ] (Optional) Make screenreader read out question
-* [] (Optional) Put content in JSON file and render from there
+* [ ] (Optional) Put content in JSON file and render from there
 
 ## Process requirements
 Before you dive into the app, you'll need to:

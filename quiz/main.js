@@ -139,19 +139,29 @@ function setHandleStartButton() {
     });
 }
 
+function renderPic() {
+    console.log("`renderPic()` was called");
+    // let path = "./gifs/"
+    // let sadPics = [];
+    // let happyPics = []
+    // this.happy
+        // shuffle(happyPics)[0]
+    // this.sad
+        // shuffle(sadPics)[0]
+}
+
 function renderFeedback(state) {
     console.log("`renderFeedback()` was called");
     let correctness = STATE.currentAnswerCorrect;
     let question = BANK[STATE.currentQ];
+    
     if(correctness) {
         $("main").html(`<section role="region" aria-labelledby="feedback" id="feedback-section"><p>Correct.</p><p>${question.question}</p><p>${question.rightAnswer}</p></section>`);
-        // $("main").prepend(`<div><image src=""></div>`);
+        // $("main").prepend(`<div><image src=""></div>`); // shuffle(happyPics)[0]
     } else {
         $("main").html(`<section role="region" aria-labelledby="feedback" id="feedback-section"><p>Wrong.</p><p>${question.question}</p><p>${question.rightAnswer}</p></section>`);
-        // $("main").prepend(`<div><img></div>`);
+        // $("main").prepend(`<div><img></div>`); // shuffle(sadPics)[0]
     }
-
-    $("main").html(correctness? `<section role="region" aria-labelledby="feedback" id="feedback-section"><p>Correct.</p><p>${question.question}</p><p>${question.rightAnswer}</p></section>` : `<section role="region" aria-labelledby="feedback" id="feedback-section"><p>Wrong.</p><p>${question.question}</p><p>${question.rightAnswer}</p></section>`);
 }
 
 function renderQuestion(state) {
@@ -175,7 +185,7 @@ function generateQuestion(questionIndex) {
 
 function generateAnswerChoices(questionIndex) {
     console.log("`generateAnswerChoices()` was called");
-    let answerStatements = shuffleAnswerChoices(BANK[questionIndex].answers); // array
+    let answerStatements = shuffle(BANK[questionIndex].answers); // array
     let answerChoices = answerStatements.map( (answer, index) => {
         let answerChoice = `<div class="answer-choice"><input type="radio" name="answer-checkbox" class="answer-checkbox" id="answer${index}"><label for="answer${index}" class="answer-text">${answer}</label></div>`;
         return answerChoice;
@@ -183,19 +193,19 @@ function generateAnswerChoices(questionIndex) {
     return answerChoices;
 }
 
-function shuffleAnswerChoices(answerChoices) {
-    console.log("`shuffleAnswerChoices()` was called");
-    let currentIndex = answerChoices.length, 
+function shuffle(arr) {
+    console.log("`shuffle()` was called");
+    let currentIndex = arr.length, 
     temporaryValue, 
     randomIndex ;
     while (0 !== currentIndex) {
         randomIndex = Math.floor(Math.random() * currentIndex); // randomize
         currentIndex -= 1;
-        temporaryValue = answerChoices[currentIndex]; // swap
-        answerChoices[currentIndex] = answerChoices[randomIndex];
-        answerChoices[randomIndex] = temporaryValue;
+        temporaryValue = arr[currentIndex]; // swap
+        arr[currentIndex] = arr[randomIndex];
+        arr[randomIndex] = temporaryValue;
     }
-    return answerChoices;
+    return arr;
 }
 
 function setHandleAnswerChecked() { // setting up handling of answer check
