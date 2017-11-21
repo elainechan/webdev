@@ -153,10 +153,10 @@ function renderFeedback(state) {
     let question = BANK[STATE.currentQ];
     
     if(correctness) {
-        $("main").html(`<section role="region" aria-labelledby="feedback" id="feedback-section"><p>Correct.</p><p>${question.question}</p><p>${question.rightAnswer}</p></section>`);
+        $("main").html(`<section role="region" aria-labelledby="feedback" id="feedback-section"><h3>Correct.</h3><p>${question.question}</p><p>${question.rightAnswer}</p></section>`);
         //$("main").prepend(`<div><image src="${gif().happy()}"></div>`); // add gif
     } else {
-        $("main").html(`<section role="region" aria-labelledby="feedback" id="feedback-section"><p>Wrong.</p><p>${question.question}</p><p>${question.rightAnswer}</p></section>`);
+        $("main").html(`<section role="region" aria-labelledby="feedback" id="feedback-section"><h3>Wrong.</h3><p>${question.question}</p><p>${question.rightAnswer}</p></section>`);
         //$("main").prepend(`<div><img src="${gif().sad()}"></div>`);
     }
 }

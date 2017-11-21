@@ -4,19 +4,21 @@ body {
 }
 
 header {
+    margin: 12px;
+    text-align: center;
+}
 
+#start-section, #end-section {
+    text-align: center;
+}
+
+section { /* <section> */
+    padding: 12px 30px;
+    margin: 12px 60px;
 }
 
 .question-body {
     border: none;
-}
-
-section { /* <section> */
-    padding: 12px;
-    margin: 12px;
-}
-
-#question-statement { /* <legend> */
 }
 
 .answer-choice {
@@ -44,14 +46,14 @@ button:hover {
     border: 1px solid #bdbdbd;
 }
 
-#submit-answer {
+nav {
+    padding: 12px 30px;
+    margin: 12px 60px;
 }
 
-#next-button {
-}
-
-#status {
-    margin: 12px;
+footer {
+    padding: 12px 30px;
+    margin: 12px 60px;
 }
 
 /* Non-mobile */
