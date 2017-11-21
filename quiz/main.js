@@ -139,14 +139,12 @@ function setHandleStartButton() {
     });
 }
 
-function renderPic() {
-    console.log("`renderPic()` was called");
-    let fs = require('fs');
-    let files = fs.readdirSync("./gifs/"); // returns array of filenames
-    // let sadPics = [];
-    // let happyPics = []
-    // this.happy = () => { return shuffle(happyPics)[0]; }
-    // this.sad = () => { return shuffle(sadPics)[0]; }
+function gif() {
+    let fs = require('fs'); // TODO: fix "require is not defined"
+    let happyGifs = fs.readdirSync("./gifs/happy/"); // returns array of filenames
+    let sadGifs = fs.readdirSync("./gifs/sad/");
+    this.happy = () => { return shuffle(happyGifs)[0]; }
+    this.sad = () => { return shuffle(sadGifs)[0]; }
 }
 
 function renderFeedback(state) {
@@ -156,10 +154,10 @@ function renderFeedback(state) {
     
     if(correctness) {
         $("main").html(`<section role="region" aria-labelledby="feedback" id="feedback-section"><p>Correct.</p><p>${question.question}</p><p>${question.rightAnswer}</p></section>`);
-        // $("main").prepend(`<div><image src=""></div>`); // shuffle(happyPics)[0]
+        $("main").prepend(`<div><image src="${gif().happy()}"></div>`); // add gif
     } else {
         $("main").html(`<section role="region" aria-labelledby="feedback" id="feedback-section"><p>Wrong.</p><p>${question.question}</p><p>${question.rightAnswer}</p></section>`);
-        // $("main").prepend(`<div><img></div>`); // shuffle(sadPics)[0]
+        $("main").prepend(`<div><img src="${gif().sad()}"></div>`);
     }
 }
 
