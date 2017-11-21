@@ -21,9 +21,10 @@ Your quiz app must:
 * [x] Render questions in a <form>. (1 point)
 * [x] Use other semantic HTML, along with CSS and jQuery. (3 points)
 * [x] Follow a11y best-practices. (5 points)
-* [ ] Use responsive design. (3 points)
+* [x] Use responsive design. (3 points)
 * [ ] Be fully usable by keyboard and mouse (which will be easy enough if you start with a form). (1 point)
 * [ ] (Optional) Make screenreader read out question
+* [] (Optional) Put content in JSON file and render from there
 
 ## Process requirements
 Before you dive into the app, you'll need to:
@@ -41,7 +42,10 @@ Before you dive into the app, you'll need to:
 * render feedback
 * render end
 
-## Examples
+## Examples and tutorials
 * Max Carlquist 
     * [Codepen](https://codepen.io/Tenkaklet/pen/QEpWPo?editors=1111)
     * [Repo](https://github.com/Tenkaklet/MusicQuiz/blob/master/index.html)
+* [W3Schools Quizzes](https://www.w3schools.com/quiztest/quiztest.asp?Qtest=HTML)
+* [Building a Simple Quiz (CSS-Tricks)](https://css-tricks.com/building-a-simple-quiz/)
+* [Make a Simple Javascript Quiz (Sitepoint)](https://www.sitepoint.com/simple-javascript-quiz/)
