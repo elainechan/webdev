@@ -141,13 +141,12 @@ function setHandleStartButton() {
 
 function renderPic() {
     console.log("`renderPic()` was called");
-    // let path = "./gifs/"
+    let fs = require('fs');
+    let files = fs.readdirSync("./gifs/"); // returns array of filenames
     // let sadPics = [];
     // let happyPics = []
-    // this.happy
-        // shuffle(happyPics)[0]
-    // this.sad
-        // shuffle(sadPics)[0]
+    // this.happy = () => { return shuffle(happyPics)[0]; }
+    // this.sad = () => { return shuffle(sadPics)[0]; }
 }
 
 function renderFeedback(state) {

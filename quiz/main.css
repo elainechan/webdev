@@ -33,6 +33,7 @@ button { /* todo: make all buttons display in same place */
     font-weight: 600;
     letter-spacing: 1px;
     background-color: #f0f0f0;
+    box-shadow: 2px 2px 2px 1px #969696;
 }
 button:hover {
     border: 1px solid #bdbdbd;
