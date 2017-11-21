@@ -23,9 +23,14 @@ section { /* <section> */
     margin: 12px;
 }
 
+.button-container { /* only Start and Restart buttons */
+    text-align: center;
+}
+
 button { /* todo: make all buttons display in same place */
     padding: 12px 30px;
     margin: 12px;
+    text-align: center;
     cursor: pointer;
     font-size: 16px;
     border-radius: 5px;

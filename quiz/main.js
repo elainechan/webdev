@@ -126,7 +126,7 @@ function renderStart() {
 
 function generateStartButton() {
     console.log("`generateStartButton()` was called");
-    let startButton = `<button id="start-button">Start</button>`;
+    let startButton = `<div class="button-container"><button id="start-button">Start</button></div>`;
     return startButton;
 }
 
@@ -154,10 +154,10 @@ function renderFeedback(state) {
     
     if(correctness) {
         $("main").html(`<section role="region" aria-labelledby="feedback" id="feedback-section"><p>Correct.</p><p>${question.question}</p><p>${question.rightAnswer}</p></section>`);
-        $("main").prepend(`<div><image src="${gif().happy()}"></div>`); // add gif
+        //$("main").prepend(`<div><image src="${gif().happy()}"></div>`); // add gif
     } else {
         $("main").html(`<section role="region" aria-labelledby="feedback" id="feedback-section"><p>Wrong.</p><p>${question.question}</p><p>${question.rightAnswer}</p></section>`);
-        $("main").prepend(`<div><img src="${gif().sad()}"></div>`);
+        //$("main").prepend(`<div><img src="${gif().sad()}"></div>`);
     }
 }
 
@@ -270,7 +270,7 @@ function generateEnd() {
 
 function generateRestartButton() {
     console.log("`generateRestartButton()` was called");
-    let restartButton = `<button type="button" id="restart-button">Try again</button>`
+    let restartButton = `<div class="button-container"><button type="button" id="restart-button">Restart</button></div>`
     return restartButton;
 }
 
