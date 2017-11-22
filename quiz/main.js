@@ -1,5 +1,5 @@
 'use strict';
-
+// TODO: make images responsive
 const BANK = [
     {
         question: 'In an HTML document, <code>!DOCTYPE html</code>...',
@@ -81,7 +81,7 @@ const BANK = [
     {
         question: 'What is the difference between <code>fixed</code> and <code>absolute</code> positioning?',
         questionTopic: 'CSS',
-        rightAnswer: 'Both <code>fixed</code> and <code>absolute</code> elements are positioned relative to the document rather than any parent.',
+        rightAnswer: 'Both <code>fixed</code> and <code>absolute</code> elements are positioned relative to the document rather than a parent.',
         answers: [
             'Both <code>fixed</code> and <code>absolute</code> elements are positioned relative to the document rather than a parent.',
             'A <code>fixed</code> element responds to its parent dimension, while an <code>absolute</code> element does not.',
