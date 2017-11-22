@@ -1,5 +1,5 @@
 'use strict';
-
+// TODO: LINK KEYBOARD USE
 const BANK = [
     {
         question: 'In an HTML document, <code>!DOCTYPE html</code>...',
@@ -142,6 +142,13 @@ function setHandleNextButton() {
         STATE.displayMode = "QUESTION";
         updateView();
     });
+    /*
+    $("#next-button").keydown(function(e){ // enable ENTER keydown event
+        if(e.which === 13){
+            $("#next-button").click();
+        }
+    });
+    */
 }
 
 function generateNextButton() {
@@ -198,8 +205,8 @@ function renderFeedback(state) {
 function renderQuestion(state) {
     console.log("`renderQuestion()` was called");
     $("main").html(generateQuestion(STATE.currentQ));
-    $("#question-form > fieldset").append(generateAnswerChoices(STATE.currentQ));
-    $("#question-form").append(generateSubmitAnswerButton());
+    $("#question-form > fieldset").append(generateAnswerChoices(STATE.currentQ)); // append choices
+    $("#question-form").append(generateSubmitAnswerButton()); // append submit button
     setHandleAnswerChecked();
     setHandleSubmitAnswer();
 }
@@ -246,7 +253,7 @@ function setHandleAnswerChecked() { // setting up handling of answer checkmark
     });
 }
 
-function generateSubmitAnswerButton() {
+function generateSubmitAnswerButton() { // initially disabled
     console.log("`generateSubmitAnswerButton()` was called");
     let answerButton = `<button type="submit" id="submit-answer" disabled>Submit Answer</button>`;
     return answerButton;

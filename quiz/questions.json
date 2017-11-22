@@ -1,6 +1,6 @@
-// different data formats
+// wireframe of various data formats
 {
-    "unlabelledQuestion" : { // unlabelled answers with no explicit index
+    "unlabelledQuestion" : { // unlabelled answers with implicit index
         "question": "What does 'HTML' stand for?",
         "rightAnswer": "Hypertext markup language.",
         "answers": [
@@ -11,7 +11,7 @@
         ]
     },
 
-    "labelledQuestion" : { // labelled answers with no explicit index
+    "labelledQuestion" : { // labelled answers with implicit index
         "question": "What is a function?",
         "answers": {
             "a": "fe",
