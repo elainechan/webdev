@@ -4,12 +4,18 @@ body {
 }
 
 header {
-    margin: 12px;
+    text-align: center;
+    padding: 12px 30px;
+    margin: 12px 60px;
+}
+
+#start-section, #end-section, #start-image, #end-image {
     text-align: center;
 }
 
-#start-section, #end-section {
-    text-align: center;
+#start-image, #end-image {
+    padding: 12px 30px;
+    margin: 12px 60px; 
 }
 
 section { /* <section> */
@@ -31,6 +37,11 @@ section { /* <section> */
 
 code {
     background-color: #f0f0f0;
+}
+
+.feedback-image {
+    padding: 12px 30px;
+    margin: 12px 60px; 
 }
 
 .button-container { /* only center Start and Restart buttons */

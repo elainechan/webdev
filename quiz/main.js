@@ -1,5 +1,5 @@
 'use strict';
-// TODO: LINK KEYBOARD USE
+
 const BANK = [
     {
         question: 'In an HTML document, <code>!DOCTYPE html</code>...',
@@ -100,7 +100,8 @@ const STATE = {
 };
 
 function updateView() { // refactor to show correct num of questions; last q is cut
-    if(STATE.currentQ === -1) { 
+    if(STATE.currentQ === -1) {
+        shuffle(BANK);
         renderStart();
     } else if(STATE.currentQ >= 0 && STATE.currentQ < BANK.length) { // steady state
         if(STATE.displayMode === "QUESTION") {
@@ -116,51 +117,11 @@ function updateView() { // refactor to show correct num of questions; last q is 
     }
 }
 
-function renderNav(displayMode) {
-    console.log("`renderNav()` was called");
-    if(displayMode === "FEEDBACK" && STATE.currentQ < BANK.length) { // adding < BANK.length fixed issue where after last question it still shows "1 to go"
-        $("nav").html(generateNextButton()); // display "Next" button
-        STATE.currentQ += 1; // mutate state for correct display info
-    } else {
-        $("nav").html("");
-    }
-    setHandleNextButton();
-}
-
-/* todo: optional redesign
-function initialize() {
-    // only called once
-    // initialize static elements, some hidden
-    // updateView() hides and shows elements through app cycle
-    setHandleNextButton();
-}
-*/
-
-function setHandleNextButton() {
-    console.log("`setHandleNextButton()` was called");
-    $("#next-button").on("click", event => { // mutate STATE
-        STATE.displayMode = "QUESTION";
-        updateView();
-    });
-    /*
-    $("#next-button").keydown(function(e){ // enable ENTER keydown event
-        if(e.which === 13){
-            $("#next-button").click();
-        }
-    });
-    */
-}
-
-function generateNextButton() {
-    console.log("`generatNextButton()` was called");
-    let nextButton = `<button type="button" id="next-button">Next</button>`;
-    return nextButton;
-}
-
 function renderStart() {
     console.log("`renderStart()` was called");
+    let startImage = `./gifs/start/start.gif`
     $("main").html(`<section role="region" aria-labelledby="start-page" id="start-section">
-    <h2>Welcome to your interview.</h2><p>To get the job, get at least half of the questions right.</p>
+    <h2>Welcome to your interview.</h2><p>To get the job, get at least half of the questions right.</p><div id="start-image"><img src=${startImage} alt="Hopeful people"></div>
 </section>`);
     $("nav").html(generateStartButton());
     setHandleStartButton();
@@ -179,27 +140,6 @@ function setHandleStartButton() {
         console.log(STATE);
         updateView();
     });
-}
-
-function gif() {
-    let fs = require('fs'); // TODO: fix "require is not defined"
-    let happyGifs = fs.readdirSync("./gifs/happy/"); // returns array of filenames
-    let sadGifs = fs.readdirSync("./gifs/sad/");
-    this.happy = () => { return shuffle(happyGifs)[0]; }
-    this.sad = () => { return shuffle(sadGifs)[0]; }
-}
-
-function renderFeedback(state) {
-    console.log("`renderFeedback()` was called");
-    let correct = STATE.currentAnswerCorrect;
-    let question = BANK[STATE.currentQ];
-    if(correct) {
-        $("main").html(`<section role="region" aria-labelledby="feedback" id="feedback-section"><h3>Correct.</h3><p>${question.question}</p><p>${question.rightAnswer}</p></section>`);
-        //$("main").prepend(`<div><image src="${gif().happy()}" alt="Happy animal GIF"></div>`); // add gif
-    } else {
-        $("main").html(`<section role="region" aria-labelledby="feedback" id="feedback-section"><h3>Wrong.</h3><p>${question.question}</p><p>${question.rightAnswer}</p></section>`);
-        //$("main").prepend(`<div><img src="${gif().sad()}" alt="Sad animal GIF"></div>`);
-    }
 }
 
 function renderQuestion(state) {
@@ -289,6 +229,58 @@ function generateStatus(state) {
     return html;
 }
 
+function renderNav(displayMode) {
+    console.log("`renderNav()` was called");
+    if(displayMode === "FEEDBACK" && STATE.currentQ < BANK.length) { // adding < BANK.length fixed issue where after last question it still shows "1 to go"
+        $("nav").html(generateNextButton()); // display "Next" button
+        STATE.currentQ += 1; // mutate state for correct display info
+    } else {
+        $("nav").html("");
+    }
+    setHandleNextButton();
+}
+
+function setHandleNextButton() {
+    console.log("`setHandleNextButton()` was called");
+    $("#next-button").on("click", event => { // mutate STATE
+        STATE.displayMode = "QUESTION";
+        updateView();
+    });
+}
+
+function generateNextButton() {
+    console.log("`generatNextButton()` was called");
+    let nextButton = `<button type="button" id="next-button">Next</button>`;
+    return nextButton;
+}
+
+function gif(state) {
+    console.log("`gif()` was called");
+    let happyGifs = [
+        './gifs/happy/happy-catpaws.gif', './gifs/happy/happy-feet.gif', './gifs/happy/happy-golden.gif', './gifs/happy/happy-lab.gif', './gifs/happy/happy-pup.gif','./gifs/happy/happy-shiba.gif', './gifs/happy/happy-pug.gif', './gifs/happy/happy-tiny-dog.gif'
+    ]; 
+    let sadGifs = [
+        './gifs/sad/sad-cat.gif', './gifs/sad/sad-creature.gif', './gifs/sad/sad-fluff.gif', './gifs/sad/sad-nope-cat.gif', './gifs/sad/sad-pup-sleep.gif', './gifs/sad/sad-pup.gif'
+    ];
+    if (STATE.currentAnswerCorrect) {
+        return shuffle(happyGifs)[0]; 
+    } else {
+        return shuffle(sadGifs)[0];
+    }
+}
+
+function renderFeedback(state) {
+    console.log("`renderFeedback()` was called");
+    let question = BANK[STATE.currentQ];
+    if(STATE.currentAnswerCorrect) {
+        $("main").html(`<section role="region" aria-labelledby="feedback" id="feedback-section"><h3>Correct.</h3><p>${question.question}</p><p>${question.rightAnswer}</p></section>`);
+        $("main").prepend(`<div class="feedback-image"><img src="${gif(state)}" alt="Happy animal GIF"></div>`); // add gif
+    } else {
+        $("main").html(`<section role="region" aria-labelledby="feedback" id="feedback-section"><h3>Wrong.</h3><p>${question.question}</p><p>${question.rightAnswer}</p></section>`);
+        $("main").prepend(`<div class="feedback-image"><img src="${gif(state)}" alt="Sad animal GIF"></div>`);
+    }
+}
+
 function renderEnd() {
     console.log("`renderEnd()` was called");
     $("main").html(generateEnd());
@@ -300,12 +292,18 @@ function renderEnd() {
 function generateEnd() {
     console.log("`gnerateEnd()` was called");
     let message;
+    let image;
+    let alt;
     if(STATE.numRight >= STATE.numWrong) { // works for both odd and even num of questions
+        image = `./gifs/end/hire.gif`;
+        alt = `Happy image`;
         message = `Congratulations, you are hired!`;
     } else {
+        image = `./gifs/end/no-hire.gif`;
+        alt = `Sad image`;
         message = `Sorry, you didn't get the job. Please try again!`;
     }
-    let end = `<section role="region" aria-labelledby="end-page" id="end-section"><h2>${message}</h2><h3>Your score is:</h3><p>${STATE.numRight} out of ${BANK.length}</p></section>`;
+    let end = `<section role="region" aria-labelledby="end-page" id="end-section"><h2>${message}</h2><h3>Your score is:</h3><p>${STATE.numRight} out of ${BANK.length}</p><div id="end-image"><img src=${image} alt="${alt}"></div></section>`;
     return end;
 }
 
@@ -326,7 +324,18 @@ function setHandleRestartButton() {
     });
 }
 
-// $(initialize); part of optional redesign
+/* todo: optional redesign
+function initialize() {
+    // only called once
+    // initialize static elements, some hidden
+    // updateView() hides and shows elements through app cycle
+    setHandleNextButton();
+}
+
+
+$(initialize); part of optional redesign
+*/
+
 $(updateView);
 
 /*
