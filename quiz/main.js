@@ -153,7 +153,7 @@ function generateNextButton() {
 function renderStart() {
     console.log("`renderStart()` was called");
     $("main").html(`<section role="region" aria-labelledby="start-page" id="start-section">
-    <h1>Welcome to your interview.</h1>
+    <h2>Welcome to your interview.</h2><p>To get the job, get at least half of the questions right.</p>
 </section>`);
     $("nav").html(generateStartButton());
     setHandleStartButton();
