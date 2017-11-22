@@ -2,53 +2,91 @@
 
 const BANK = [
     {
-        question: 'HTML: What does "!DOCTYPE html" do in an HTML document?',
-        rightAnswer: 'It informs the browser on how to render the document.',
+        question: 'In an HTML document, <code>!DOCTYPE html</code>...',
+        questionTopic: 'HTML',
+        rightAnswer: 'Informs the browser on how to render the document.',
         answers: [
-            'It informs the browser on how to render the document.',
-            'It represents the root (top-level element) of an HTML document.',
-            'It refers to the generic container for flow content in an HTML document.', 
-            'It represents the document object of an HTML document.'
+            'Informs the browser on how to render the document.',
+            'Represents the root or the top-level element.',
+            'Refers to the generic container for flow content.', 
+            'Represents the document object.'
         ]
     },
     {
-        question: 'DOM: what is the difference between window and document?',
-        rightAnswer: '"Window" is the global object in a browser, and "document" is the main object of the rendered DOM.',
+        question: 'In the Document Object Model (DOM), <code>window</code> refers to...',
+        questionTopic: 'DOM',
+        rightAnswer: 'The global object in a browser.',
         answers: [
-         '"Window" is the main object of the rendered DOM, and "document" is the global object in a browser.',
-         '"Window" is the area of a webpage visible to the user, and "document" is the global object in a browser.',
-         '"Window" contains properties about the user display, and "document" is the area of a webpage visible to the user.',
-         '"Window" is the global object in a browser, and "document" is the main object of the rendered DOM.'
+         'An element returned by the DOM API.',
+         'The area of a webpage visible to the user.',
+         'The container of user display properties.',
+         'The global object in a browser.'
         ]
     },
     {
-        question: 'DOM: What is the difference between "event propagation" and "event delegation"?',
-        rightAnswer: 'Event bubbling: when an event happens on an element, it first runs the handlers on it, then on its parent, then all the way up on other ancestors.\nEvent delegation: allows attachment of an event listener to a parent element that will fire for all its current and future descendents.',
+        question: 'In the Document Object Model (DOM), <code>document</code> refers to...',
+        questionTopic: 'DOM',
+        rightAnswer: 'The main object of the rendered DOM.',
         answers: [
-            'Event bubbling: when an event happens on an element, it first runs the handlers on it, then on its parent, then all the way up on other ancestors.\nEvent delegation: allows attachment of an event listener to a parent element that will fire for all its current and future descendents.',
-            'Event bubbling: when an event happens on an element, it first runs the handlers on it, then all the way down on its children.\nEvent delegation: allow attachment of an event listener to a child element that will fire for all its parents.',
-            'Event bubbling: when an event happens on an element, it runs for all its siblings.\nEvent delegation: allows attachment of an event listener to an element that will fire for all elements with the same class.',
-            'Event bubbling: refers to the node on which the event listener is registered on.\nEvent delegation: refers to the most deeply nested element that caused the event.'
+            'The main object of the rendered DOM.',
+            'The global object in a browser.',
+            'The area of a webpage visible to the user.',
+            'An array of nodes or elements.'
         ]
     },
     {
-        question: 'CSS: in the box model, what is the difference between "padding" and "margin"?',
-        rightAnswer: 'Padding represents the space between the box and the border.\nMargin represents the space between the border and the other content that interact with the box.',
+        question: 'What is the correct order of event bubbling?',
+        questionTopic: 'DOM',
+        rightAnswer: 'The handlers on an element, its parent, and its other ancestors.',
         answers: [
-            'Padding represents the space between the box and the border.\nMargin represents the space between the border and the other content that interact with the box.',
-            'Padding represents the space between the border and the other content that interact with the box.\nMargin represents the space between the box and the border.',
-            'Padding does not affect the size of the box but it affects the other content that interact with the box.\nMargin directly determines the size of the box through specifying the size of the space between the box and the border.',
-            'Padding is on the outside of block elements.\nMargin is on the inside of block elements.'
+            'The handlers on an element, its parent, and then its other ancestors.',
+            'The handlers on an element, then all its children.',
+            'The handlers on an element, then all its siblings.',
+            'The handlers on the parent of an element, the element itself, and then its children.'
         ]
     },
     {
-        question: 'CSS: What is the difference between "fixed" and "absolute" positioning?',
-        rightAnswer: 'Both position an element relative to the document rather than any particular parent.',
+        question: 'Event delegation...',
+        questionTopic: 'DOM',
+        rightAnswer: 'Allows attachment of an event listener that will fire for an element\'s descendents.',
         answers: [
-            'Both position an element relative to the document rather than any particular parent.',
-            'A "fixed" element responds to the dimension of its parent, while an "absolute" element responds to the dimension of the document.',
-            '"Fixed" elements respond to scrolling, while "absolute" elements are unaffected by srolling.',
-            'An "absolute" element is removed from the normal flow of the document, while a "fixed" element follows the normal flow of the document.'
+            'Allows attachment of an event listener that will fire for an element\'s descendents.',
+            'Allows attachment of an event listener that will fire for an element\'s parents.',
+            'Allows attachment of an event listener that will fire for all elements with the same class.',
+            'Refers to the most deeply nested element that caused an event.'
+        ]
+    },
+    {
+        question: 'In the box model, <code>padding</code>...',
+        questionTopic: 'CSS',
+        rightAnswer: 'Represents the space between the box and the border.',
+        answers: [
+            'Represents the space between the box and the border.',
+            'Represents the space between the border and the other content that interact with the box.',
+            'Does not affect the size of the box, but it affects the other content that interact with the box.',
+            'Is on the outside of block elements.'
+        ]
+    },
+    {
+        question: 'In the box model, <code>margin</code>...',
+        questionTopic: 'CSS',
+        rightAnswer: 'Represents the space between the border and the other content that interact with the box.',
+        answers: [
+            'Represents the space between the border and the other content that interact with the box.',
+            'Represents the space between the box and the border.',
+            'Directly determines the size of the box through specifying the size of the space between the box and the border.',
+            'Is on the inside of block elements.'
+        ]
+    },
+    {
+        question: 'What is the difference between <code>fixed</code> and <code>absolute</code> positioning?',
+        questionTopic: 'CSS',
+        rightAnswer: 'Both <code>fixed</code> and <code>absolute</code> elements are positioned relative to the document rather than any parent.',
+        answers: [
+            'Both <code>fixed</code> and <code>absolute</code> elements are positioned relative to the document rather than a parent.',
+            'A <code>fixed</code> element responds to its parent dimension, while an <code>absolute</code> element does not.',
+            'A <code>fixed</code> element responds to scrolling, while an <code>absolute</code> element does not.',
+            'A <code>fixed</code> element follows the normal flow of the document, while an <code>absolute</code> element does not.'
         ]
     }
 ];
@@ -77,8 +115,6 @@ function updateView() { // refactor to show correct num of questions; last q is 
         renderEnd();
     }
 }
-// todo: on submit of final question: 
-// button show "get results"
 
 function renderNav(displayMode) {
     console.log("`renderNav()` was called");
@@ -103,7 +139,6 @@ function initialize() {
 function setHandleNextButton() {
     console.log("`setHandleNextButton()` was called");
     $("#next-button").on("click", event => { // mutate STATE
-        //STATE.currentQ += 1;
         STATE.displayMode = "QUESTION";
         updateView();
     });
@@ -149,15 +184,14 @@ function gif() {
 
 function renderFeedback(state) {
     console.log("`renderFeedback()` was called");
-    let correctness = STATE.currentAnswerCorrect;
+    let correct = STATE.currentAnswerCorrect;
     let question = BANK[STATE.currentQ];
-    
-    if(correctness) {
+    if(correct) {
         $("main").html(`<section role="region" aria-labelledby="feedback" id="feedback-section"><h3>Correct.</h3><p>${question.question}</p><p>${question.rightAnswer}</p></section>`);
-        //$("main").prepend(`<div><image src="${gif().happy()}"></div>`); // add gif
+        //$("main").prepend(`<div><image src="${gif().happy()}" alt="Happy animal GIF"></div>`); // add gif
     } else {
         $("main").html(`<section role="region" aria-labelledby="feedback" id="feedback-section"><h3>Wrong.</h3><p>${question.question}</p><p>${question.rightAnswer}</p></section>`);
-        //$("main").prepend(`<div><img src="${gif().sad()}"></div>`);
+        //$("main").prepend(`<div><img src="${gif().sad()}" alt="Sad animal GIF"></div>`);
     }
 }
 
@@ -205,7 +239,7 @@ function shuffle(arr) {
     return arr;
 }
 
-function setHandleAnswerChecked() { // setting up handling of answer check
+function setHandleAnswerChecked() { // setting up handling of answer checkmark
     console.log("`setHandleAnswerChecked` was called")
     $(".answer-checkbox").change(event => {
         $("#submit-answer").attr("disabled", false); // enables submit answer button

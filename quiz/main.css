@@ -25,6 +25,14 @@ section { /* <section> */
     margin: 12px;
 }
 
+.answer-text {
+    margin-left: 12px;
+}
+
+code {
+    background-color: #f0f0f0;
+}
+
 .button-container { /* only center Start and Restart buttons */
     text-align: center;
 }
