@@ -163,9 +163,12 @@ function generateQuestion(questionIndex) {
 
 function generateAnswerChoices(questionIndex) {
     console.log("`generateAnswerChoices()` was called");
-    let answerStatements = shuffle(BANK[questionIndex].answers); // array
-    let answerChoices = answerStatements.map( (answer, index) => {
-        let answerChoice = `<div class="answer-choice"><input type="radio" name="answer-checkbox" class="answer-checkbox" id="answer${index}"><label for="answer${index}" class="answer-text">${answer}</label></div>`;
+    let originalIndex = BANK[questionIndex].answers.forEach((answer, index) => {
+        
+    })
+    let shuffledAnswers = shuffle(BANK[questionIndex].answers); // array
+    let answerChoices = shuffledAnswers.map( (answer, index) => {
+        let answerChoice = `<div class="answer-choice"><input type="radio" name="answer-checkbox" class="answer-checkbox" id=${index}><label for="answer${index}" class="answer-text">${answer}</label></div>`;
         return answerChoice;
     });
     return answerChoices;
@@ -205,7 +208,7 @@ function setHandleSubmitAnswer() {
         event.preventDefault();
         let checkedID = $("input[name=answer-checkbox]:checked").attr("id");
         let chosenAnswer = $(`label[for=${checkedID}]`).text();
-        if(chosenAnswer === BANK[STATE.currentQ].rightAnswer) { // mutate STATE
+        if(checkedID === 0 || checkedID === '0') { // mutate STATE
             STATE.numRight += 1;
             STATE.currentAnswerCorrect = true;
         } else {
@@ -331,8 +334,6 @@ function initialize() {
     // updateView() hides and shows elements through app cycle
     setHandleNextButton();
 }
-
-
 $(initialize); part of optional redesign
 */
 
@@ -342,7 +343,6 @@ $(updateView);
 Model: question, state
 View: render, generate
 Controller: update, button handlers
-
 separation of concerns:
 handlers change state, don't call render
 updates changes view, don't change state
