@@ -5,17 +5,22 @@ body {
 
 header {
     text-align: center;
-    padding: 12px 30px;
-    margin: 12px 60px;
+    padding: 6px 30px;
+    margin: 6px 60px;
 }
 
 #start-section, #end-section, #start-image, #end-image {
     text-align: center;
 }
 
-#start-image, #end-image {
+#start-image-container, #end-image {
     padding: 12px 30px;
-    margin: 12px 60px; 
+    margin: auto;
+    width: 50%;
+}
+
+#start-image {
+    width: 100%;
 }
 
 #topic-logo {
@@ -27,11 +32,15 @@ section { /* <section> */
     margin: 12px 60px;
 }
 
-#question-body {
-    display: inline-block;
+#question-container {
+    clear: right;
 }
 
-.question-content {
+#logo-container {
+
+}
+
+#question-content {
     border: none;
 }
 
@@ -81,7 +90,31 @@ nav {
 footer {
     padding: 12px 30px;
     margin: 12px 60px;
+    text-align: right;
+    clear: left; /* fixed glitch */
+}
+
+.row::before, .row::after {
+    display: table;
+    width: 100%;
+    clear: both;
+}
+
+.col {
+    width: 100%;
+    float: left;
 }
 
 /* Non-mobile */
-@media only screen and (min-width: 640px) {}
+@media only screen and (min-width: 640px) {
+    .col {
+        /*width: 48%;*/
+        float: left;
+    }
+    #logo-container {
+        width: 25%;
+    }
+    #question-container {
+        width: 75%;
+    }
+}

@@ -86,6 +86,8 @@ const BANK = [
     }]
 ];
 
+// separate BANK into JASON file
+// use AJAX to
 const STATE = {
     currentQ: -1, // ?
     numRight: 0,
@@ -116,7 +118,7 @@ function renderStart() {
     console.log("`renderStart()` was called");
     let startImage = `./gifs/start/start.gif`
     $("main").html(`<section role="region" aria-labelledby="start-page" id="start-section">
-    <h2>Welcome to your interview.</h2><p>To get the job, get at least half of the questions right.</p><div id="start-image"><img src=${startImage} alt="Mulder and Scully looking at the sky"></div>
+    <h2>Welcome to your interview.</h2><p>To get the job, get at least half of the questions right.</p><div id="start-image-container"><img id="start-image" src=${startImage} alt="Mulder and Scully looking at the sky"></div>
 </section>`);
     $("nav").html(generateStartButton());
     setHandleStartButton();
@@ -139,23 +141,51 @@ function setHandleStartButton() {
 
 function renderQuestion(state) {
     console.log("`renderQuestion()` was called");
-    //$("main").html(`<div id="question-block"></div>`); // wrap question and logo in div container
     $("main").html(generateQuestion(state.currentQ));
+    $("#logo-container").append(generateTopicLogo(BANK[state.currentQ][0].topic)); // append logo
     $("#question-form > fieldset").append(generateAnswerChoices(state.currentQ)); // append choices
     $("#question-form").append(generateSubmitAnswerButton()); // append submit button
-    $("#question-body").prepend(generateTopicLogo(BANK[state.currentQ][0].topic)); // append logo
-    //$("main").append(`<div id="topic-logo"><img src="./logos/JavaScript-logo.png" alt="logo"></div>`)
     setHandleAnswerChecked();
     setHandleSubmitAnswer();
 }
+
+/* optional
+
+associate image filename to cropping data
+array of filenames
+key value pairs (img: dimension)
+
+function cropGif() {
+    use AJAX to get JSON containing cropping information
+    fetch image URL
+    apply cropping
+        size: a bounding box starting top left corner, ending bottom right corner
+        calculate height and width
+        set cropping container to height and width in pixels
+        set cropping container `top, left`
+        CSS
+            position: absolute
+            use negative values to hide part of image
+}
+*/
 
 function generateQuestion(questionIndex) {
     console.log("`generateQuestion()` was called");
     let currentQuestion = BANK[questionIndex];
     let whichQ = `<h3 id="question-number">Question ${questionIndex + 1} of ${BANK.length}</h3>`;
     let questionStatement = `${currentQuestion[0].question}`;
-    let questionForm = `<section role="region" aria-labelledby="question" id="question-section"><h3 id="question-number">Question ${questionIndex + 1} of ${BANK.length}</h3><div id="question-body"><form aria-labelledby="question" id="question-form">
-    <fieldset class="question-content"><legend id="question-statement">${questionStatement}</legend></fieldset></form></div></section>`;
+    let questionForm = `<section role="region" aria-labelledby="question" id="question-section">
+    <h3 id="question-number">
+    Question ${questionIndex + 1} of ${BANK.length}
+    </h3>
+    <div class="row">
+    <div class="col" id="logo-container">
+    </div><!--col-->
+    <div class="col" id="question-container"><form aria-labelledby="question" id="question-form">
+    <fieldset id="question-content"><legend id="question-statement">${questionStatement}</legend></fieldset></form>
+    </div><!--col-->
+    </div><!--row-->
+    </section>`;
     return questionForm;
 }
 
@@ -169,7 +199,7 @@ function nakedValues(arrayOfObjects, zeroOrOne) { // zeroOrOne: 0 for keys, 1 fo
     return oneDArray;
 }
 
-function getOriginalIndex(value) {
+function getOriginalIndex(value) { // get pre-shuffle answer index
     let originalIndex = _.findIndex(BANK[STATE.currentQ][0].answers, function(o) { return o.answer == value; });
     return originalIndex;
 }
@@ -186,7 +216,7 @@ function generateAnswerChoices(questionIndex) {
 }
 
 function generateTopicLogo(topic) {
-    let logo = `<div id="logo-container"><img id="topic-logo" src="./logos/${topic}-logo.png" alt="${topic} logo"></div>`;
+    let logo = `<img id="topic-logo" src="./logos/${topic}-logo.png" alt="${topic} logo">`;
     return logo;
 }
 
