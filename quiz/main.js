@@ -1,116 +1,86 @@
 'use strict';
 // TODO: make images responsive
 // TODO: refactor BANK data format
-/*
-const BANK = [
-    {
-        question: 'In an HTML document, <code>!DOCTYPE html</code>...',
-        questionTopic: 'HTML',
-        rightAnswer: 'Informs the browser on how to render the document.',
-        answers: [
-            'Informs the browser on how to render the document.',
-            'Represents the root or the top-level element.',
-            'Refers to the generic container for flow content.', 
-            'Represents the document object.'
-        ]
-    },
-    {
-        question: 'In the Document Object Model (DOM), <code>window</code> refers to...',
-        questionTopic: 'DOM',
-        rightAnswer: 'The global object in a browser.',
-        answers: [
-         'An element returned by the DOM API.',
-         'The area of a webpage visible to the user.',
-         'The container of user display properties.',
-         'The global object in a browser.'
-        ]
-    },
-    {
-        question: 'In the Document Object Model (DOM), <code>document</code> refers to...',
-        questionTopic: 'DOM',
-        rightAnswer: 'The main object of the rendered DOM.',
-        answers: [
-            'The main object of the rendered DOM.',
-            'The global object in a browser.',
-            'The area of a webpage visible to the user.',
-            'An array of nodes or elements.'
-        ]
-    },
-    {
-        question: 'What is the correct order of event bubbling?',
-        questionTopic: 'DOM',
-        rightAnswer: 'The handlers on an element, its parent, and its other ancestors.',
-        answers: [
-            'The handlers on an element, its parent, and then its other ancestors.',
-            'The handlers on an element, then all its children.',
-            'The handlers on an element, then all its siblings.',
-            'The handlers on the parent of an element, the element itself, and then its children.'
-        ]
-    },
-    {
-        question: 'Event delegation...',
-        questionTopic: 'DOM',
-        rightAnswer: 'Allows attachment of an event listener that will fire for an element\'s descendents.',
-        answers: [
-            'Allows attachment of an event listener that will fire for an element\'s descendents.',
-            'Allows attachment of an event listener that will fire for an element\'s parents.',
-            'Allows attachment of an event listener that will fire for all elements with the same class.',
-            'Refers to the most deeply nested element that caused an event.'
-        ]
-    },
-    {
-        question: 'In the box model, <code>padding</code>...',
-        questionTopic: 'CSS',
-        rightAnswer: 'Represents the space between the box and the border.',
-        answers: [
-            'Represents the space between the box and the border.',
-            'Represents the space between the border and the other content that interact with the box.',
-            'Does not affect the size of the box, but it affects the other content that interact with the box.',
-            'Is on the outside of block elements.'
-        ]
-    },
-    {
-        question: 'In the box model, <code>margin</code>...',
-        questionTopic: 'CSS',
-        rightAnswer: 'Represents the space between the border and the other content that interact with the box.',
-        answers: [
-            'Represents the space between the border and the other content that interact with the box.',
-            'Represents the space between the box and the border.',
-            'Directly determines the size of the box through specifying the size of the space between the box and the border.',
-            'Is on the inside of block elements.'
-        ]
-    },
-    {
-        question: 'What is the difference between <code>fixed</code> and <code>absolute</code> positioning?',
-        questionTopic: 'CSS',
-        rightAnswer: 'Both <code>fixed</code> and <code>absolute</code> elements are positioned relative to the document rather than a parent.',
-        answers: [
-            'Both <code>fixed</code> and <code>absolute</code> elements are positioned relative to the document rather than a parent.',
-            'A <code>fixed</code> element responds to its parent dimension, while an <code>absolute</code> element does not.',
-            'A <code>fixed</code> element responds to scrolling, while an <code>absolute</code> element does not.',
-            'A <code>fixed</code> element follows the normal flow of the document, while an <code>absolute</code> element does not.'
-        ]
-    }
-];
-*/
 
 const BANK = [
     [{
-        key: 0,
-        question: 'Wat',
+        question: 'In an HTML document, <code>!DOCTYPE html</code>...',
+        topic: 'HTML',
         answers: [
-            { key: 0, answer: 'q0 answer 0' },
-            { key: 1, answer: 'q0 answer 1' },
-            { key: 2, answer: 'q0 answer 2' }
+            { key: 0, answer: 'Informs the browser on how to render the document.' },
+            { key: 1, answer: 'Represents the root or the top-level element.' },
+            { key: 2, answer: 'Refers to the generic container for flow content.' }, 
+            { key: 3, answer: 'Represents the document object.' }
         ]
     }],
     [{
-        key: 1,
-        question: 'Wat Wat',
+        question: 'In the Document Object Model (DOM), <code>window</code> refers to...',
+        topic: 'DOM',
         answers: [
-            { key: 0, answer: 'q1 answer 0' },
-            { key: 1, answer: 'q1 answer 1' },
-            { key: 2, answer: 'q1 answer 2' }
+            { key: 0, answer: 'The global object in a browser.' },
+            { key: 1, answer: 'An element returned by the DOM API.' },
+            { key: 2, answer: 'The area of a webpage visible to the user.' },
+            { key: 3, answer: 'The container of user display properties.' }
+        ]
+    }],
+    [{
+        question: 'In the Document Object Model (DOM), <code>document</code> refers to...',
+        topic: 'DOM',
+        answers: [
+            { key: 0, answer: 'The main object of the rendered DOM.' },
+            { key: 1, answer: 'The global object in a browser.' },
+            { key: 2, answer: 'The area of a webpage visible to the user.' },
+            { key: 3, answer: 'An array of nodes or elements.' }
+        ]
+    }],
+    [{
+        question: 'What is the correct order of event bubbling?',
+        topic: 'DOM',
+        answers: [
+            { key: 0, answer: 'The handlers on an element, its parent, and then its other ancestors.' },
+            { key: 1, answer: 'The handlers on an element, then all its children.' },
+            { key: 2, answer: 'The handlers on an element, then all its siblings.' },
+            { key: 3, answer: 'The handlers on the parent of an element, the element itself, and then its children.' }
+        ]
+    }],
+    [{
+        question: 'Event delegation...',
+        topic: 'DOM',
+        answers: [
+            { key: 0, answer: 'Allows attachment of an event listener that will fire for an element\'s descendents.' },
+            { key: 1, answer: 'Allows attachment of an event listener that will fire for an element\'s parents.' },
+            { key: 2, answer: 'Allows attachment of an event listener that will fire for all elements with the same class.' },
+            { key: 3, answer: 'Refers to the most deeply nested element that caused an event.' }
+        ]
+    }],
+    [{
+        question: 'In the box model, <code>padding</code>...',
+        topic: 'CSS',
+        answers: [
+            { key: 0, answer: 'Represents the space between the box and the border.' },
+            { key: 1, answer: 'Represents the space between the border and the other content that interact with the box.' },
+            { key: 2, answer: 'Does not affect the size of the box, but it affects the other content that interact with the box.' },
+            { key: 3, answer: 'Is on the outside of block elements.' }
+        ]
+    }],
+    [{
+        question: 'In the box model, <code>margin</code>...',
+        topic: 'CSS',
+        answers: [
+            { key: 0, answer: 'Represents the space between the border and the other content that interact with the box.' },
+            { key: 1, answer: 'Represents the space between the box and the border.' },
+            { key: 2, answer: 'Directly determines the size of the box through specifying the size of the space between the box and the border.' },
+            { key: 3, answer: 'Is on the inside of block elements.' }
+        ]
+    }],
+    [{
+        question: 'What is the difference between <code>fixed</code> and <code>absolute</code> positioning?',
+        topic: 'CSS',
+        answers: [
+            { key: 0, answer: 'Both <code>fixed</code> and <code>absolute</code> elements are positioned relative to the document rather than a parent.' },
+            { key: 1, answer: 'A <code>fixed</code> element responds to its parent dimension, while an <code>absolute</code> element does not.' },
+            { key: 2, answer: 'A <code>fixed</code> element responds to scrolling, while an <code>absolute</code> element does not.' },
+            { key: 3, answer: 'A <code>fixed</code> element follows the normal flow of the document, while an <code>absolute</code> element does not.' }
         ]
     }]
 ];
@@ -313,10 +283,10 @@ function renderFeedback(state) {
     console.log("`renderFeedback()` was called");
     let question = BANK[STATE.currentQ];
     if(STATE.currentAnswerCorrect) {
-        $("main").html(`<section role="region" aria-labelledby="feedback" id="feedback-section"><h3>Correct.</h3><p>${question.question}</p><p>${question.rightAnswer}</p></section>`);
+        $("main").html(`<section role="region" aria-labelledby="feedback" id="feedback-section"><h3>Correct.</h3><p>${question[0].question}</p><p>${question[0].answers[0].answer}</p></section>`);
         $("main").prepend(`<div class="feedback-image"><img src="${gif(state)}" alt="Happy animal GIF"></div>`); // add gif
     } else {
-        $("main").html(`<section role="region" aria-labelledby="feedback" id="feedback-section"><h3>Wrong.</h3><p>${question.question}</p><p>${question.rightAnswer}</p></section>`);
+        $("main").html(`<section role="region" aria-labelledby="feedback" id="feedback-section"><h3>Wrong.</h3><p>${question[0].question}</p><p>${question[0].answers[0].answer}</p></section>`);
         $("main").prepend(`<div class="feedback-image"><img src="${gif(state)}" alt="Sad animal GIF"></div>`);
     }
 }
