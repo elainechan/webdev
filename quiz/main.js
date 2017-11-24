@@ -1,5 +1,7 @@
 'use strict';
 // TODO: make images responsive
+// TODO: refactor BANK data format
+/*
 const BANK = [
     {
         question: 'In an HTML document, <code>!DOCTYPE html</code>...',
@@ -90,6 +92,28 @@ const BANK = [
         ]
     }
 ];
+*/
+
+const BANK = [
+    [{
+        key: 0,
+        question: 'Wat',
+        answers: [
+            { key: 0, answer: 'q0 answer 0' },
+            { key: 1, answer: 'q0 answer 1' },
+            { key: 2, answer: 'q0 answer 2' }
+        ]
+    }],
+    [{
+        key: 1,
+        question: 'Wat Wat',
+        answers: [
+            { key: 0, answer: 'q1 answer 0' },
+            { key: 1, answer: 'q1 answer 1' },
+            { key: 2, answer: 'q1 answer 2' }
+        ]
+    }]
+];
 
 const STATE = {
     currentQ: -1, // ?
@@ -155,20 +179,33 @@ function generateQuestion(questionIndex) {
     console.log("`generateQuestion()` was called");
     let currentQuestion = BANK[questionIndex];
     let whichQ = `<h3 id="question-number">Question ${questionIndex + 1} of ${BANK.length}</h3>`;
-    let questionStatement = `${currentQuestion.question}`;
+    let questionStatement = `${currentQuestion[0].question}`;
     let questionForm = `<section role="region" aria-labelledby="question" id="question-section"><h3 id="question-number">Question ${questionIndex + 1} of ${BANK.length}</h3><form aria-labelledby="question" id="question-form">
     <fieldset class="question-body"><legend id="question-statement">${questionStatement}</legend></fieldset></form></section>`;
     return questionForm;
 }
 
-function generateAnswerChoices(questionIndex) {
+function nakedValues(arrayOfObjects, zeroOrOne) { // zeroOrOne: 0 for keys, 1 for properties
+    var twoDArray = arrayOfObjects.map( (entry, i) => {
+        return Object.values(arrayOfObjects[i]);
+    });
+    var oneDArray = twoDArray.map(entry => {
+        return entry[zeroOrOne];
+    });
+    return oneDArray;
+}
+
+function getOriginalIndex(value) {
+    let originalIndex = _.findIndex(BANK[STATE.currentQ][0].answers, function(o) { return o.answer == value; });
+    return originalIndex;
+}
+
+function generateAnswerChoices(questionIndex) { // TODO: grab original index
     console.log("`generateAnswerChoices()` was called");
-    let originalIndex = BANK[questionIndex].answers.forEach((answer, index) => {
-        
-    })
-    let shuffledAnswers = shuffle(BANK[questionIndex].answers); // array
+    let answers = nakedValues(BANK[STATE.currentQ][0].answers, 1);
+    let shuffledAnswers = shuffle(answers); // array
     let answerChoices = shuffledAnswers.map( (answer, index) => {
-        let answerChoice = `<div class="answer-choice"><input type="radio" name="answer-checkbox" class="answer-checkbox" id=${index}><label for="answer${index}" class="answer-text">${answer}</label></div>`;
+        let answerChoice = `<div class="answer-choice"><input type="radio" name="answer-checkbox" class="answer-checkbox" id=${getOriginalIndex(answer)}><label for="answer${getOriginalIndex(answer)}" class="answer-text">${answer}</label></div>`;
         return answerChoice;
     });
     return answerChoices;
