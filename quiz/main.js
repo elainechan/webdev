@@ -1,6 +1,7 @@
 'use strict';
 // TODO: make images responsive
-// TODO: responsive layout, prevent horizontal scrolling
+// TODO: make question and logo inline-block
+// TODO: responsive layout (grid and/or flexbox), prevent horizontal scrolling
 
 const BANK = [
     [{
@@ -138,11 +139,11 @@ function setHandleStartButton() {
 
 function renderQuestion(state) {
     console.log("`renderQuestion()` was called");
-    //$("main").html(`<div id="question-block"></div>`);
+    //$("main").html(`<div id="question-block"></div>`); // wrap question and logo in div container
     $("main").html(generateQuestion(state.currentQ));
     $("#question-form > fieldset").append(generateAnswerChoices(state.currentQ)); // append choices
     $("#question-form").append(generateSubmitAnswerButton()); // append submit button
-    $("#question-section").append(generateTopicLogo(BANK[state.currentQ][0].topic)); // append logo
+    $("#question-body").prepend(generateTopicLogo(BANK[state.currentQ][0].topic)); // append logo
     //$("main").append(`<div id="topic-logo"><img src="./logos/JavaScript-logo.png" alt="logo"></div>`)
     setHandleAnswerChecked();
     setHandleSubmitAnswer();
@@ -153,8 +154,8 @@ function generateQuestion(questionIndex) {
     let currentQuestion = BANK[questionIndex];
     let whichQ = `<h3 id="question-number">Question ${questionIndex + 1} of ${BANK.length}</h3>`;
     let questionStatement = `${currentQuestion[0].question}`;
-    let questionForm = `<section role="region" aria-labelledby="question" id="question-section"><h3 id="question-number">Question ${questionIndex + 1} of ${BANK.length}</h3><form aria-labelledby="question" id="question-form">
-    <fieldset class="question-body"><legend id="question-statement">${questionStatement}</legend></fieldset></form></section>`;
+    let questionForm = `<section role="region" aria-labelledby="question" id="question-section"><h3 id="question-number">Question ${questionIndex + 1} of ${BANK.length}</h3><div id="question-body"><form aria-labelledby="question" id="question-form">
+    <fieldset class="question-content"><legend id="question-statement">${questionStatement}</legend></fieldset></form></div></section>`;
     return questionForm;
 }
 
@@ -185,7 +186,7 @@ function generateAnswerChoices(questionIndex) {
 }
 
 function generateTopicLogo(topic) {
-    let logo = `<div id="topic-logo"><img src="./logos/${topic}-logo.png" alt="${topic} logo"></div>`;
+    let logo = `<div id="logo-container"><img id="topic-logo" src="./logos/${topic}-logo.png" alt="${topic} logo"></div>`;
     return logo;
 }
 

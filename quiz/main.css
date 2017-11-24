@@ -18,16 +18,20 @@ header {
     margin: 12px 60px; 
 }
 
+#topic-logo {
+    height: 200px;
+}
+
 section { /* <section> */
     padding: 12px 30px;
     margin: 12px 60px;
 }
 
-#question-section {
+#question-body {
     display: inline-block;
 }
 
-.question-body {
+.question-content {
     border: none;
 }
 
