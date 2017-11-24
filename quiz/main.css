@@ -23,6 +23,10 @@ section { /* <section> */
     margin: 12px 60px;
 }
 
+#question-section {
+    display: inline-block;
+}
+
 .question-body {
     border: none;
 }

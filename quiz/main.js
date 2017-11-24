@@ -1,6 +1,6 @@
 'use strict';
 // TODO: make images responsive
-// TODO: refactor BANK data format
+// TODO: responsive layout, prevent horizontal scrolling
 
 const BANK = [
     [{
@@ -15,7 +15,7 @@ const BANK = [
     }],
     [{
         question: 'In the Document Object Model (DOM), <code>window</code> refers to...',
-        topic: 'DOM',
+        topic: 'JavaScript',
         answers: [
             { key: 0, answer: 'The global object in a browser.' },
             { key: 1, answer: 'An element returned by the DOM API.' },
@@ -25,7 +25,7 @@ const BANK = [
     }],
     [{
         question: 'In the Document Object Model (DOM), <code>document</code> refers to...',
-        topic: 'DOM',
+        topic: 'JavaScript',
         answers: [
             { key: 0, answer: 'The main object of the rendered DOM.' },
             { key: 1, answer: 'The global object in a browser.' },
@@ -35,7 +35,7 @@ const BANK = [
     }],
     [{
         question: 'What is the correct order of event bubbling?',
-        topic: 'DOM',
+        topic: 'JavaScript',
         answers: [
             { key: 0, answer: 'The handlers on an element, its parent, and then its other ancestors.' },
             { key: 1, answer: 'The handlers on an element, then all its children.' },
@@ -45,7 +45,7 @@ const BANK = [
     }],
     [{
         question: 'Event delegation...',
-        topic: 'DOM',
+        topic: 'JavaScript',
         answers: [
             { key: 0, answer: 'Allows attachment of an event listener that will fire for an element\'s descendents.' },
             { key: 1, answer: 'Allows attachment of an event listener that will fire for an element\'s parents.' },
@@ -115,7 +115,7 @@ function renderStart() {
     console.log("`renderStart()` was called");
     let startImage = `./gifs/start/start.gif`
     $("main").html(`<section role="region" aria-labelledby="start-page" id="start-section">
-    <h2>Welcome to your interview.</h2><p>To get the job, get at least half of the questions right.</p><div id="start-image"><img src=${startImage} alt="Hopeful people"></div>
+    <h2>Welcome to your interview.</h2><p>To get the job, get at least half of the questions right.</p><div id="start-image"><img src=${startImage} alt="Mulder and Scully looking at the sky"></div>
 </section>`);
     $("nav").html(generateStartButton());
     setHandleStartButton();
@@ -138,9 +138,12 @@ function setHandleStartButton() {
 
 function renderQuestion(state) {
     console.log("`renderQuestion()` was called");
-    $("main").html(generateQuestion(STATE.currentQ));
-    $("#question-form > fieldset").append(generateAnswerChoices(STATE.currentQ)); // append choices
+    //$("main").html(`<div id="question-block"></div>`);
+    $("main").html(generateQuestion(state.currentQ));
+    $("#question-form > fieldset").append(generateAnswerChoices(state.currentQ)); // append choices
     $("#question-form").append(generateSubmitAnswerButton()); // append submit button
+    $("#question-section").append(generateTopicLogo(BANK[state.currentQ][0].topic)); // append logo
+    //$("main").append(`<div id="topic-logo"><img src="./logos/JavaScript-logo.png" alt="logo"></div>`)
     setHandleAnswerChecked();
     setHandleSubmitAnswer();
 }
@@ -170,7 +173,7 @@ function getOriginalIndex(value) {
     return originalIndex;
 }
 
-function generateAnswerChoices(questionIndex) { // TODO: grab original index
+function generateAnswerChoices(questionIndex) {
     console.log("`generateAnswerChoices()` was called");
     let answers = nakedValues(BANK[STATE.currentQ][0].answers, 1);
     let shuffledAnswers = shuffle(answers); // array
@@ -179,6 +182,11 @@ function generateAnswerChoices(questionIndex) { // TODO: grab original index
         return answerChoice;
     });
     return answerChoices;
+}
+
+function generateTopicLogo(topic) {
+    let logo = `<div id="topic-logo"><img src="./logos/${topic}-logo.png" alt="${topic} logo"></div>`;
+    return logo;
 }
 
 function shuffle(arr) {
@@ -306,11 +314,11 @@ function generateEnd() {
     let alt;
     if(STATE.numRight >= STATE.numWrong) { // works for both odd and even num of questions
         image = `./gifs/end/hire.gif`;
-        alt = `Happy image`;
+        alt = `Michael and Pam from The Office having a celebration dance`;
         message = `Congratulations, you are hired!`;
     } else {
         image = `./gifs/end/no-hire.gif`;
-        alt = `Sad image`;
+        alt = `Dr. Who crying in the rain`;
         message = `Sorry, you didn't get the job. Please try again!`;
     }
     let end = `<section role="region" aria-labelledby="end-page" id="end-section"><h2>${message}</h2><h3>Your score is:</h3><p>${STATE.numRight} out of ${BANK.length}</p><div id="end-image"><img src=${image} alt="${alt}"></div></section>`;
