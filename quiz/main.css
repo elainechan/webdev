@@ -13,13 +13,13 @@ header {
     text-align: center;
 }
 
-#start-image-container, #end-image {
+#start-image-container, #end-image-container {
     padding: 12px 30px;
     margin: auto;
     width: 50%;
 }
 
-#start-image {
+#start-image, #end-image {
     width: 100%;
 }
 
@@ -34,10 +34,6 @@ section { /* <section> */
 
 #question-container {
     clear: right;
-}
-
-#logo-container {
-
 }
 
 #question-content {
@@ -58,11 +54,8 @@ code {
 
 .feedback-image {
     padding: 12px 30px;
-    margin: 12px 60px; 
-}
-
-.crop {
-    width: 300px;
+    margin: 12px 60px;
+    width: 400px;
     height: 200px;
     overflow: hidden;
 }

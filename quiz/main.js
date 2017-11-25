@@ -97,7 +97,7 @@ const STATE = {
     currentAnswerCorrect: false,
 };
 
-function updateView() {
+function updateView() { // refactor to show correct num of questions; last q is cut
     if(STATE.currentQ === -1) {
         shuffle(BANK);
         renderStart();
@@ -190,16 +190,6 @@ function generateQuestion(questionIndex) {
     return questionForm;
 }
 
-function nakedValues(arrayOfObjects, zeroOrOne) { // zeroOrOne: 0 for keys, 1 for properties
-    var twoDArray = arrayOfObjects.map( (entry, i) => {
-        return Object.values(arrayOfObjects[i]);
-    });
-    var oneDArray = twoDArray.map(entry => {
-        return entry[zeroOrOne];
-    });
-    return oneDArray;
-}
-
 function getOriginalIndex(value) { // get pre-shuffle answer index
     let originalIndex = _.findIndex(BANK[STATE.currentQ][0].answers, function(o) { return o.answer == value; });
     return originalIndex;
@@ -219,21 +209,6 @@ function generateAnswerChoices(questionIndex) {
 function generateTopicLogo(topic) {
     let logo = `<img id="topic-logo" src="./logos/${topic}-logo.png" alt="${topic} logo">`;
     return logo;
-}
-
-function shuffle(arr) {
-    console.log("`shuffle()` was called");
-    let currentIndex = arr.length, 
-    temporaryValue, 
-    randomIndex ;
-    while (0 !== currentIndex) {
-        randomIndex = Math.floor(Math.random() * currentIndex); // randomize
-        currentIndex -= 1;
-        temporaryValue = arr[currentIndex]; // swap
-        arr[currentIndex] = arr[randomIndex];
-        arr[randomIndex] = temporaryValue;
-    }
-    return arr;
 }
 
 function setHandleAnswerChecked() { // setting up handling of answer checkmark
@@ -324,10 +299,10 @@ function renderFeedback(state) {
     let question = BANK[STATE.currentQ];
     if(STATE.currentAnswerCorrect) {
         $("main").html(`<section role="region" aria-labelledby="feedback" id="feedback-section"><h3>Correct.</h3><p>${question[0].question}</p><p>${question[0].answers[0].answer}</p></section>`);
-        $("main").prepend(`<div class="feedback-image crop"><img src="${gif(state)}" alt="Happy animal GIF"></div>`); // add gif
+        $("main").prepend(`<div class="feedback-image"><img src="${gif(state)}" alt="Happy animal GIF"></div>`); // add gif
     } else {
         $("main").html(`<section role="region" aria-labelledby="feedback" id="feedback-section"><h3>Wrong.</h3><p>${question[0].question}</p><p>${question[0].answers[0].answer}</p></section>`);
-        $("main").prepend(`<div class="feedback-image crop"><img src="${gif(state)}" alt="Sad animal GIF"></div>`);
+        $("main").prepend(`<div class="feedback-image"><img src="${gif(state)}" alt="Sad animal GIF"></div>`);
     }
 }
 
@@ -353,7 +328,7 @@ function generateEnd() {
         alt = `Dr. Who crying in the rain`;
         message = `Sorry, you didn't get the job. Please try again!`;
     }
-    let end = `<section role="region" aria-labelledby="end-page" id="end-section"><h2>${message}</h2><h3>Your score is:</h3><p>${STATE.numRight} out of ${BANK.length}</p><div id="end-image"><img src=${image} alt="${alt}"></div></section>`;
+    let end = `<section role="region" aria-labelledby="end-page" id="end-section"><h2>${message}</h2><h3>Your score is:</h3><p>${STATE.numRight} out of ${BANK.length}</p><div id="end-image-container"><img id="end-image" src=${image} alt="${alt}"></div></section>`;
     return end;
 }
 

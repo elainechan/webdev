@@ -1,18 +1,19 @@
 function shuffle(arr) {
-  var currentIndex = arr.length, 
-      temporaryValue, 
-      randomIndex ;
-  // While there remain elements to shuffle...
-  while (0 !== currentIndex) {
-    // Pick a remaining element...
-    randomIndex = Math.floor(Math.random() * currentIndex);
-    currentIndex -= 1;
-    // And swap it with the current element.
-    temporaryValue = arr[currentIndex];
-    arr[currentIndex] = arr[randomIndex];
-    arr[randomIndex] = temporaryValue;
-  }
-  return arr;
+    console.log(`shuffle() was called`);  
+    var currentIndex = arr.length, 
+        temporaryValue, 
+        randomIndex ;
+    // While there remain elements to shuffle...
+    while (0 !== currentIndex) {
+        // Pick a remaining element...
+        randomIndex = Math.floor(Math.random() * currentIndex);
+        currentIndex -= 1;
+        // And swap it with the current element.
+        temporaryValue = arr[currentIndex];
+        arr[currentIndex] = arr[randomIndex];
+        arr[randomIndex] = temporaryValue;
+    }
+    return arr;
 }
 
 var q1 = { 
@@ -47,7 +48,8 @@ function stripKeyValueLabels(arrOfObjs) {
 }
 console.log(`stripKeyValueLabels(q1.answers)`, `\n`, `Given an array of objects with labelled key-property pairs, returns an object with unlabelled key-property pairs.`, `\n`, stripKeyValueLabels(q1.answers), `\n`);
 
-function nakedValues(arrayOfObjects, zeroOrOne) { 
+function nakedValues(arrayOfObjects, zeroOrOne) {
+    console.log(`nakedValues() was called`);
     var twoDArray = arrayOfObjects.map( (entry, i) => {
         return Object.values(arrayOfObjects[i]);
     });
