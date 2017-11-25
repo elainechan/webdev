@@ -97,7 +97,7 @@ const STATE = {
     currentAnswerCorrect: false,
 };
 
-function updateView() { // refactor to show correct num of questions; last q is cut
+function updateView() {
     if(STATE.currentQ === -1) {
         shuffle(BANK);
         renderStart();
@@ -324,10 +324,10 @@ function renderFeedback(state) {
     let question = BANK[STATE.currentQ];
     if(STATE.currentAnswerCorrect) {
         $("main").html(`<section role="region" aria-labelledby="feedback" id="feedback-section"><h3>Correct.</h3><p>${question[0].question}</p><p>${question[0].answers[0].answer}</p></section>`);
-        $("main").prepend(`<div class="feedback-image"><img src="${gif(state)}" alt="Happy animal GIF"></div>`); // add gif
+        $("main").prepend(`<div class="feedback-image crop"><img src="${gif(state)}" alt="Happy animal GIF"></div>`); // add gif
     } else {
         $("main").html(`<section role="region" aria-labelledby="feedback" id="feedback-section"><h3>Wrong.</h3><p>${question[0].question}</p><p>${question[0].answers[0].answer}</p></section>`);
-        $("main").prepend(`<div class="feedback-image"><img src="${gif(state)}" alt="Sad animal GIF"></div>`);
+        $("main").prepend(`<div class="feedback-image crop"><img src="${gif(state)}" alt="Sad animal GIF"></div>`);
     }
 }
 

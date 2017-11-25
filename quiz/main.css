@@ -61,6 +61,12 @@ code {
     margin: 12px 60px; 
 }
 
+.crop {
+    width: 300px;
+    height: 200px;
+    overflow: hidden;
+}
+
 .button-container { /* only center Start and Restart buttons */
     text-align: center;
 }
