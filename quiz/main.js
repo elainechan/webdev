@@ -86,8 +86,9 @@ const BANK = [
     }]
 ];
 
-// separate BANK into JASON file
-// use AJAX to
+// optional:
+// separate BANK in JSON file
+// use AJAX to retrieve
 const STATE = {
     currentQ: -1, // ?
     numRight: 0,
@@ -149,8 +150,8 @@ function renderQuestion(state) {
     setHandleSubmitAnswer();
 }
 
-/* optional
-
+/* optional:
+Crop image
 associate image filename to cropping data
 array of filenames
 key value pairs (img: dimension)
