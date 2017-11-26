@@ -33,11 +33,12 @@ header {
 }
 
 #topic-logo {
-    height: 200px;
+    max-width: 120px;
 }
 
 #logo-container {
     margin: auto;
+    min-width: 200px;
 }
 
 section { /* <section> */
@@ -52,6 +53,7 @@ section { /* <section> */
 
 #question-content {
     border: none;
+    margin-top: 20px;
 }
 
 .answer-choice {
@@ -124,9 +126,9 @@ footer {
         float: left;
     }
     #logo-container {
-        width: 25%;
+        width: 20%;
     }
     #question-container {
-        width: 75%;
+        width: 80%;
     }
 }
