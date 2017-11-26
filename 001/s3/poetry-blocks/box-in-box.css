@@ -9,7 +9,7 @@ li {
 .wrapper {
     display: grid;
     grid-template-columns: 400px 400px 400px;
-    padding: 10px;
+    margin: 0 auto;
     border: solid 2px #000000;
 }
 
@@ -17,36 +17,30 @@ li {
     width: 400px;
     height: 400px;
     padding: 10px;
-    margin: 0;
+    margin: 0 auto;
     overflow-wrap: break-word;
 }
 
 .alpha {
-    border: dotted 2px #AA0000;
     background-color: #FDFFDD;
 }
 
 .bravo {
-    border: dotted 2px #00AA00;
     background-color: #FFDDE0;
 }
 
 .charlie {
-    border: dotted 2px #0000AA;
     background-color: #DDFDFF;
 }
 
 .delta {
-    border: dotted 2px #AAAA00;
     background-color: #DDFFE8;
 }
 
 .echo {
-    border: dotted 2px #00AAAA;
     background-color: #EADDFF;
 }
 
 .foxtrot {
-    border: dotted 2px #00AAAA;
     background-color: #FFEACC;
 }
