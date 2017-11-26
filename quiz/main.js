@@ -297,11 +297,19 @@ function renderFeedback(state) {
     console.log("`renderFeedback()` was called");
     let question = BANK[STATE.currentQ];
     if(STATE.currentAnswerCorrect) {
-        $("main").html(`<section role="region" aria-labelledby="feedback" id="feedback-section"><h3>Correct.</h3><p>${question[0].question}</p><p>${question[0].answers[0].answer}</p></section>`);
-        $("main").prepend(`<div class="feedback-image"><img src="${gif(state)}" alt="Happy animal GIF"></div>`); // add gif
+        $("main")
+        .html(`<div class="col" id="feedback-container">
+        <section role="region" aria-labelledby="feedback" id="feedback-section">
+        <h3>Correct.</h3>
+        <p>${question[0].question}</p><p>${question[0].answers[0].answer}</p>
+        </section></div>
+        <!--col-->`);
+        $("main").prepend(`<div class="col" id="feedback-image-container">
+        <img id="feecback-image" src="${gif(state)}" alt="Happy animal GIF">
+        </div><!--col-->`); // add gif
     } else {
-        $("main").html(`<section role="region" aria-labelledby="feedback" id="feedback-section"><h3>Wrong.</h3><p>${question[0].question}</p><p>${question[0].answers[0].answer}</p></section>`);
-        $("main").prepend(`<div class="feedback-image"><img src="${gif(state)}" alt="Sad animal GIF"></div>`);
+        $("main").html(`<div class="col" id="feedback-container"><section role="region" aria-labelledby="feedback" id="feedback-section"><h3>Wrong.</h3><p>${question[0].question}</p><p>${question[0].answers[0].answer}</p></section></div>`);
+        $("main").prepend(`<div class="col" id="feedback-image-container"><img id="feedback-image" src="${gif(state)}" alt="Sad animal GIF"></div>`);
     }
 }
 
