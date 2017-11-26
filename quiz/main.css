@@ -163,12 +163,16 @@ footer {
     }
     #question-container {
         width: 80%;
+
     }
     #feedback-image-container {
-        width: 40%
+        width: 40%;
+        min-height: 100px;
+
     }
     #feedback-container {
-        width: 60%
+        width: 60%;
+
     }
     header {
         text-align: center;
@@ -177,9 +181,11 @@ footer {
     }
     h1 {
         font-size: 36px;
+        font-weight: 800;
     }
     h2 {
-        font-size: 30px
+        font-size: 30px;
+        font-weight: 600;
     }
     body {
         font-size: 20px;
@@ -188,6 +194,7 @@ footer {
         margin-top: 20px;
         margin-bottom: 20px;
         margin-left: 16px;
+        font-weight: 600;
     }
     #question-content {
         margin-top: 20px;
@@ -211,7 +218,7 @@ footer {
         margin: 12px 60px;
     }
     button { /* todo: make all buttons display in same place */
-        padding: 12px 24px;
+        padding: 12px 30px;
         margin: 12px;
         font-size: 18px;
         font-weight: 600;
