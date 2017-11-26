@@ -126,7 +126,7 @@ function renderStart() {
 
 function generateStartButton() {
     console.log("`generateStartButton()` was called");
-    let startButton = `<div class="button-container"><button id="start-button">Start</button></div>`;
+    let startButton = `<div class="button-container"><button id="start-button">Begin</button></div>`;
     return startButton;
 }
 
@@ -341,14 +341,14 @@ function generateEnd() {
 
 function generateRestartButton() {
     console.log("`generateRestartButton()` was called");
-    let restartButton = `<div class="button-container"><button type="button" id="restart-button">Restart</button></div>`
+    let restartButton = `<div class="button-container"><button type="button" id="restart-button">Start Over</button></div>`
     return restartButton;
 }
 
 function setHandleRestartButton() {
     console.log("`setHandleRestartButton()` was called")
     $("#restart-button").on("click", event => { // button handler: Controller
-        STATE.currentQ = 0;
+        STATE.currentQ = -1;
         STATE.numRight = 0;
         STATE.numWrong = 0;
         console.log(STATE);

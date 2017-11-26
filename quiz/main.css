@@ -134,7 +134,7 @@ nav {
 footer {
     padding: 12px 30px;
     margin: 12px 60px;
-    text-align: right;
+    text-align: center;
     clear: left; /* fixed glitch */
 }
 
