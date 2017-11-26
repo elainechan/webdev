@@ -9,6 +9,15 @@ header {
     margin: 6px 60px;
 }
 
+#headline {
+    margin-bottom: 3px;
+    font-size: 30px;
+}
+
+#subhead {
+    font-size: 24px;
+}
+
 #start-section, #end-section, #start-image, #end-image {
     text-align: center;
 }
@@ -20,14 +29,14 @@ header {
 }
 
 #start-image-container {
-    max-height: 500px;
+    max-height: 400px;
     min-height: 100px;
     overflow: hidden;
 }
 
 #start-image {
     min-height: 100px;
-    margin-top: -30px;
+    margin-top: -60px;
 }
 
 #start-image, #end-image {
@@ -36,6 +45,8 @@ header {
 
 #topic-logo {
     max-width: 120px;
+    display: block;
+    margin: auto;
 }
 
 #logo-container {
@@ -44,18 +55,26 @@ header {
 }
 
 section { /* <section> */
-    padding: 12px 30px;
-    margin: 12px 60px;
+    padding: 6px 30px;
+    margin: 6px 60px;
 }
 
 #question-container {
     clear: right;
+    float: left;
     margin: auto;
+    min-width: 300px;
 }
 
 #question-content {
     border: none;
     margin-top: 20px;
+}
+
+#question-number {
+    margin-top: 20px;
+    margin-bottom: 20px;
+    margin-left: 16px;
 }
 
 .answer-choice {

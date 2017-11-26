@@ -172,16 +172,16 @@ function cropGif() {
 function generateQuestion(questionIndex) {
     console.log("`generateQuestion()` was called");
     let currentQuestion = BANK[questionIndex];
-    let whichQ = `<h3 id="question-number">Question ${questionIndex + 1} of ${BANK.length}</h3>`;
     let questionStatement = `${currentQuestion[0].question}`;
     let questionForm = `<section role="region" aria-labelledby="question" id="question-section">
-    <h3 id="question-number">
-    Question ${questionIndex + 1} of ${BANK.length}
-    </h3>
+
     <div class="row">
     <div class="col" id="logo-container">
     </div><!--col-->
     <div class="col" id="question-container"><form aria-labelledby="question" id="question-form">
+    <h3 id="question-number">
+    Question ${questionIndex + 1} of ${BANK.length}
+    </h3>
     <fieldset id="question-content"><legend id="question-statement">${questionStatement}</legend></fieldset></form>
     </div><!--col-->
     </div><!--row-->
@@ -249,7 +249,7 @@ function renderStatus(state) {
 function generateStatus(state) {
     console.log("`generateStatus() was called");
     // display status: x right, y wrong, z to go
-    let html = `<p>You got ${STATE.numRight} right, ${STATE.numWrong} wrong, ${BANK.length - STATE.currentQ} to go</p>`;
+    let html = `<p>${STATE.numRight} right, ${STATE.numWrong} wrong, ${BANK.length - STATE.currentQ} to go</p>`;
     return html;
 }
 
