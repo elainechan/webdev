@@ -12,10 +12,12 @@ header {
 h1 {
     margin-bottom: 3px;
     font-size: 24px;
+    font-weight: 700;
 }
 
 h2 {
     font-size: 20px;
+    font-weight: 500;
 }
 
 #start-section, #end-section, #start-image, #end-image {
@@ -73,6 +75,7 @@ section { /* <section> */
     margin-top: 20px;
     margin-bottom: 10px;
     margin-left: 16px;
+    font-weight: 400;
 }
 
 .answer-choice {
@@ -108,14 +111,14 @@ code {
 }
 
 button { /* todo: make all buttons display in same place */
-    padding: 6px 12px;
-    margin: 6px;
+    padding: 10px 16px;
+    margin: 10px;
     text-align: center;
     cursor: pointer;
     font-size: 16px;
     border-radius: 5px;
     border: 1px solid #d9d9d9;
-    font-weight: 600;
+    font-weight: 500;
     letter-spacing: 1px;
     background-color: #f0f0f0;
     box-shadow: 2px 2px 2px 1px #969696;
@@ -211,5 +214,6 @@ footer {
         padding: 12px 24px;
         margin: 12px;
         font-size: 18px;
+        font-weight: 600;
     }
 }
