@@ -42,6 +42,47 @@ Before you dive into the app, you'll need to:
 * render feedback
 * render end
 
+## Notes
+* Redesign: add `START` and `END` states
+* In `START` state:
+```javascript
+function initialize() {
+    // only called once
+    // initialize static elements, some hidden
+    // updateView() hides and shows elements through app cycle
+    setHandleNextButton();
+}
+$(initialize); // call on first run
+```
+
+* Model: question, state
+* View: render, generate
+* Controller: update, button handlers
+* Separation of concerns:
+    * handlers change state, don't call render
+    * updates change view, don't change state
+
+* Crop image
+    * associate image filename to cropping data
+    * array of filenames
+    * key value pairs (img: dimension)
+```javascript
+function cropGif() {
+    /*
+    use AJAX to get JSON containing cropping information
+    fetch image URL
+    apply cropping
+        size: a bounding box starting top left corner, ending bottom right corner
+        calculate height and width
+        set cropping container to height and width in pixels
+        set cropping container `top, left`
+        CSS
+            position: absolute
+            use negative values to hide part of image
+    */
+}
+```
+
 ## Reference
 * Max Carlquist 
     * [Codepen](https://codepen.io/Tenkaklet/pen/QEpWPo?editors=1111)

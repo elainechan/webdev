@@ -61,26 +61,6 @@ function renderQuestion(state) {
     setHandleSubmitAnswer();
 }
 
-/* optional:
-Crop image
-associate image filename to cropping data
-array of filenames
-key value pairs (img: dimension)
-
-function cropGif() {
-    use AJAX to get JSON containing cropping information
-    fetch image URL
-    apply cropping
-        size: a bounding box starting top left corner, ending bottom right corner
-        calculate height and width
-        set cropping container to height and width in pixels
-        set cropping container `top, left`
-        CSS
-            position: absolute
-            use negative values to hide part of image
-}
-*/
-
 function generateQuestion(questionIndex) {
     console.log("`generateQuestion()` was called");
     let currentQuestion = BANK[questionIndex];
@@ -247,23 +227,4 @@ function setHandleRestartButton() {
     });
 }
 
-/* todo: optional redesign
-function initialize() {
-    // only called once
-    // initialize static elements, some hidden
-    // updateView() hides and shows elements through app cycle
-    setHandleNextButton();
-}
-$(initialize); part of optional redesign
-*/
-
 $(updateView);
-
-/*
-Model: question, state
-View: render, generate
-Controller: update, button handlers
-separation of concerns:
-handlers change state, don't call render
-updates changes view, don't change state
-*/
