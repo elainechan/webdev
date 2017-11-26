@@ -49,7 +49,7 @@ const BANK = [
         answers: [
             { key: 0, answer: 'An event listener that will fire for an element\'s descendents.' },
             { key: 1, answer: 'An event listener that will fire for an element\'s parents.' },
-            { key: 2, answer: 'An event listener that will fire for an element\'s siblings .' },
+            { key: 2, answer: 'An event listener that will fire for an element\'s siblings.' },
             { key: 3, answer: 'The most deeply nested element that caused an event.' }
         ]
     }],
@@ -78,9 +78,9 @@ const BANK = [
         topic: 'CSS',
         answers: [
             { key: 0, answer: 'Both <code>fixed</code> and <code>absolute</code> elements are positioned relative to the document rather than a parent.' },
-            { key: 1, answer: 'A <code>fixed</code> element responds to its parent, while an <code>absolute</code> element does not.' },
-            { key: 2, answer: 'A <code>fixed</code> element responds to scrolling, while an <code>absolute</code> element does not.' },
-            { key: 3, answer: 'A <code>fixed</code> element follows the normal flow of the document, while an <code>absolute</code> element does not.' }
+            { key: 1, answer: 'A <code>fixed</code> element responds to its parent; an <code>absolute</code> element does not.' },
+            { key: 2, answer: 'A <code>fixed</code> element responds to scrolling; an <code>absolute</code> element does not.' },
+            { key: 3, answer: 'A <code>fixed</code> element follows document normal flow; an <code>absolute</code> element does not.' }
         ]
     }]
 ];

@@ -77,11 +77,11 @@ section { /* <section> */
 }
 
 .answer-choice {
-    margin: 10px;
+    margin: 6px;
 }
 
 .answer-text {
-    margin-left: 10px;
+    margin-left: 6px;
 }
 
 code {
@@ -173,5 +173,12 @@ footer {
     }
     body {
         font-size: 20px;
+    }
+    .answer-choice {
+        margin: 12px;
+    }
+    
+    .answer-text {
+        margin-left: 12px;
     }
 }
