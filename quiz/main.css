@@ -20,12 +20,14 @@ header {
 }
 
 #start-image-container {
-    height: 400px;
+    max-height: 500px;
+    min-height: 100px;
     overflow: hidden;
 }
 
 #start-image {
-    margin: -100px;
+    min-height: 100px;
+    margin-top: -30px;
 }
 
 #start-image, #end-image {

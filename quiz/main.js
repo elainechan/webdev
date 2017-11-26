@@ -118,7 +118,7 @@ function renderStart() {
     console.log("`renderStart()` was called");
     let startImage = `./gifs/start/start.gif`
     $("main").html(`<section role="region" aria-labelledby="start-page" id="start-section">
-    <h2>Welcome to your interview.</h2><div id="start-image-container"><img id="start-image" src=${startImage} alt="Mulder and Scully looking at the sky"></div>
+    <h2 id="subhead">Welcome to your interview.</h2><div id="start-image-container"><img id="start-image" src=${startImage} alt="Mulder and Scully looking at the sky"></div>
 </section>`);
     $("nav").html(generateStartButton());
     setHandleStartButton();
@@ -219,7 +219,7 @@ function setHandleAnswerChecked() { // setting up handling of answer checkmark
 
 function generateSubmitAnswerButton() { // initially disabled
     console.log("`generateSubmitAnswerButton()` was called");
-    let answerButton = `<button type="submit" id="submit-answer" disabled>Submit Answer</button>`;
+    let answerButton = `<button type="submit" id="submit-answer" disabled>Submit</button>`;
     return answerButton;
 }
 
