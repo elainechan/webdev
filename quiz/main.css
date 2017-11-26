@@ -107,7 +107,6 @@ footer {
 /* Non-mobile */
 @media only screen and (min-width: 640px) {
     .col {
-        /*width: 48%;*/
         float: left;
     }
     #logo-container {
