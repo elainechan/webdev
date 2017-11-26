@@ -1,6 +1,5 @@
 'use strict';
 // TODO: make images responsive
-// TODO: make question and logo inline-block
 // TODO: responsive layout (grid and/or flexbox), prevent horizontal scrolling
 
 const BANK = [
@@ -347,13 +346,6 @@ function setHandleRestartButton() {
         console.log(STATE);
         updateView();
     });
-}
-
-function getImgURL(str) { // takes filename as input
-    let root = `https://github.com/elainechan/webdev/blob/master/quiz/`;
-    let file = str.replace(/^[.(?=/)]/, root); // replace dot with url root
-    let url = file.concat(`?raw=true`); // concat url with retrieve code
-    return url;
 }
 
 /* todo: optional redesign

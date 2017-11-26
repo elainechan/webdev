@@ -27,6 +27,10 @@ header {
     height: 200px;
 }
 
+#logo-container {
+    margin: auto;
+}
+
 section { /* <section> */
     padding: 12px 30px;
     margin: 12px 60px;
@@ -34,6 +38,7 @@ section { /* <section> */
 
 #question-container {
     clear: right;
+    margin: auto;
 }
 
 #question-content {
