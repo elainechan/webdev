@@ -7,7 +7,7 @@ const BANK = [
         question: 'In an HTML document, <code>!DOCTYPE html</code>...',
         topic: 'HTML',
         answers: [
-            { key: 0, answer: 'Informs the browser on how to render the document.' },
+            { key: 0, answer: 'Tells the browser how to render the document.' },
             { key: 1, answer: 'Represents the root or the top-level element.' },
             { key: 2, answer: 'Refers to the generic container for flow content.' }, 
             { key: 3, answer: 'Represents the document object.' }
@@ -37,48 +37,48 @@ const BANK = [
         question: 'What is the correct order of event bubbling?',
         topic: 'JavaScript',
         answers: [
-            { key: 0, answer: 'The handlers on an element, its parent, and then its other ancestors.' },
-            { key: 1, answer: 'The handlers on an element, then all its children.' },
-            { key: 2, answer: 'The handlers on an element, then all its siblings.' },
-            { key: 3, answer: 'The handlers on the parent of an element, the element itself, and then its children.' }
+            { key: 0, answer: 'The element, its parent, then its other ancestors.' },
+            { key: 1, answer: 'The element, then all its children.' },
+            { key: 2, answer: 'The element, then all its siblings.' },
+            { key: 3, answer: 'The element, then all other elements of the same class.' }
         ]
     }],
     [{
-        question: 'Event delegation...',
+        question: 'Event delegation refers to...',
         topic: 'JavaScript',
         answers: [
-            { key: 0, answer: 'Allows attachment of an event listener that will fire for an element\'s descendents.' },
-            { key: 1, answer: 'Allows attachment of an event listener that will fire for an element\'s parents.' },
-            { key: 2, answer: 'Allows attachment of an event listener that will fire for all elements with the same class.' },
-            { key: 3, answer: 'Refers to the most deeply nested element that caused an event.' }
+            { key: 0, answer: 'An event listener that will fire for an element\'s descendents.' },
+            { key: 1, answer: 'An event listener that will fire for an element\'s parents.' },
+            { key: 2, answer: 'An event listener that will fire for an element\'s siblings .' },
+            { key: 3, answer: 'The most deeply nested element that caused an event.' }
         ]
     }],
     [{
-        question: 'In the box model, <code>padding</code>...',
+        question: 'In the box model, <code>padding</code> affects...',
         topic: 'CSS',
         answers: [
-            { key: 0, answer: 'Represents the space between the box and the border.' },
-            { key: 1, answer: 'Represents the space between the border and the other content that interact with the box.' },
-            { key: 2, answer: 'Does not affect the size of the box, but it affects the other content that interact with the box.' },
-            { key: 3, answer: 'Is on the outside of block elements.' }
+            { key: 0, answer: 'The space between the box and the border.' },
+            { key: 1, answer: 'The space between the border and other content that interact with the box.' },
+            { key: 2, answer: 'Font size in pixels.' },
+            { key: 3, answer: 'Image size in pixels.' }
         ]
     }],
     [{
-        question: 'In the box model, <code>margin</code>...',
+        question: 'In the box model, <code>margin</code> affects...',
         topic: 'CSS',
         answers: [
-            { key: 0, answer: 'Represents the space between the border and the other content that interact with the box.' },
-            { key: 1, answer: 'Represents the space between the box and the border.' },
-            { key: 2, answer: 'Directly determines the size of the box through specifying the size of the space between the box and the border.' },
-            { key: 3, answer: 'Is on the inside of block elements.' }
+            { key: 0, answer: 'The space between the border and other content that interact with the box.' },
+            { key: 1, answer: 'The space between the box and the border.' },
+            { key: 2, answer: 'The size of the viewport.' },
+            { key: 3, answer: 'The size of the browser window.' }
         ]
     }],
     [{
-        question: 'What is the difference between <code>fixed</code> and <code>absolute</code> positioning?',
+        question: 'Which of the following is true?',
         topic: 'CSS',
         answers: [
             { key: 0, answer: 'Both <code>fixed</code> and <code>absolute</code> elements are positioned relative to the document rather than a parent.' },
-            { key: 1, answer: 'A <code>fixed</code> element responds to its parent dimension, while an <code>absolute</code> element does not.' },
+            { key: 1, answer: 'A <code>fixed</code> element responds to its parent, while an <code>absolute</code> element does not.' },
             { key: 2, answer: 'A <code>fixed</code> element responds to scrolling, while an <code>absolute</code> element does not.' },
             { key: 3, answer: 'A <code>fixed</code> element follows the normal flow of the document, while an <code>absolute</code> element does not.' }
         ]
@@ -118,7 +118,7 @@ function renderStart() {
     console.log("`renderStart()` was called");
     let startImage = `./gifs/start/start.gif`
     $("main").html(`<section role="region" aria-labelledby="start-page" id="start-section">
-    <h2>Welcome to your interview.</h2><p>To get the job, get at least half of the questions right.</p><div id="start-image-container"><img id="start-image" src=${startImage} alt="Mulder and Scully looking at the sky"></div>
+    <h2>Welcome to your interview.</h2><div id="start-image-container"><img id="start-image" src=${startImage} alt="Mulder and Scully looking at the sky"></div>
 </section>`);
     $("nav").html(generateStartButton());
     setHandleStartButton();
