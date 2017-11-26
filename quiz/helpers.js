@@ -1,3 +1,4 @@
+// shuffle content of array
 function shuffle(arr) {
     console.log(`shuffle() was called`);  
     var currentIndex = arr.length, 
@@ -16,7 +17,8 @@ function shuffle(arr) {
     return arr;
 }
 
-function nakedValues(arrayOfObjects, zeroOrOne) {
+// take array of objects and an indicator, return naked array of keys or properties
+function nakedValues(arrayOfObjects, zeroOrOne) { // if 0 return keys, if 1 return properties
     console.log(`nakedValues() was called`);
     var twoDArray = arrayOfObjects.map( (entry, i) => {
         return Object.values(arrayOfObjects[i]);
@@ -27,7 +29,27 @@ function nakedValues(arrayOfObjects, zeroOrOne) {
     return oneDArray;
 }
 
-function getImgURL(str) { // takes filename as input and returns full URL
+function getOriginalIndex(value) { // get pre-shuffle index for checking answer correctness
+    let originalIndex = _.findIndex(BANK[STATE.currentQ][0].answers, function(o) { return o.answer == value; });
+    return originalIndex;
+}
+
+function gif(state) { // get GIF for feedback
+    console.log("`gif()` was called");
+    let happyGifs = [
+        './gifs/happy/happy-catpaws.gif', './gifs/happy/happy-feet.gif', './gifs/happy/happy-golden.gif', './gifs/happy/happy-lab.gif', './gifs/happy/happy-pup.gif','./gifs/happy/happy-shiba.gif', './gifs/happy/happy-pug.gif', './gifs/happy/happy-tiny-dog.gif'
+    ]; 
+    let sadGifs = [
+        './gifs/sad/sad-cat.gif', './gifs/sad/sad-creature.gif', './gifs/sad/sad-fluff.gif', './gifs/sad/sad-nope-cat.gif', './gifs/sad/sad-pup-sleep.gif', './gifs/sad/sad-pup.gif'
+    ];
+    if (STATE.currentAnswerCorrect) {
+        return shuffle(happyGifs)[0]; 
+    } else {
+        return shuffle(sadGifs)[0];
+    }
+}
+
+function getImgURL(str) { // takes filename as input and returns full image URL
     console.log(`getImgURL() was called`)
     let root = `https://github.com/elainechan/webdev/blob/master/quiz/`;
     let file = str.replace(/^[.(?=/)]/, root); // replace dot with url root

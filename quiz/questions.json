@@ -10,7 +10,7 @@
             "fum"
         ]
     },
-
+    
     "labelledQuestion" : { // labelled answers with implicit index
         "question": "What is a function?",
         "answers": {
@@ -25,9 +25,9 @@
     "indexedQuestion": { // labelled answers with explicit index
         "question": "What does 'CSS' stand for?",
         "answers": [
-            { "key": 1, "answer": "Apple"}, 
-            { "key": 2, "answer": "Orange"}, 
-            { "key": 3, "answer": "Banana"}
+            { "key": "1", "answer": "Apple"}, 
+            { "key": "2", "answer": "Orange"}, 
+            { "key": "3", "answer": "Banana"}
         ]
     }
 }

@@ -1,3 +1,5 @@
+/* Default: Mobile */
+
 body {
     font-family: helvetica;
     font-size: 16px;
@@ -167,7 +169,7 @@ footer {
     }
     #feedback-image-container {
         width: 40%;
-        min-height: 100px;
+        min-height: 300px;
 
     }
     #feedback-container {
