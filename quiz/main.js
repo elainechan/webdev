@@ -1,6 +1,6 @@
 'use strict';
 // TODO: make images responsive
-// TODO: responsive layout (grid and/or flexbox), prevent horizontal scrolling
+
 
 const BANK = [
     [{

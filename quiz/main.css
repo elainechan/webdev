@@ -19,6 +19,15 @@ header {
     width: 50%;
 }
 
+#start-image-container {
+    height: 400px;
+    overflow: hidden;
+}
+
+#start-image {
+    margin: -100px;
+}
+
 #start-image, #end-image {
     width: 100%;
 }
