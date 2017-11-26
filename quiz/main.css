@@ -44,14 +44,13 @@ h2 {
 }
 
 #topic-logo {
-    max-width: 120px;
+    max-width: 100px;
     display: block;
     margin: auto;
 }
 
 #logo-container, #feedback-image-container {
     margin: auto;
-    min-width: 200px;
 }
 
 section { /* <section> */
@@ -110,7 +109,7 @@ code {
 }
 
 button { /* todo: make all buttons display in same place */
-    padding: 12px 30px;
+    padding: 12px 24px;
     margin: 12px;
     text-align: center;
     cursor: pointer;
@@ -155,10 +154,10 @@ footer {
         float: left;
     }
     #logo-container {
-        width: 25%;
+        width: 20%;
     }
-    #question-container, #feedback-container {
-        width: 75%;
+    #question-container {
+        width: 80%;
     }
     #feedback-image-container {
         width: 40%
