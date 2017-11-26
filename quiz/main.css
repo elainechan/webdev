@@ -23,7 +23,7 @@ h2 {
 }
 
 #start-image-container, #end-image-container {
-    padding: 12px 30px;
+    padding: 6px 10px;
     margin: auto;
     width: 50%;
 }
@@ -66,12 +66,12 @@ section { /* <section> */
 
 #question-content {
     border: none;
-    margin-top: 20px;
+    margin-top: 6px;
 }
 
 #question-number {
     margin-top: 20px;
-    margin-bottom: 20px;
+    margin-bottom: 10px;
     margin-left: 16px;
 }
 
@@ -108,11 +108,11 @@ code {
 }
 
 button { /* todo: make all buttons display in same place */
-    padding: 12px 24px;
-    margin: 12px;
+    padding: 6px 12px;
+    margin: 6px;
     text-align: center;
     cursor: pointer;
-    font-size: 18px;
+    font-size: 14px;
     border-radius: 5px;
     border: 1px solid #d9d9d9;
     font-weight: 600;
@@ -125,13 +125,13 @@ button:hover {
 }
 
 nav {
-    padding: 12px 30px;
-    margin: 12px 60px;
+    padding: 6px 10px;
+    margin: 6px 10px;
 }
 
 footer {
-    padding: 12px 10px;
-    margin: 12px 10px;
+    padding: 6px 5px;
+    margin: 6px 5px;
     text-align: center;
     clear: left; /* fixed glitch */
 }
@@ -152,6 +152,9 @@ footer {
     .col {
         float: left;
     }
+    #start-image-container, #end-image-container {
+        padding: 12px 30px;
+    }
     #logo-container {
         width: 20%;
     }
@@ -164,6 +167,11 @@ footer {
     #feedback-container {
         width: 60%
     }
+    header {
+        text-align: center;
+        padding: 12px;
+        margin: 12px;
+    }
     h1 {
         font-size: 36px;
     }
@@ -172,6 +180,14 @@ footer {
     }
     body {
         font-size: 20px;
+    }
+    #question-number {
+        margin-top: 20px;
+        margin-bottom: 20px;
+        margin-left: 16px;
+    }
+    #question-content {
+        margin-top: 20px;
     }
     .answer-choice {
         margin: 12px;
@@ -182,5 +198,18 @@ footer {
     }
     #topic-logo {
         max-width: 100px;
+    }
+    footer {
+        padding: 12px 10px;
+        margin: 12px 10px;
+    }
+    nav {
+        padding: 12px 30px;
+        margin: 12px 60px;
+    }
+    button { /* todo: make all buttons display in same place */
+        padding: 12px 24px;
+        margin: 12px;
+        font-size: 18px;
     }
 }
