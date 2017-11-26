@@ -77,11 +77,11 @@ section { /* <section> */
 }
 
 .answer-choice {
-    margin: 12px;
+    margin: 10px;
 }
 
 .answer-text {
-    margin-left: 12px;
+    margin-left: 10px;
 }
 
 code {
