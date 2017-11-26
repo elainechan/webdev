@@ -30,7 +30,7 @@ function renderStart() {
     console.log("`renderStart()` was called");
     let startImage = `./gifs/start/start.gif`
     $("main").html(`<section role="region" aria-labelledby="start-page" id="start-section">
-    <h2 id="subhead">Welcome to your interview.</h2><div id="start-image-container"><img id="start-image" src=${startImage} alt="Mulder and Scully looking at the sky"></div>
+    <h2 id="subhead">Welcome to your interview.</h2><p>We are looking for a junior developer with a master degree and the experience of a senior developer, at the salary of an intern.</p><div id="start-image-container"><img id="start-image" src=${startImage} alt="Mulder and Scully looking at the sky"></div>
 </section>`);
     $("nav").html(generateStartButton());
     setHandleStartButton();
@@ -195,16 +195,22 @@ function renderEnd() {
 function generateEnd() {
     console.log("`gnerateEnd()` was called");
     let message;
+    let adjective;
     let image;
     let alt;
     if(STATE.numRight >= STATE.numWrong) { // works for both odd and even num of questions
+        if(STATE.numRight/BANK.length > 0.75) {
+            adjective = `<em>so</em>`;
+        } else {
+            adjective = `<em>barely</em>`;
+        }
         image = `./gifs/end/hire.gif`;
         alt = `Michael and Pam from The Office having a celebration dance`;
-        message = `Congratulations, you are hired!`;
+        message = `Congratulations, you are ${adjective} hired!`;
     } else {
         image = `./gifs/end/no-hire.gif`;
         alt = `Dr. Who crying in the rain`;
-        message = `Sorry, you didn't get the job. Please try again!`;
+        message = `Sorry, you didn't get the job.<p>Please join our internship program in which you will be paid only in stock options and Starbucks giftcards. Or keep interviewing.</p>`;
     }
     let end = `<section role="region" aria-labelledby="end-page" id="end-section"><h2>${message}</h2><h3>Your score is:</h3><p>${STATE.numRight} out of ${BANK.length}</p><div id="end-image-container"><img id="end-image" src=${image} alt="${alt}"></div></section>`;
     return end;
