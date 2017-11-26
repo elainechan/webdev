@@ -44,7 +44,7 @@ h2 {
 }
 
 #topic-logo {
-    max-width: 100px;
+    max-width: 50px;
     display: block;
     margin: auto;
 }
@@ -62,7 +62,6 @@ section { /* <section> */
     clear: right;
     float: left;
     margin: auto;
-    min-width: 300px;
 }
 
 #question-content {
@@ -77,11 +76,11 @@ section { /* <section> */
 }
 
 .answer-choice {
-    margin: 6px;
+    margin: 3px;
 }
 
 .answer-text {
-    margin-left: 6px;
+    margin-left: 3px;
 }
 
 code {
@@ -180,5 +179,8 @@ footer {
     
     .answer-text {
         margin-left: 12px;
+    }
+    #topic-logo {
+        max-width: 100px;
     }
 }
