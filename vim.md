@@ -3,7 +3,7 @@
 ## Window Navigation
 * `:split [file1] [file2]` open additional files in horizontal split mode
 * `:vsplit` open added files in vertical split mode
-* `ctrl-w` + `up` or `down` - move between open buffers in same window
+* `ctrl-w` + direction (`j`-down, `k`-up, `h`-left, `l`-right) - move between open buffers in same window
 
 ## Editing
 * Editing between buffers (with `set clipboard=unnamedplus` added in .vimrc file):
