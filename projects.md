@@ -9,7 +9,7 @@
 ## Possible
 * [ ] [Cloud Deploy Demo](https://github.com/elainechan/notes/blob/master/Devops/deployment-demo.md)
 * [ ] [Search Engine](https://blog.kabir.ml/posts/inside-wade)
-* [x] Knowledge Quiz
+* [x] [Knowledge Quiz](https://elainechan.github.io/webdev/quiz/index.html)
 * [ ] Tic Tac Toe
 * [ ] Database server
 * [ ] Depth-first searcher
