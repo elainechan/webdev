@@ -96,7 +96,7 @@ const BANK = [
             { key: 0, answer: 'The space between the box and the border.' },
             { key: 1, answer: 'The space between the border and other content that interact with the box.' },
             { key: 2, answer: 'Font size in pixels.' },
-            { key: 3, answer: 'Image size in pixels.' }
+            { key: 3, answer: 'Image quality in pixels.' }
         ]
     }],
     [{

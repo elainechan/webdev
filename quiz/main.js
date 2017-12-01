@@ -210,9 +210,9 @@ function generateEnd() {
     } else {
         image = `./gifs/end/no-hire.gif`;
         alt = `Dr. Who crying in the rain`;
-        message = `Sorry, you didn't get the job.<p>Please join our internship program in which you will be paid only in stock options and Starbucks giftcards. Or keep interviewing.</p>`;
+        message = `<h2 id="subhead">Sorry, you didn't get the job.</h2><p>Please join our internship program in which you will be paid only in stock options and Starbucks giftcards. Or keep interviewing.</p>`;
     }
-    let end = `<section role="region" aria-labelledby="end-page" id="end-section"><h2>${message}</h2><h3>Your score is:</h3><p>${STATE.numRight} out of ${BANK.length}</p><div id="end-image-container"><img id="end-image" src=${image} alt="${alt}"></div></section>`;
+    let end = `<section role="region" aria-labelledby="end-page" id="end-section">${message}<h3>Your score is: ${STATE.numRight} out of ${BANK.length}</h3><div id="end-image-container"><img id="end-image" src=${image} alt="${alt}"></div></section>`;
     return end;
 }
 
