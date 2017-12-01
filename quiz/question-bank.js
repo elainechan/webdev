@@ -1,5 +1,15 @@
 const BANK = [
     [{
+        question: 'Which of the following is <strong>true</strong> about <code>null</code> in JavaScript?',
+        topic: 'JavaScript',
+        answers: [
+            { key: 0, answer: '<code>null</code> is a primitive type in JavaScript.' },
+            { key: 1, answer: '<code>null</code> indicates that a variable has been declared but has not yet been assigned a value' },
+            { key: 2, answer: '<code>null</code> cannot be assigned to a variable.' }, 
+            { key: 3, answer: 'An uninitialized variable is automatically assigned a value of <code>null</code>.' }
+        ]
+    }],
+    [{
         question: '<code>rm index.html</code> on the command line...',
         topic: 'Linux',
         answers: [
