@@ -1,7 +1,4 @@
 /* Default: Mobile */
-html {
-    box-sizing: border-box;
-}
 
 body {
     font-family: roboto;
@@ -10,17 +7,18 @@ body {
 
 header {
     text-align: center;
-    padding: 6px;
-    margin: 6px;
+    padding: 3px;
+    margin: 3px;
 }
 
 h1 {
-    margin-bottom: 3px;
+    margin: 3px;
     font-size: 24px;
     font-weight: 700;
 }
 
 h2 {
+    margin: 0;
     font-size: 20px;
     font-weight: 500;
 }
@@ -36,14 +34,15 @@ h2 {
 }
 
 #start-image-container {
-    max-height: 400px;
+    max-height: 300px;
     min-height: 100px;
     overflow: hidden;
 }
 
 #start-image {
     min-height: 100px;
-    margin-top: -25%;
+    max-width: 500px;
+    margin-top: -40%;
 }
 
 #start-image, #end-image {

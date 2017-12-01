@@ -31,7 +31,7 @@ Before you dive into the app, you'll need to:
 * [x] think about the user experiences outlined above and how your design must make them possible.
 * [x] design your app using HTML wireframes, which are HTML (and minimal CSS) only versions of the different screens in your app.
 
-## TODO
+## Features TODO:
 * [ ] Data store (JSON question bank)
 * [ ] Selection menu
     * [ ] Option to select quiz size (number of questions)
@@ -52,6 +52,10 @@ Before you dive into the app, you'll need to:
 * [ ] Search engine
     * [ ] by keyword
     * [ ] by date
+
+## Design TODO:
+* [ ] Grid system
+* [ ] Style guide
 
 ## Notes
 * Redesign: add `START` and `END` states
