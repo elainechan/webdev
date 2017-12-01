@@ -3,15 +3,25 @@
 ## Design Pattern: Model-View-Controller
 * _Model_: `BANK` (immutable), `STATE` (mutable)
 * _View_: `render`, `generate`
-* _Controller_: `update`, `handler`
+* _Controller_: `update`, `setHandle`
 * Separation of concerns:
-    * `handler` _Controller_ 
-        * mutates `STATE` _Model_
-        * doesn't call `render` to change _View_
+    * `BANK` _Model_ is never mutated
+    * `render` _View_
+        * calls `setHandler` to display button
+        * does not trigger `setHandler` to mutate `STATE` _Model_
+    * `setHandle` _Controller_ 
+        * mutates `STATE` _Model_ when triggered by click events
+        * does not call `render` to change _View_
     * `update` _Controller_ 
         * calls `render` to change _View_
-        * does't mutate `STATE` _Model_
-    * `BANK` _Model_ is never mutated
+        * does not mutate `STATE` _Model_
+
+## Files
+* `index.html`: startup wireframes
+* `main.css`: styles
+* `main.js`: main program
+* `helpers.js`: helper functions for manipulating data or loading assets
+* `question-bank.js`: `BANK` of all question content
 
 ## App Implementation
 ### User experience requirements

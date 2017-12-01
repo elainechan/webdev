@@ -4,11 +4,11 @@ const STATE = {
     currentQ: -1, // -1 before program starts
     numRight: 0,
     numWrong: 0,
-    displayMode: "QUESTION", // either QUESTION or FEEDBACK. (optional) refactor add START, END
+    displayMode: "QUESTION", // either QUESTION or FEEDBACK.
     currentAnswerCorrect: false,
 };
 
-function updateView() { // refactor to show correct num of questions; last q is cut
+function updateView() {
     if(STATE.currentQ === -1) {
         shuffle(BANK);
         renderStart();
