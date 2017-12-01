@@ -21,7 +21,7 @@ See [requirements.md](./requirements.md) for requirements checklist.
 
 ## Displays
 * Start page
-* Question content
+* Question content: randomized questions and answer choices in each cycle
 * Feedback: number of questions right, number wrong, number remaining
 * Overall result
 
