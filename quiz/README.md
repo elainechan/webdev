@@ -1,10 +1,10 @@
 # Web Developer Interview Quiz
 
-Test your Web development knowledge. 
+Brush up your Web development knowledge for that dream job interview.
 
 [Click here to take the quiz](https://elainechan.github.io/webdev/quiz/index.html)
 
-See [requirements.md](https://github.com/elainechan/webdev/blob/master/quiz/requirements.md) for requirements checklist.
+See [requirements.md](./requirements.md) for requirements checklist.
 
 ## Topics Covered
 * [x] HTML
@@ -42,17 +42,17 @@ See [requirements.md](https://github.com/elainechan/webdev/blob/master/quiz/requ
         * does not mutate `STATE` _Model_
 
 ## Files
-* `index.html`: startup wireframes
-* `main.css`: styles
+* `index.html`: startup wireframe
+* `main.css`: styles and layout
 * `main.js`: main program
-* `helpers.js`: helper functions for manipulating data or loading assets
-* `question-bank.js`: `BANK` of all question content
+* `helpers.js`: helper functions for manipulating data and loading assets
+* `question-bank.js`: question content
 
 ## Enhancement
 
 ## Add Backend
 * [ ] Server
-* [ ] Data structure (JSON)
+* [ ] JSON data structure ([example](./questions.json))
 * [ ] Database
 * [ ] Get/request APIs
 
