@@ -48,6 +48,7 @@ h3 {
     max-height: 300px;
     min-height: 100px;
     overflow: hidden;
+    clear: both;
 }
 
 #start-image {
@@ -127,7 +128,7 @@ code {
     text-align: center;
 }
 
-button { /* todo: make all buttons display in same place */
+button {
     padding: 10px 16px;
     margin: 10px;
     text-align: center;
@@ -145,6 +146,8 @@ button:hover {
 }
 
 nav {
+    text-align: center;
+    bottom: 0px;
     padding: 6px 10px;
     margin: 6px 10px;
 }

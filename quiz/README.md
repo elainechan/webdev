@@ -1,5 +1,9 @@
 # Web Developer Interview Quiz
 
+Test your Web development knowledge. 
+
+[Take the quiz](https://elainechan.github.io/webdev/quiz/index.html)
+
 See [requirements.md](https://github.com/elainechan/webdev/blob/master/quiz/requirements.md) for requirements checklist.
 
 ## Topics Covered
