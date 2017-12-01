@@ -1,4 +1,7 @@
 /* Default: Mobile */
+html {
+    box-sizing: border-box;
+}
 
 body {
     font-family: roboto;

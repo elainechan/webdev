@@ -1,5 +1,45 @@
 const BANK = [
     [{
+        question: 'Which of the following statements about JavaScript functions is <strong>false</strong>?',
+        topic: 'JavaScript',
+        answers: [
+            { key: 0, answer: 'JavaScript functions are not hoisted.' },
+            { key: 1, answer: 'A function can accept other functions as arguments.' },
+            { key: 2, answer: 'JavaScript functions can be anonymous.' }, 
+            { key: 3, answer: 'A JavaScript function can be a property value in an object.' }
+        ]
+    }],
+    [{
+        question: 'A <code>@media</code> query...',
+        topic: 'CSS',
+        answers: [
+            { key: 0, answer: 'Defines different style rules for different devices.' },
+            { key: 1, answer: 'Represents a generic container for video and audio content.' },
+            { key: 2, answer: 'Represents a generic container for embedded interactive content.' }, 
+            { key: 3, answer: 'Renders vector graphics in a designated area of the viewport.' }
+        ]
+    }],
+    [{
+        question: 'An <code>ID</code> selector...',
+        topic: 'CSS',
+        answers: [
+            { key: 0, answer: 'Is preceded by a <code>#</code> character and identifies a unique element.' },
+            { key: 1, answer: 'Is preceded by a <code>.</code> character and identifies multiple elements.' },
+            { key: 2, answer: 'Is preceded by a <code>#</code> character and identifies multiple elements.' }, 
+            { key: 3, answer: 'Is preceded by a <code>.</code> character and identifies a unique element.' }
+        ]
+    }],
+    [{
+        question: 'What is a <code>&lt;head&gt;</code> element?',
+        topic: 'HTML',
+        answers: [
+            { key: 0, answer: 'It provides metadata about the HTML document.' },
+            { key: 1, answer: 'It creates a hyperlink to other web pages.' },
+            { key: 2, answer: 'It represents introductory content such as navigation.' }, 
+            { key: 3, answer: 'It is used to group several controls within a web form.' }
+        ]
+    }],
+    [{
         question: 'In an HTML document, <code>!DOCTYPE html</code>...',
         topic: 'HTML',
         answers: [
@@ -15,8 +55,8 @@ const BANK = [
         answers: [
             { key: 0, answer: 'The global object in a browser.' },
             { key: 1, answer: 'An element returned by the DOM API.' },
-            { key: 2, answer: 'The area of a webpage visible to the user.' },
-            { key: 3, answer: 'The container of user display properties.' }
+            { key: 2, answer: 'An area of a webpage visible to the user.' },
+            { key: 3, answer: 'The generic container of display properties.' }
         ]
     }],
     [{
@@ -70,7 +110,7 @@ const BANK = [
         ]
     }],
     [{
-        question: 'Which of the following is true?',
+        question: 'Which of the following is <strong>true</strong>?',
         topic: 'CSS',
         answers: [
             { key: 0, answer: 'Both <code>fixed</code> and <code>absolute</code> elements are positioned relative to the document rather than a parent.' },
