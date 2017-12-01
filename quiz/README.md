@@ -45,8 +45,14 @@ See [requirements.md](https://github.com/elainechan/webdev/blob/master/quiz/requ
 * `question-bank.js`: `BANK` of all question content
 
 ## Enhancement
+
+## Add Backend
+* [ ] Server
+* [ ] Data structure (JSON)
+* [ ] Database
+* [ ] Get/request APIs
+
 ### Add Features
-* [ ] Data store (JSON question bank)
 * [ ] Selection menu
     * [ ] Option to select quiz size (number of questions)
     * [ ] Option to select topic area
@@ -71,7 +77,7 @@ See [requirements.md](https://github.com/elainechan/webdev/blob/master/quiz/requ
 * [ ] Grid system
 * [ ] Style guide
 
-### Refactor
+### App Refactor
 * [ ] Add `START` and `END` states
     * [ ] In `START` state:
 ```javascript
