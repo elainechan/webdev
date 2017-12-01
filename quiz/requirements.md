@@ -37,6 +37,21 @@ Before you dive into the app, you'll need to:
     * [ ] Option to select quiz size (number of questions)
     * [ ] Option to select topic area
     * [ ] Option to select difficulty
+    * [ ] Access reference material
+    * [ ] Access analytics
+* [ ] Feedback enhancement
+    * [ ] Display answer explanations
+    * [ ] Display reference links
+* [ ] Review page
+    * [ ] Display answer explanations
+    * [ ] Display answer history
+* [ ] Analytics feature
+    * [ ] Overall answer history
+    * [ ] Performance by date
+    * [ ] Performance by topic
+* [ ] Search engine
+    * [ ] by keyword
+    * [ ] by date
 
 ## Notes
 * Redesign: add `START` and `END` states
