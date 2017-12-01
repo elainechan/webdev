@@ -23,8 +23,6 @@ Your quiz app must:
 * [x] Follow a11y best-practices. (5 points)
 * [x] Use responsive design. (3 points)
 * [x] Be fully usable by keyboard and mouse (which will be easy enough if you start with a form). (1 point)
-* [ ] (Optional) Make screenreader read out question
-* [ ] (Optional) Put content in JSON file and render from there
 
 ## Process requirements
 Before you dive into the app, you'll need to:
@@ -34,13 +32,11 @@ Before you dive into the app, you'll need to:
 * [x] design your app using HTML wireframes, which are HTML (and minimal CSS) only versions of the different screens in your app.
 
 ## TODO
-* state (question number)
-* tally (score)
-* data store (question bank)
-* render question (id)
-* submit question ()
-* render feedback
-* render end
+* [ ] Data store (JSON question bank)
+* [ ] Selection menu
+    * [ ] Option to select quiz size (number of questions)
+    * [ ] Option to select topic area
+    * [ ] Option to select difficulty
 
 ## Notes
 * Redesign: add `START` and `END` states
