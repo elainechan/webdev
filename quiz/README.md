@@ -20,5 +20,5 @@
 * Overall result
 
 ## Question Bank Size
-* 12
+* 15
 
