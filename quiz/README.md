@@ -1,9 +1,24 @@
-# Quiz
+# Web Developer Interview Quiz
 
-## Topics
-* HTML
-* CSS
-* JavaScript
+## Topics Covered
+* [x] HTML
+* [x] CSS
+* [x] JavaScript
+* [x] Linux
+* [ ] Network Protocols
+* [ ] Debugging
+* [ ] Testing
+* [ ] Web Tooling
+* [ ] Data Structures
+* [ ] Algorithms
+* [ ] Design Patterns
 
-## Feedback
-* Number of questions right, number wrong, number remaining
+## Displays
+* Start page
+* Question content
+* Feedback: number of questions right, number wrong, number remaining
+* Overall result
+
+## Question Bank Size
+* 12
+

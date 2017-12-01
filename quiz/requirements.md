@@ -1,6 +1,6 @@
 # Requirements
 
-## Model-View-Controller Structure
+## Design Pattern: Model-View-Controller
 * _Model_: `BANK` (immutable), `STATE` (mutable)
 * _View_: `render`, `generate`
 * _Controller_: `update`, `handler`

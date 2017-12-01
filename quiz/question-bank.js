@@ -1,5 +1,35 @@
 const BANK = [
     [{
+        question: '<code>rm index.html</code> on the command line...',
+        topic: 'Linux',
+        answers: [
+            { key: 0, answer: 'Removes <code>index.html</code> file from the current working directory, if it exists.' },
+            { key: 1, answer: 'Changes the current working directory to <code>index.html</code>, if it exists.' },
+            { key: 2, answer: 'Creates a new directory named <code>index.html</code>.' }, 
+            { key: 3, answer: 'Deletes the current working directory.' }
+        ]
+    }],
+    [{
+        question: '<code>pwd</code> on the command line...',
+        topic: 'Linux',
+        answers: [
+            { key: 0, answer: 'Prints the current working directory.' },
+            { key: 1, answer: 'Changes the current working directory.' },
+            { key: 2, answer: 'Creates a new directory.' }, 
+            { key: 3, answer: 'Deletes the current directory.' }
+        ]
+    }],
+    [{
+        question: '<code>cd</code> on the command line...',
+        topic: 'Linux',
+        answers: [
+            { key: 0, answer: 'Changes the current working directory.' },
+            { key: 1, answer: 'Prints the current working directory.' },
+            { key: 2, answer: 'Creates a new directory.' }, 
+            { key: 3, answer: 'Deletes the current directory.' }
+        ]
+    }],
+    [{
         question: 'Which of the following statements about JavaScript functions is <strong>false</strong>?',
         topic: 'JavaScript',
         answers: [
