@@ -12,12 +12,17 @@ See [requirements.md](./requirements.md) for requirements checklist.
 * [x] JavaScript
 * [x] Linux
 * [ ] Network Protocols
+* [ ] React
+* [ ] Node
 * [ ] Debugging
-* [ ] Testing
-* [ ] Web Tooling
-* [ ] Data Structures
-* [ ] Algorithms
-* [ ] Design Patterns
+* [ ] Testing (`assert`, `expect`, etc)
+* [ ] Web Tooling (Webpack, Babel, browser debuggers...)
+* [ ] Database (SQL, NoSQL, Mongo, etc...)
+* [ ] Computer Systems (Bits and bytes)
+* [ ] Devops (Terminology, tools, processes...)
+* [ ] Data Structures (Linked lists, trees, heaps, queues, stacks...)
+* [ ] Algorithms (Searching, sorting...)
+* [ ] Design Patterns (MVC, Singleton, Factory, Decorator...)
 
 ## Displays
 * Start page

@@ -20,6 +20,8 @@ Pasting: use normal
     * added text will appear on every line after a second
 * [insert] `ctrl-w` delete word before cursor
 * [insert] `ctrl-u` delete from cursor to beginning of line
+* `da"` delete everything between quotes including the quotes
+* `d%` delete everything between matching parentheses including parentheses
 
 ## Indenting
 * [insert] `ctrl-t` - current line forward
