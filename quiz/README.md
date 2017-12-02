@@ -57,12 +57,12 @@ See [requirements.md](./requirements.md) for requirements checklist.
 
 ### User Stories
 1. Level 1 difficulty 
-Users should be able to:
+- Users should be able to:
 - [ ] choose one or more topic(s)
 - [ ] choose the number of questions they have to answer.
 
 2. Level 2 difficulty
-Users should be able to:
+- Users should be able to:
 - [ ] sign up for an account
 - [ ] log in and log out
 - [ ] use app as guest
