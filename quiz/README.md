@@ -69,7 +69,7 @@ See [requirements.md](./requirements.md) for requirements checklist.
     - [ ] use app as guest
     - [ ] create and save custom quizzes based on topic(s) and number of questions.
     - [ ] review results from quizzes they had taken in the past. 
-
+    - Requirements:
     - [ ] Each time a quiz is taken, quiz data, user selections, and results are saved and stored in database.
     - [ ] If user chooses to sign up for an account, their history will be made available.
     - [ ] This requires management of session ID (to identify session), user IP address (to identify user).
@@ -79,7 +79,7 @@ See [requirements.md](./requirements.md) for requirements checklist.
     - [ ] See performance history
     - [ ] Zoom in to narrow results by date, by topic, by difficulty
     - [ ] Access analysis of performance history
-    
+    - Requirements:
     - [ ] Organize data store by date, by topic, by difficulty
     - [ ] Models for analyzing performance data
 
