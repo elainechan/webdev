@@ -56,23 +56,32 @@ See [requirements.md](./requirements.md) for requirements checklist.
 ## Enhancement
 
 ### User Stories
-1. Level 1 difficulty 
-- Users should be able to:
-- [ ] choose one or more topic(s)
-- [ ] choose the number of questions they have to answer.
+1. Level 1: Content selection 
+    - Users should be able to:
+    - [ ] choose one or more topic(s)
+    - [ ] choose the number of questions they have to answer.
+    - [ ] choose difficulty level
 
-2. Level 2 difficulty
-- Users should be able to:
-- [ ] sign up for an account
-- [ ] log in and log out
-- [ ] use app as guest
-- [ ] create and save custom quizzes based on topic(s) and number of questions.
-- [ ] review results from quizzes they had taken in the past. 
+2. Level 2 Authentication, CRUD
+    - Users should be able to:
+    - [ ] sign up for an account
+    - [ ] log in and log out
+    - [ ] use app as guest
+    - [ ] create and save custom quizzes based on topic(s) and number of questions.
+    - [ ] review results from quizzes they had taken in the past. 
 
-3. Level 3 difficulty
-- [ ] Each time a quiz is taken, quiz data, user selections, and results are saved and stored in database.
-- [ ] If user chooses to sign up for an account, their history will be made available.
-- [ ] This requires management of session ID (to identify session), user IP address (to identify user).
+    - [ ] Each time a quiz is taken, quiz data, user selections, and results are saved and stored in database.
+    - [ ] If user chooses to sign up for an account, their history will be made available.
+    - [ ] This requires management of session ID (to identify session), user IP address (to identify user).
+
+3. Level 3: Analytics
+    - Users should be able to:
+    - [ ] See performance history
+    - [ ] Zoom in to narrow results by date, by topic, by difficulty
+    - [ ] Access analysis of performance history
+    
+    - [ ] Organize data store by date, by topic, by difficulty
+    - [ ] Models for analyzing performance data
 
 ### Add Backend
 * [ ] Server
