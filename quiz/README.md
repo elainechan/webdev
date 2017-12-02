@@ -56,13 +56,14 @@ See [requirements.md](./requirements.md) for requirements checklist.
 ## Enhancement
 
 ### User Stories
-1. Level 1: Content selection 
+(Listed by estimated difficulty)
+1. Level 1: Content selection (easy)
     - Users should be able to:
     - [ ] choose one or more topic(s)
     - [ ] choose the number of questions they have to answer.
     - [ ] choose difficulty level
 
-2. Level 2 Authentication, CRUD
+2. Level 2 Authentication, CRUD (medium)
     - Users should be able to:
     - [ ] sign up for an account
     - [ ] log in and log out
@@ -74,7 +75,7 @@ See [requirements.md](./requirements.md) for requirements checklist.
     - [ ] If user chooses to sign up for an account, their history will be made available.
     - [ ] This requires management of session ID (to identify session), user IP address (to identify user).
 
-3. Level 3: Analytics
+3. Level 3: Analytics (hard)
     - Users should be able to:
     - [ ] See performance history
     - [ ] Zoom in to narrow results by date, by topic, by difficulty
