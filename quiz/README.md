@@ -85,6 +85,9 @@ See [requirements.md](./requirements.md) for requirements checklist.
 ### Improve Design
 * [ ] Grid system
 * [ ] Style guide
+* [ ] Navigation menu [example](https://codepen.io/philhoyt/pen/ujHzd)
+    * [ ] Drop down
+    * [ ] Tabs
 
 ### App Refactor
 * [ ] Add `START` and `END` states
