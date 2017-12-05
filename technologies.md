@@ -1,37 +1,43 @@
 # Technologies
 
-Frontend languages:
-  * HTML
-  * CSS
-  * Javascript
+## Web
+* Progressive Web Apps
+    - [ ] Service Workers
+    - [ ] Push
+    - [ ] Lighthouse
+    - [ ] Polymer
+    - [ ] Angular
+* Material Design
 
-Backend languages:
-  * Python
-  * Node
-  * Linux
+##  Backend:
+* Servers
+* Tools
+    - Python
+    - Node
+    - Linux
+* Containers
+    - Docker
+    - Kubernetes
+* Bare metal
+    - DigitalOcean
+    - RackSpace
 
-Databases:
+## Databases
   * SQL
   * PostgreSQL
   * NoSQL
 
 Backend components:
-  * Servers
-  * Containers
 
-Cloud computing:
+## Cloud
   * AWS
   * Google Cloud
   * Azure
   * Serverless Framework
 
-DevOps
+## DevOps
   * Microservices
   * Continuous Integration
   * Continuous Delivery
   * Agile
   * Scrum
-
-Bare metal
-  * DigitalOcean
-  * RackSpace
