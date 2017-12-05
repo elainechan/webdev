@@ -1,7 +1,7 @@
 # Project Pipeline
 
 ## Current
-* [x] [Knowledge Quiz](https://elainechan.github.io/webdev/rote)
+* [x] [Knowledge Quiz](https://elainechan.github.io/rote)
 
 ## Interested
 * [ ] [Hacker News reader PWA](https://hnpwa.com/)
