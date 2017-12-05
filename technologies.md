@@ -5,9 +5,16 @@
     - [ ] Service Workers
     - [ ] Push
     - [ ] Lighthouse
-    - [ ] Polymer
-    - [ ] Angular
+* Streaming data 
+    - WebRTC
 * Material Design
+* Frameworks
+    - Angular
+    - React
+    - Redux
+    - Aurelia
+    - Vue
+    - Polymer
 
 ##  Backend:
 * Servers
