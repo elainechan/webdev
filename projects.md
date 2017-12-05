@@ -36,8 +36,8 @@
 * [ ] Symbolic differentiator
 
 ## Archived
-* [ ] [Bring Me Home](https://github.com/elainechan/bringmehome)
-* [ ] [NLP News Summarizer](https://github.com/elainechan/lampedo)
-* [ ] [Sudoku](https://github.com/elainechan/sudoku)
-* [ ] [Gratuation Relocation](https://github.com/elainechan/graduation)
-* [ ] [Automation](https://github.com/elainechan/automation)
+* [Bring Me Home](https://github.com/elainechan/bringmehome)
+* [NLP News Summarizer](https://github.com/elainechan/lampedo)
+* [Sudoku](https://github.com/elainechan/sudoku)
+* [Gratuation Relocation](https://github.com/elainechan/graduation)
+* [Automation](https://github.com/elainechan/automation)
