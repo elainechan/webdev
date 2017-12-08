@@ -5,6 +5,7 @@
 
 ## Interested
 * [ ] [Data science mixtape](https://www.thinkful.com/learn/track/data-scientist/)
+* [ ] [Clustering music genres](https://www.r-bloggers.com/clustering-music-genres-with-r)
 * [ ] [Hacker News reader PWA](https://hnpwa.com/)
 * [ ] [Linux Lab](./linux-lab.md)
 * [ ] [Job Scraper in Python](https://medium.com/@msalmon00/web-scraping-job-postings-from-indeed-96bd588dcb4b)
