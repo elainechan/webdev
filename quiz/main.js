@@ -113,8 +113,7 @@ function setHandleSubmitAnswer() {
     console.log("`setHandleSubmitAnswer()` was called");
     $("#submit-answer").on("click", event => {
         event.preventDefault();
-        let checkedID = $("input[name=answer-checkbox]:checked").attr("id");
-        let chosenAnswer = $(`label[for=${checkedID}]`).text();
+        let checkedID = $("input[class=answer-checkbox]:checked").attr("id");
         if(checkedID === 0 || checkedID === '0') { // mutate STATE
             STATE.numRight += 1;
             STATE.currentAnswerCorrect = true;
