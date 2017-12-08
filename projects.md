@@ -4,6 +4,7 @@
 * [x] [Knowledge Quiz](https://elainechan.github.io/rote)
 
 ## Interested
+* [ ] [Data science mixtape](https://www.thinkful.com/learn/track/data-scientist/)
 * [ ] [Hacker News reader PWA](https://hnpwa.com/)
 * [ ] [Linux Lab](./linux-lab.md)
 * [ ] [Job Scraper in Python](https://medium.com/@msalmon00/web-scraping-job-postings-from-indeed-96bd588dcb4b)
