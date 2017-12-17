@@ -4,6 +4,10 @@
 * [x] [Knowledge Quiz](https://elainechan.github.io/rote)
 
 ## Interested
+* [ ] Neural networks tutorial
+    - [Tensorflow playground](http://playground.tensorflow.org/#activation=tanh&batchSize=10&dataset=circle&regDataset=reg-plane&learningRate=0.03&regularizationRate=0&noise=0&networkShape=4,2&seed=0.07379&showTestData=false&discretize=false&percTrainData=50&x=true&y=true&xTimesY=true&xSquared=true&ySquared=true&cosX=false&sinX=true&cosY=false&sinY=true&collectStats=false&problem=classification&initZero=false&hideText=false)
+    - [Picasso: a CNN visualizer](https://medium.com/merantix/picasso-a-free-open-source-visualizer-for-cnns-d8ed3a35cfc5)
+    - [Unreasonable Effectiveness of RNNs](http://karpathy.github.io/2015/05/21/rnn-effectiveness/)
 * [ ] [Data science mixtape](https://www.thinkful.com/learn/track/data-scientist/)
 * [ ] [Clustering music genres](https://www.r-bloggers.com/clustering-music-genres-with-r)
 * [ ] [Hacker News reader PWA](https://hnpwa.com/)
