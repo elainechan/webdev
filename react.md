@@ -1,2 +1,5 @@
-* Chrome extension for debugginh
-* 
+* Chrome extension for debugging
+* state
+* `props` - parameter
+* constructor
+* render
