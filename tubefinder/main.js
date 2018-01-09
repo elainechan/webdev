@@ -3,7 +3,7 @@ const YOUTUBE_SEARCH_URL = 'https://www.googleapis.com/youtube/v3/search';
 function getDataFromApi(searchTerm, callback) {
   const query = {
 	part: 'snippet',
-	key: youTubeDataAPIToken(), // TODO: remove
+	key: youTubeDataAPIToken(), // YouTube Data API unique authorizatin token
 	q: `${searchTerm} in:name`,
   };
   $.getJSON(YOUTUBE_SEARCH_URL, query, callback);
