@@ -7,8 +7,6 @@ auth = tweepy.OAuthHandler(consumer_key, consumer_secret)
 auth.set_access_token(access_token, access_secret)
 api = tweepy.API(auth)
 
-# TODO: the following classes can't both run at the same time.
-
 # Create a live stream listener based on hashtag #goldenglobes.
 # Save tweet data in JSON file.
 class DataListener(tweepy.streaming.StreamListener):
@@ -23,7 +21,7 @@ class DataListener(tweepy.streaming.StreamListener):
 
 data_listener = DataListener()
 data_stream = tweepy.streaming.Stream(auth, data_listener)
-data_stream.filter(track=['#goldenglobes']) # Only get results with hashtag
+data_stream.filter(track=['#goldenglobes'], async=True) # Only get results with hashtag
 
 # Save tweet status in text file.
 class StatusListener(tweepy.streaming.StreamListener):
@@ -38,4 +36,4 @@ class StatusListener(tweepy.streaming.StreamListener):
 
 status_listener = StatusListener()
 status_stream = tweepy.streaming.Stream(auth, status_listener)
-status_stream.filter(track=['#goldenglobes'])
+status_stream.filter(track=['#goldenglobes'], async=True)
