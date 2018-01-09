@@ -3,13 +3,13 @@ const YOUTUBE_SEARCH_URL = 'https://www.googleapis.com/youtube/v3/search';
 function getDataFromApi(searchTerm, callback) {
   const query = {
 	part: 'snippet',
-	key: 'AIzaSyBkdN6yb7KKtlV3h89IY1rMAD92FZo78jw', // TODO: remove before git push
+	key: 'AIzaSyBkdN6yb7KKtlV3h89IY1rMAD92FZo78jw', // TODO: remove
 	q: `${searchTerm} in:name`,
   };
   $.getJSON(YOUTUBE_SEARCH_URL, query, callback);
 }
 
-function renderResult(result) { // TODO: result is undefined
+function renderResult(result) {
   return `
 	<div>
 	  <a href="https://www.youtube.com/watch?v=${result.id.videoId}" target="_blank"><img src="${result.snippet.thumbnails.default.url}" alt="YouTube video snippet"></a>
@@ -22,7 +22,7 @@ function renderResult(result) { // TODO: result is undefined
 }
 
 function displayYouTubeSearchData(data) {
-  const results = data.items.map((item, index) => renderResult(item)); // TODO: item is undefined
+  const results = data.items.map((item, index) => renderResult(item));
   $('.js-search-results').html(results);
 }
 
