@@ -25,7 +25,7 @@
 * (Database: MongoDB)
 * Reading data: Node file.fs, python io
 
-## Project: Trendline
+## Project Description: Trendline
 Less ambitious, more portfolio-like: "first node/express app on Heroku"
 
 ### Live Update Version
@@ -42,3 +42,8 @@ Less ambitious, more portfolio-like: "first node/express app on Heroku"
 * "Datastore" is just `var Store = {}`
 * Use heroku to serve `index.html`, `index.css` and `app.js` files
 * Once the first Node/Express app is 'up' on Heroku, you can put files in the `/public` folder and they'll be served verbatim with no extra logic required
+
+## Project Requirements
+
+## Sources
+* [The Effects of Rent Control Expansion on Tenants, Landlords, and Inequality: Evidence from San Francisco](http://conference.nber.org/confer//2017/PEf17/Diamond_McQuade_Qian.pdf)

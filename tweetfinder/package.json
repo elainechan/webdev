@@ -1,0 +1,14 @@
+{
+  "name": "tweetfinder",
+  "version": "1.0.0",
+  "description": "## Steps 1. Authenticate using four tokens. 2. Create a live streaming listener using Tweepy. 3. Save data in two formats simultaneously: \ta. Use `data` parameter and save as `JSON`. \tb. Use `status` parameter and save as `txt`.",
+  "main": "main.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "twitter": "^1.7.1"
+  }
+}
