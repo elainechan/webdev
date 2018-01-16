@@ -47,3 +47,44 @@ Less ambitious, more portfolio-like: "first node/express app on Heroku"
 
 ## Sources
 * [The Effects of Rent Control Expansion on Tenants, Landlords, and Inequality: Evidence from San Francisco](http://conference.nber.org/confer//2017/PEf17/Diamond_McQuade_Qian.pdf)
+* [1000 Largest U.S. Cities Data in JSON](https://gist.github.com/Miserlou/c5cd8364bf9b2420bb29)
+
+### Collect Data
+* Write to file with .get tweets passing params
+* Refine search to make sure we're getting 'valid' tweets
+* Parse those results for data
+* Within this time range, in this geo location, matching this query, how many tweets are there?
+
+page=1
+result=[]
+page=100
+if (result.length = 0)
+{request with page= 50}
+{request page=25}
+the service knows it has 250 results:
+impossible: (you ask for page 1, 50 results per page, it gives you a full array)
+
+"take a look at some example tweets"
+sentiment analysis week by week
+
+curl https://api.twitter.com/1.1/search/tweets.json?
+
+q='to%3ANASA&tweet_mode=extended'
+
+Twitter search API
+15 requests in 15 minutes
+setTimeout() to space out requests
+have dataset by Tuesday
+
+// recommended 200s break in setTimeout
+var cities = [a,b,c]
+var currentCityIndex = 1
+
+function getCityData(){
+    //request data cities[currentCityIndex]
+    //log out the result
+    currentCityIndex ++;
+    setTimeout(getCityData, 100000)
+}
+
+getCityData();

@@ -5,3 +5,5 @@ tweets.txt
 node_modules/
 package-lock.json
 config.js
+config1.js
+config.sh
