@@ -1,7 +1,3 @@
-/*
-Uses 'twitter' package
-*/
-
 'use strict';
 
 const Twitter = require('twitter');
@@ -12,7 +8,7 @@ const cities = require('./cities.js');
 var client = new Twitter(config);
 var params = {
 	q: '%23donaldtrump',
-	geocode: '40.7127837,-74.0059413,10mi', // New York City
+	geocode: '40.7127837,-74.0059413,10mi',
 	count: 5,
 	result_type: 'recent',
 	lang: 'en',
@@ -32,11 +28,8 @@ function getTweets() {
 			tweets.push(entry.full_text); // full_text in retweets are always truncated
 		});
 		var uniqueTweets = tweets.filter(onlyUnique);
-		uniqueTweets.forEach(entry => {
-			fs.appendFile('tweets.txt', entry + '\n', err => {
-				if (err) throw err;
-			});
-		});
+		//console.log(uniqueTweets);
+		return uniqueTweets;
 	});
 }
 // Discards duplicate tweets
@@ -45,38 +38,34 @@ function onlyUnique(value, index, self) {
 }
 
 var currentCityIndex = 0;
-function getCityData() {
+var tweetObjects = [];
+function getCityData(query='%23donaldtrump', cityCount=3, tweetCount=5) {
 	setTimeout(function() {
 		let lat = cities[currentCityIndex].latitude;
 		let lon = cities[currentCityIndex].longitude;
+		params.q = '%23donaldtrump';
 		params.geocode = `${lat},${lon},10mi`;
-		fs.appendFile('tweets.txt', `${cities[currentCityIndex].city}`+ '\n', err => {
-			if (err) throw err;
-		});
-		getTweets(); // Collect data for current city
+		params.count = tweetCount;
+		console.log(`Adding tweets from ${cities[currentCityIndex].city}...`);
+		getTweets();
+		
+		var currentCityData = new Object,
+		    city = cities[currentCityIndex].city,
+		    tweets = getTweets();
+		tweetObjects.push(currentCityData);
+		console.log(JSON.stringify(tweetObjects));
+		
 		currentCityIndex++;
-		if(currentCityIndex < 5) {
+		if(currentCityIndex < cityCount) {
 			getCityData();
 		}
 	}, 10000);
+	//console.log(tweetObjects);
+	return tweetObjects;
 }
-getCityData();
-/*
-var currIndex = 0;
-function timeConsoleLog() {
-    setTimeout(function() {
-        let la = cities[currIndex].latitude;
-        let lo = cities[currIndex].longitude;
-        let currCity = cities[currIndex].city;
-        obj.city = `${currCity}`;
-        obj.geocode = `${la},${lo}`;
-        printCity();
-        currIndex++;
-        if(currIndex < 3) {
-            timeConsoleLog();
-        }
-    }, 3000);
-        
-}
-timeConsoleLog();
-*/
+fs.appendFile('tweet-text.json', JSON.stringify(getCityData()), err => {
+	if (err) throw err;
+});
+// Allow input:
+// geocode
+// q
