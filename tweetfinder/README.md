@@ -1,11 +1,13 @@
-# Streaming Twitter Data using Tweepy
+# Consuming Twitter API
 
-## Steps
+### Tweepy Streaming Steps
 1. Authenticate using four tokens.
-2. Create a live streaming listener using Tweepy.
+2. Create a live streaming listener.
 3. Save data in two formats simultaneously:
 	a. Use `data` parameter and save as `JSON`.
 	b. Use `status` parameter and save as `txt`.
+
+### Node Twitter Search
 
 ## Use Cases
 * 'How sick is Denver?' 
@@ -61,7 +63,7 @@ page=100
 if (result.length = 0)
 {request with page= 50}
 {request page=25}
-the service knows it has 250 results:
+the service knows it has 100 results:
 impossible: (you ask for page 1, 50 results per page, it gives you a full array)
 
 "take a look at some example tweets"
@@ -76,15 +78,13 @@ Twitter search API
 setTimeout() to space out requests
 have dataset by Tuesday
 
-// recommended 200s break in setTimeout
-var cities = [a,b,c]
-var currentCityIndex = 1
-
+// Take 200s break in setTimeout
+```javascript
 function getCityData(){
     //request data cities[currentCityIndex]
     //log out the result
     currentCityIndex ++;
     setTimeout(getCityData, 100000)
 }
-
 getCityData();
+```
