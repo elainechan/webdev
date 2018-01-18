@@ -1,5 +1,7 @@
 # Consuming Twitter API
 
+[Blog Post](http://elainechan.nyc/twitter-api/)
+
 ### Tweepy Streaming Steps
 1. Authenticate using four tokens.
 2. Create a live streaming listener.
