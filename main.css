@@ -7,6 +7,12 @@ body {
     font-size: 18pt;
 }
 
+#logo {
+    position: absolute;
+    top: 100px;
+    left: 60px;
+}
+
 h1 {
     font-size: 36pt;
 }
@@ -52,3 +58,33 @@ li a:hover {
 li a:visited {
     color: #101010;
 }
+
+@media only screen and (max-width: 1190px) {
+    #logo {
+        position: absolute;
+        top: 180px;
+        left: 48px;
+    }
+}
+@media only screen and (max-width: 678px) {
+    #logo {
+        position: absolute;
+        top: 240px;
+        left: 36px;
+    }
+}
+@media only screen and (max-width: 534px) {
+    #logo {
+        position: absolute;
+        top: 300px;
+        left: 20px;
+    }
+}
+@media only screen and (max-width: 450px) {
+    #logo {
+        position: absolute;
+        top: 300px;
+        left: 10px;
+    }
+}
+
