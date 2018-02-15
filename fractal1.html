@@ -1,0 +1,65 @@
+<!--Equations http://paulbourke.net/fractals/fracintro/-->
+<!--Implementation http://progur.com/2017/02/create-mandelbrot-fractal-javascript.html-->
+<!DOCTYPE html>
+<html>
+<body>
+<script>
+    (function() {
+        const myCanvas = document.createElement('canvas');
+        myCanvas.width = 1000;
+        myCanvas.height = 750;
+        var maxIterations = 200; // Change iteration to alter composition
+        document.body.appendChild(myCanvas);
+        const ctx = myCanvas.getContext('2d');
+        function checkIfMandelbrot(x, y) {
+            let realComponentOfResult = x;
+            let imaginaryComponentOfResult = y;
+            for (let i = 0; i < maxIterations; i++) {
+                const tempRealComponent = realComponentOfResult
+                * realComponentOfResult
+                - imaginaryComponentOfResult
+                * imaginaryComponentOfResult
+                                        + x;
+                const tempImaginaryComponent = 2.0
+                * realComponentOfResult
+                * imaginaryComponentOfResult
+                                             + y;
+                realComponentOfResult = tempRealComponent;
+                imaginaryComponentOfResult = tempImaginaryComponent;
+
+                if (realComponentOfResult * imaginaryComponentOfResult > 5) {
+                return (i / maxIterations * 100); // Not in set
+                }
+            };
+            return 0; // In the set
+        }
+        const magniFactor = 400; // Change to alter zoom
+        const panX = 1.0;
+        const panY = 0.75;
+        function draw() {
+            for (let x = 0; x < myCanvas.width; x++) {
+                for (let y = 0; y < myCanvas.height; y++) {
+                    const belongsToSet = checkIfMandelbrot(x / magniFactor - panX,
+                                                         y / magniFactor - panY);
+                    if (belongsToSet === 0) {
+                        ctx.fillStyle = '#000';
+                        ctx.fillRect(x, y, 1, 1); // Draw a black pixel
+                    } else {
+                        ctx.fillStyle = `hsl(0, 100%, ${belongsToSet}%)`;
+                        ctx.fillRect(x, y, 1, 1);
+                    }
+                }
+            }
+        };
+        draw();
+        function reDraw(){
+            console.log('attempting redraw')
+            maxIterations = 150;
+            draw();
+        }
+        //this is invoking immediately instead of.. after several hours like i'd expect??
+        setTimeout(reDraw(),15000000)
+    })();
+</script>
+</body>
+</html>
