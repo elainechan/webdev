@@ -1,6 +1,11 @@
 # JavaScript Notes
 
 ## Current Interest
+
+* `call`, `bind`, apply` and ES6 usage
+* Partial application and currying
+* Deconstruction
+
 * Self-reference with `this`
 * DOM manipulation
 * diff between vanilla unit tests and testing libraries
